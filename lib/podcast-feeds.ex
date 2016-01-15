@@ -27,13 +27,10 @@ defmodule PodcastFeeds do
               generator: nil,
               categories: [],
               rating: nil,
-              docs: nil,
               cloud: nil,
               ttl: nil,
               managing_editor: nil,
               web_master: nil,
-              skip_hours: [],
-              skip_days: [],
               image: nil,
               itunes: nil,
               atom_links: []

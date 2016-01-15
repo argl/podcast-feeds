@@ -4,6 +4,12 @@
         <title>W3Schools Home Page</title>
         <link>http://www.w3schools.com</link>
         <description>Free web building tutorials</description>
+        <category>channel category 1</category>
+        <category>channel category 2</category>
+        <cloud domain="rpc.sys.com" port="80" path="/RPC2" registerProcedure="myCloud.rssPleaseNotify" protocol="xml-rpc" />
+        <ttl>60</ttl>
+        <managingEditor>geo@herald.com (George Matesky)</managingEditor>
+        <webMaster>betty@herald.com (Betty Guernsey)</webMaster>
         <skipHours>
             <hour>1</hour>
             <hour>2</hour>
@@ -23,6 +29,8 @@
             <title>RSS Tutorial</title>
             <link>http://www.w3schools.com/webservices</link>
             <description>New RSS tutorial on W3Schools</description>
+            <category>item category 1</category>
+            <category>item category 2</category>
         </item>
         <item>
             <title>XML Tutorial</title>
