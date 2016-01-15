@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>W3Schools Home Page</title>
+        <link>http://www.w3schools.com</link>
+        <description>Free web building tutorials</description>
+        <skipHours>
+            <hour>1</hour>
+            <hour>2</hour>
+        </skipHours>
+        <skipDays>
+            <day>Monday</day>
+            <day>Tuesday</day>
+        </skipDays>
+        <pubDate>Sat, 15 Aug 2015 09:54:05 +0000</pubDate>
+        <lastBuildDate>Sat, 16 Aug 2015 09:54:05 +0000</lastBuildDate>
+        <image>
+            <title>Test Image</title>
+            <description>test image...</description>
+            <url>http://localhost/image</url>
+        </image>
+        <item>
+            <title>RSS Tutorial</title>
+            <link>http://www.w3schools.com/webservices</link>
+            <description>New RSS tutorial on W3Schools</description>
+        </item>
+        <item>
+            <title>XML Tutorial</title>
+            <link>http://www.w3schools.com/xml</link>
+            <description>New XML tutorial on W3Schools</description>
+        </item>
+    </channel>
+</rss>
