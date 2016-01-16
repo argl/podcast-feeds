@@ -26,11 +26,12 @@ defmodule PodcastFeeds do
               last_build_date: nil,
               generator: nil,
               categories: [],
-              rating: nil,
               cloud: nil,
               ttl: nil,
               managing_editor: nil,
               web_master: nil,
+              skip_hours: [],
+              skip_days: [],
               image: nil,
               itunes: nil,
               atom_links: []
