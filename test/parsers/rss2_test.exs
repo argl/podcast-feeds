@@ -64,25 +64,54 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.description == "Image description"
     assert i.width == 200
     assert i.height == 100
+  end
 
+  test "parse atom namespace in meta" , %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    {:ok, state, _rest} = RSS2.parse(fstream)
+    m = state.feed.meta
     atom_links = m.atom_links
     assert length(atom_links) == 4
     atom_self = Enum.find(atom_links, 0, fn(link) -> link.rel == "self" end)
     assert atom_self
     assert atom_self.href == "http://localhost:8081/example.xml"
 
+    atom_first = Enum.find(atom_links, 0, fn(link) -> link.rel == "first" end)
+    assert atom_first
+    assert atom_first.href == "http://localhost:8081/example.xml"
   end
 
-  test "parse namespaces", %{sample1: sample1} do
+  test "parse atom namespace in entry" , %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    {:ok, state, _rest} = RSS2.parse(fstream)
+    [e | rest] = state.feed.entries
+    contributors = e.contributors
+    assert length(contributors) == 1
+    [e | _rest] = rest
+    contributors = e.contributors
+    assert length(contributors) == 2
+    contributor = hd(contributors)
+    assert contributor.name == "Caspar Contributor"
+    assert contributor.uri == "http://contributor.example.com/caspar"
+    assert contributor.email == "caspar@contributor.example.com"
+
+    atom_links = e.atom_links
+    assert length(atom_links) == 1
+    atom_deep = Enum.find(atom_links, 0, fn(link) -> link.rel == "http://localhost:8081/deep-link" end)
+    assert atom_deep
+    assert atom_deep.href == "http://localhost:8081/example.xml#"
+
+  end
+
+
+  test "namespaces info", %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     {:ok, state, _rest} = RSS2.parse(fstream)
     namespaces = state.namespaces
-    assert namespaces == [
-      psc: "http://podlove.org/simple-chapters",
-      content: "http://purl.org/rss/1.0/modules/content/",
-      itunes: "http://www.itunes.com/dtds/podcast-1.0.dtd",
-      atom: "http://www.w3.org/2005/Atom"
-    ]
+    assert is_list(namespaces)
+    assert length(namespaces) == 4
+    assert Keyword.get(namespaces, :psc) == "http://podlove.org/simple-chapters"
+    assert Keyword.get(namespaces, :itunes) == "http://www.itunes.com/dtds/podcast-1.0.dtd"
   end
 
   # test "parse_meta with atom links", %{sample3: sample3} do

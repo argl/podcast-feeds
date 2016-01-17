@@ -34,7 +34,8 @@ defmodule PodcastFeeds do
               skip_days: [],
               image: nil,
               itunes: nil,
-              atom_links: []
+              atom_links: [],
+              contributors: []
   end
 
   defmodule Entry do
@@ -50,7 +51,8 @@ defmodule PodcastFeeds do
               source: nil,
               itunes: nil,
               psc: [],
-              atom_links: []
+              atom_links: [],
+              contributors: []
   end
 
   defmodule Feed do
@@ -95,6 +97,12 @@ defmodule PodcastFeeds do
 
   defmodule SkipHours do
     defstruct hours: []
+  end
+
+  defmodule Contributor do
+    defstruct name: nil,
+      email: nil,
+      uri: nil
   end
 
 
