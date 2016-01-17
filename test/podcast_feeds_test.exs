@@ -11,7 +11,7 @@ defmodule PodcastFeeds.Test do
 
   test "parse file" , %{sample1: sample1} do
     res = PodcastFeeds.parse_file(sample1)
-    assert {:ok, feed, namespaces, rest} = res
+    assert {:ok, %PodcastFeeds.Feed{} = _feed, _namespaces, _rest} = res
   end
 
 end

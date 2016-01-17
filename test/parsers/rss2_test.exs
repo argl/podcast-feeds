@@ -47,7 +47,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert m.publication_date == %Timex.DateTime{calendar: :gregorian, day: 13, hour: 0, minute: 0, month: 11, ms: 0, second: 0, timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min, full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2015}
     assert m.last_build_date == %Timex.DateTime{calendar: :gregorian, day: 12, hour: 22, minute: 47, month: 11, ms: 0, second: 30, timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min, full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2015}
     assert m.generator == "Generator"
-    assert m.cloud == %{domain: 'cloud.example.com', path: '/path', port: '80', protocol: 'xml-rpc', registerProcedure: 'cloud.register'}
+    assert m.cloud == %{domain: "cloud.example.com", path: "/path", port: "80", protocol: "xml-rpc", registerProcedure: "cloud.register"}
     assert m.ttl == 60
     assert m.managing_editor == "podcast-editor@example.com (Paula Podcaster)"
     assert m.web_master == "podcast-webmaster@example.com (Wendy Webmaster)"
@@ -65,11 +65,17 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.width == 200
     assert i.height == 100
 
+    atom_links = m.atom_links
+    assert length(atom_links) == 4
+    atom_self = Enum.find(atom_links, 0, fn(link) -> link.rel == "self" end)
+    assert atom_self
+    assert atom_self.href == "http://localhost:8081/example.xml"
+
   end
 
   test "parse namespaces", %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
-    {:ok, state, rest} = RSS2.parse(fstream)
+    {:ok, state, _rest} = RSS2.parse(fstream)
     namespaces = state.namespaces
     assert namespaces == [
       psc: "http://podlove.org/simple-chapters",

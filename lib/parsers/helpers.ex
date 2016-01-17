@@ -43,9 +43,7 @@ defmodule PodcastFeeds.Parsers.Helpers do
     %ParserState{element_stack: [elem | element_stack]} = state
     case elem.__struct__ do
       ^struct_name ->
-        attribute_map = Enum.reduce(attributes, %{}, fn({_,key,_,_,value}, acc) -> 
-          Map.put(acc, List.to_atom(key), value)
-        end)
+        attribute_map = extract_attributes(attributes)
         elem = %{elem | struct_member => attribute_map}
         %{state | element_stack: [elem | element_stack]}
       _ -> state
@@ -77,6 +75,13 @@ defmodule PodcastFeeds.Parsers.Helpers do
     case text |> DateFormat.parse("{RFC1123}") do
       {:ok, date} -> date
       _ -> nil
+    end
+  end
+
+  # get attributes from node and put it into a map
+  def extract_attributes(attributes) do
+    Enum.reduce attributes, %{}, fn({:attribute, key, _, _, value}, acc) -> 
+      Map.put(acc, List.to_atom(key), to_string(value))
     end
   end
 
