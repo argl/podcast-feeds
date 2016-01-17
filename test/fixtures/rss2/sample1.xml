@@ -24,6 +24,7 @@
         <day>Monday</day>
         <day>Tuesday</day>
     </skipDays>
+    <generator>Generator</generator>
 
     <image>
       <url>http://localhost:8081/podcast-image.jpg</url>
@@ -39,7 +40,6 @@
     <atom:link rel="first" href="http://localhost:8081/example.xml"/>
     <atom:link rel="last" href="http://localhost:8081/example_last.xml"/>
 
-    <generator>Generator</generator>
     <itunes:author>Itunes Author</itunes:author>
     <itunes:summary>Itunes Summary</itunes:summary>
     <itunes:category text="Itunes Category"/>

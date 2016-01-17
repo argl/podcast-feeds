@@ -9,7 +9,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Feed
   alias PodcastFeeds.Entry
   alias PodcastFeeds.Meta
-  # alias PodcastFeeds.Itunes
+  alias PodcastFeeds.Itunes
   # alias PodcastFeeds.AtomLink
   # alias PodcastFeeds.Psc
   alias PodcastFeeds.Image
@@ -296,6 +296,24 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   defp sax_event_handler({:endElement, uri, name, 'atom'}, state) do 
     # forward to atom module
     PodcastFeeds.Parsers.Ext.Atom.sax_event_handler({:endElement, uri, name, 'atom'}, state)
+  end
+
+
+  defp sax_event_handler({:startElement, uri, name, 'itunes', attributes}, state) do
+    # forward to itunes module
+    # make sure we have an itunes element intialized
+    # either on meta or entry elements allowed
+    [elem | element_stack] = state.element_stack
+    elem = case elem.itunes do
+      nil -> %{elem | itunes: %Itunes{}}
+      _ -> elem
+    end
+    state = %{state | element_stack: [elem | element_stack]}
+    PodcastFeeds.Parsers.Ext.Itunes.sax_event_handler({:startElement, uri, name, 'itunes', attributes}, state)
+  end
+  defp sax_event_handler({:endElement, uri, name, 'itunes'}, state) do 
+    # forward to Itunes module
+    PodcastFeeds.Parsers.Ext.Itunes.sax_event_handler({:endElement, uri, name, 'itunes'}, state)
   end
 
 

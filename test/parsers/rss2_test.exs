@@ -100,8 +100,15 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     atom_deep = Enum.find(atom_links, 0, fn(link) -> link.rel == "http://localhost:8081/deep-link" end)
     assert atom_deep
     assert atom_deep.href == "http://localhost:8081/example.xml#"
-
   end
+
+  test "parse itunes namespace in meta" , %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    {:ok, state, _rest} = RSS2.parse(fstream)
+    i = state.feed.meta.itunes
+    assert i.author == "Itunes Author"
+  end
+
 
 
   test "namespaces info", %{sample1: sample1} do
