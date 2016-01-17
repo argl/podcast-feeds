@@ -50,6 +50,10 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert m.ttl == 60
     assert m.managing_editor == "podcast-editor@example.com (Paula Podcaster)"
     assert m.web_master == "podcast-webmaster@example.com (Wendy Webmaster)"
+
+    assert m.categories == ["channel category 2", "channel category 1"]
+    assert m.skip_hours == [1, 2]
+    assert m.skip_days == ["Monday", "Tuesday"]
     # assert m.image == ""
   end
 
