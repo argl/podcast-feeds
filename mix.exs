@@ -2,7 +2,7 @@ defmodule Feedme.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :feedme,
+    [app: :podcast_feeds,
      version: "1.0.0",
      elixir: "~> 1.2",
      description: "Elixir RSS/Atom parser, optimized for POdcast feeds, based on erlsom",

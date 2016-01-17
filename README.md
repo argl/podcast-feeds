@@ -10,11 +10,11 @@ Add **podcast-feeds** into your mix dependencies and applications:
 
 ```elixir
 def application do
-  [applications: [:podcast-feeds]]
+  [applications: [:podcast_feeds]]
 end
 
 defp deps do
-  [{:podcast-feeds, "~> 1.0.0"}]
+  [{:podcast_feeds, "~> 1.0.0"}]
 end
 ```
 Then run ```mix deps.get``` to install podcast-feeds.
