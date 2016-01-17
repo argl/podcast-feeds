@@ -18,3 +18,9 @@ defp deps do
 end
 ```
 Then run ```mix deps.get``` to install podcast-feeds.
+
+## Example
+
+```elixir
+{:ok, feed, _rest} = PodcastFeeds.parse_file("./test/fixtures/rss2/sample.xml")
+```
