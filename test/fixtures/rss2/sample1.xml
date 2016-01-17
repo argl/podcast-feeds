@@ -29,6 +29,9 @@
       <url>http://localhost:8081/podcast-image.jpg</url>
       <title>Podcast Image Title</title>
       <link>http://podcast.example.com/</link>
+      <description>Image description</description>
+      <width>200</width>
+      <height>100</height>
     </image>
     <atom:link rel="self" type="application/rss+xml" title="Podcast Title (MPEG-4 AAC Audio)" href="http://localhost:8081/example.xml"/>
     <atom:link rel="alternate" type="application/rss+xml" title="Podcast Title (MP3 Audio)" href="http://localhost:8081/example-mp3.xml"/>

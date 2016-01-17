@@ -37,6 +37,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     res = RSS2.parse(fstream)
     assert {:ok, feed, rest} = res
     m = feed.meta
+    assert rest == '\n'
     assert m.title == "Podcast Title"
     assert m.link == "http://localhost:8081/"
     assert m.description == "Podcast Description"
@@ -54,7 +55,16 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert m.categories == ["channel category 2", "channel category 1"]
     assert m.skip_hours == [1, 2]
     assert m.skip_days == ["Monday", "Tuesday"]
-    # assert m.image == ""
+    assert m.image != nil
+
+    i = m.image
+    assert i.title == "Podcast Image Title"
+    assert i.url == "http://localhost:8081/podcast-image.jpg"
+    assert i.link == "http://podcast.example.com/"
+    assert i.description == "Image description"
+    assert i.width == 200
+    assert i.height == 100
+
   end
 
   # test "parse_meta with atom links", %{sample3: sample3} do

@@ -97,6 +97,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     state
     |> map_character_content(:title, PodcastFeeds.Meta)
     |> map_character_content(:title, PodcastFeeds.Entry)
+    |> map_character_content(:title, PodcastFeeds.Image)
   end
 
   defp sax_event_handler({:startElement, _uri, 'link', [], _attributes}, state) do
@@ -106,6 +107,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     state
     |> map_character_content(:link, PodcastFeeds.Meta)
     |> map_character_content(:link, PodcastFeeds.Entry)
+    |> map_character_content(:link, PodcastFeeds.Image)
   end
 
   defp sax_event_handler({:startElement, _uri, 'description', [], _attributes}, state) do
@@ -115,6 +117,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     state
     |> map_character_content(:description, PodcastFeeds.Meta)
     |> map_character_content(:description, PodcastFeeds.Entry)
+    |> map_character_content(:description, PodcastFeeds.Image)
   end
 
 
@@ -264,17 +267,49 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
 
 
-  # image element
+  # image element, title and url nodes handled above
   defp sax_event_handler({:startElement, _uri, 'image', [], _attributes}, %ParserState{element_stack: element_stack} = state) do
     %{state | element_stack: [%Image{} | element_stack]}
   end
   defp sax_event_handler({:endElement, _uri, 'image', []}, %ParserState{element_stack: element_stack} = state) do
-    [_image | element_stack] = element_stack
+    [image | element_stack] = element_stack
+    [meta | element_stack] = element_stack
+    meta = %{meta | image: image}
+    element_stack = [meta | element_stack]
     %{state | element_stack: element_stack}
   end
+  defp sax_event_handler({:startElement, _uri, 'url', [], _attributes}, state) do
+    %{state | element_acc: ""}
+  end
+  defp sax_event_handler({:endElement, _uri, 'url', []}, state) do
+    state
+    |> map_character_content(:url, PodcastFeeds.Image)
+  end
+  defp sax_event_handler({:startElement, _uri, 'width', [], _attributes}, state) do
+    %{state | element_acc: ""}
+  end
+  defp sax_event_handler({:endElement, _uri, 'width', []}, state) do
+    state
+    |> parse_character_content_to_integer
+    |> map_character_content(:width, PodcastFeeds.Image)
+  end
+  defp sax_event_handler({:startElement, _uri, 'height', [], _attributes}, state) do
+    %{state | element_acc: ""}
+  end
+  defp sax_event_handler({:endElement, _uri, 'height', []}, state) do
+    state
+    |> parse_character_content_to_integer
+    |> map_character_content(:height, PodcastFeeds.Image)
+  end
 
-
-
+  defp sax_event_handler({:startElement, uri, name, 'atom', _attributes}, state) do
+    # forward to atom module
+    PodcastFeeds.Parsers.Ext.Atom.sax_event_handler({:startElement, uri, name, 'atom', _attributes}, state)
+  end
+  defp sax_event_handler({:endElement, uri, name, 'atom'}, state) do 
+    # forward to atom module
+    PodcastFeeds.Parsers.Ext.Atom.sax_event_handler({:endElement, uri, name, 'atom'}, state)
+  end
 
 
   # fall-through
@@ -291,16 +326,6 @@ defmodule PodcastFeeds.Parsers.RSS2 do
 
 
 
-  # defp sax_event_handler({:startElement, _uri, _local_name, [], _attributes}, state) do
-  #   # IO.puts "-> startElement: #{uri} #{prefix}:#{local_name}"
-  #   state
-  # end
-
-  # defp sax_event_handler({:endElement, _uri, _local_name, []}, state) do
-  #   # IO.puts "-> endElement: #{prefix}:#{local_name}"
-  #   state
-  # end
-
   defp sax_event_handler({:processingInstruction, _target, _data}, state) do
     # IO.puts "-> processingInstruction: target=#{target}, data=#{data}"
     state
@@ -308,7 +333,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
 
 
   defp sax_event_handler({:startPrefixMapping, _prefix, _uri}, state) do
-    # IO.puts "-> startPrefixMapping: #{prefix}=#{uri}"
+    #IO.puts "-> startPrefixMapping: #{prefix}=#{uri}"
     state
   end
 
