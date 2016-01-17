@@ -3,6 +3,9 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   # use GenServer
   use Timex
 
+  alias PodcastFeeds.Parsers.Helpers
+  alias PodcastFeeds.Parsers.Helpers.ParserState
+
   alias PodcastFeeds.Feed
   alias PodcastFeeds.Entry
   alias PodcastFeeds.Meta
@@ -12,26 +15,10 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Image
   # alias PodcastFeeds.Enclosure
   # alias Timex.DateFormat
+  alias PodcastFeeds.SkipDays
+  alias PodcastFeeds.SkipHours
 
-  defmodule ParserState do
-    defstruct feed: nil,      # the feed structure we try to fill
-    element_acc: nil,         # accumulates character data
-    # checkout_elem: nil,     # holds a funtion to get our current element we work on
-    # checkin_elem: nil,      # holds a function to put our current element back
-    element_stack: []         # holds our element stack
-    # element_name_stack: []  # holds the curent element name
-    # meta: nil,              # meta information on the feed, stuff from the <channel> element
-    # entry: nil,             # entry struct, corresponds to the <item> elements of the feed
-    # image: nil,       
-    # enclosure: nil
-  end
 
-  defmodule SkipDays do
-    defstruct days: []
-  end
-  defmodule SkipHours do
-    defstruct hours: []
-  end
 
   def parse(stream) do
 
@@ -95,9 +82,9 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'title', []}, state) do
     state
-    |> map_character_content(:title, PodcastFeeds.Meta)
-    |> map_character_content(:title, PodcastFeeds.Entry)
-    |> map_character_content(:title, PodcastFeeds.Image)
+    |> Helpers.map_character_content(:title, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:title, PodcastFeeds.Entry)
+    |> Helpers.map_character_content(:title, PodcastFeeds.Image)
   end
 
   defp sax_event_handler({:startElement, _uri, 'link', [], _attributes}, state) do
@@ -105,9 +92,9 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'link', []}, state) do
     state
-    |> map_character_content(:link, PodcastFeeds.Meta)
-    |> map_character_content(:link, PodcastFeeds.Entry)
-    |> map_character_content(:link, PodcastFeeds.Image)
+    |> Helpers.map_character_content(:link, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:link, PodcastFeeds.Entry)
+    |> Helpers.map_character_content(:link, PodcastFeeds.Image)
   end
 
   defp sax_event_handler({:startElement, _uri, 'description', [], _attributes}, state) do
@@ -115,9 +102,9 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'description', []}, state) do
     state
-    |> map_character_content(:description, PodcastFeeds.Meta)
-    |> map_character_content(:description, PodcastFeeds.Entry)
-    |> map_character_content(:description, PodcastFeeds.Image)
+    |> Helpers.map_character_content(:description, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:description, PodcastFeeds.Entry)
+    |> Helpers.map_character_content(:description, PodcastFeeds.Image)
   end
 
 
@@ -126,8 +113,8 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'author', []}, state) do
     state
-    |> map_character_content(:author, PodcastFeeds.Meta)
-    |> map_character_content(:author, PodcastFeeds.Entry)
+    |> Helpers.map_character_content(:author, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:author, PodcastFeeds.Entry)
   end
 
 
@@ -136,7 +123,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'language', []}, state) do
     state
-    |> map_character_content(:language, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:language, PodcastFeeds.Meta)
   end
 
 
@@ -145,7 +132,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'copyright', []}, state) do
     state
-    |> map_character_content(:copyright, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:copyright, PodcastFeeds.Meta)
   end
 
 
@@ -154,8 +141,8 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'pubDate', []}, state) do
     state
-    |> parse_character_content_to_date
-    |> map_character_content(:publication_date, PodcastFeeds.Meta)
+    |> Helpers.parse_character_content_to_date
+    |> Helpers.map_character_content(:publication_date, PodcastFeeds.Meta)
   end
 
   defp sax_event_handler({:startElement, _uri, 'lastBuildDate', [], _attributes}, state) do
@@ -163,8 +150,8 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'lastBuildDate', []}, state) do
     state
-    |> parse_character_content_to_date
-    |> map_character_content(:last_build_date, PodcastFeeds.Meta)
+    |> Helpers.parse_character_content_to_date
+    |> Helpers.map_character_content(:last_build_date, PodcastFeeds.Meta)
   end
 
   defp sax_event_handler({:startElement, _uri, 'generator', [], _attributes}, state) do
@@ -172,7 +159,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'generator', []}, state) do
     state
-    |> map_character_content(:generator, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:generator, PodcastFeeds.Meta)
   end
 
   defp sax_event_handler({:startElement, _uri, 'guid', [], _attributes}, state) do
@@ -180,7 +167,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'guid', []}, state) do
     state
-    |> map_character_content(:guid, PodcastFeeds.Entry)
+    |> Helpers.map_character_content(:guid, PodcastFeeds.Entry)
   end
 
 
@@ -189,14 +176,14 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'category', []}, state) do
     state
-    |> append_character_content_to_list(:categories, PodcastFeeds.Meta)
-    |> append_character_content_to_list(:categories, PodcastFeeds.Entry)
+    |> Helpers.append_character_content_to_list(:categories, PodcastFeeds.Meta)
+    |> Helpers.append_character_content_to_list(:categories, PodcastFeeds.Entry)
   end
 
 
   defp sax_event_handler({:startElement, _uri, 'cloud', [], attributes}, state) do
     state
-    |> map_attributes(attributes, :cloud, PodcastFeeds.Meta)
+    |> Helpers.map_attributes(attributes, :cloud, PodcastFeeds.Meta)
   end
 
 
@@ -205,8 +192,8 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'ttl', []}, state) do
     state
-    |> parse_character_content_to_integer
-    |> map_character_content(:ttl, PodcastFeeds.Meta)
+    |> Helpers.parse_character_content_to_integer
+    |> Helpers.map_character_content(:ttl, PodcastFeeds.Meta)
   end
 
 
@@ -215,7 +202,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'managingEditor', []}, state) do
     state
-    |> map_character_content(:managing_editor, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:managing_editor, PodcastFeeds.Meta)
   end
 
 
@@ -224,7 +211,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'webMaster', []}, state) do
     state
-    |> map_character_content(:web_master, PodcastFeeds.Meta)
+    |> Helpers.map_character_content(:web_master, PodcastFeeds.Meta)
   end
 
   # skipHours, sjipDays elements on channel
@@ -244,7 +231,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'day', []}, state) do
     state
-    |> append_character_content_to_list(:days, PodcastFeeds.Parsers.RSS2.SkipDays)
+    |> Helpers.append_character_content_to_list(:days, PodcastFeeds.SkipDays)
   end
 
   defp sax_event_handler({:startElement, _uri, 'skipHours', [], _attributes}, %ParserState{element_stack: element_stack} = state) do
@@ -262,8 +249,8 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'hour', []}, state) do
     state
-    |> parse_character_content_to_integer
-    |> append_character_content_to_list(:hours, PodcastFeeds.Parsers.RSS2.SkipHours)
+    |> Helpers.parse_character_content_to_integer
+    |> Helpers.append_character_content_to_list(:hours, PodcastFeeds.SkipHours)
   end
 
 
@@ -283,23 +270,23 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
   defp sax_event_handler({:endElement, _uri, 'url', []}, state) do
     state
-    |> map_character_content(:url, PodcastFeeds.Image)
+    |> Helpers.map_character_content(:url, PodcastFeeds.Image)
   end
   defp sax_event_handler({:startElement, _uri, 'width', [], _attributes}, state) do
     %{state | element_acc: ""}
   end
   defp sax_event_handler({:endElement, _uri, 'width', []}, state) do
     state
-    |> parse_character_content_to_integer
-    |> map_character_content(:width, PodcastFeeds.Image)
+    |> Helpers.parse_character_content_to_integer
+    |> Helpers.map_character_content(:width, PodcastFeeds.Image)
   end
   defp sax_event_handler({:startElement, _uri, 'height', [], _attributes}, state) do
     %{state | element_acc: ""}
   end
   defp sax_event_handler({:endElement, _uri, 'height', []}, state) do
     state
-    |> parse_character_content_to_integer
-    |> map_character_content(:height, PodcastFeeds.Image)
+    |> Helpers.parse_character_content_to_integer
+    |> Helpers.map_character_content(:height, PodcastFeeds.Image)
   end
 
   defp sax_event_handler({:startElement, uri, name, 'atom', _attributes}, state) do
@@ -356,71 +343,6 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     IO.puts "internal error: #{description}"
   end
 
-
-  # helpers
-  # set the current character content to a struct member
-  defp map_character_content(state, struct_member, struct_name) do
-    %ParserState{element_stack: [elem | element_stack], element_acc: element_acc} = state
-    case elem.__struct__ do
-      ^struct_name ->
-        elem = %{elem | struct_member => element_acc}
-        %{state | element_stack: [elem | element_stack]}
-      _ -> state
-    end
-  end
-
-  # append the current character content to a list of strings
-  defp append_character_content_to_list(state, struct_member, struct_name) do
-    %ParserState{element_stack: [elem | element_stack], element_acc: element_acc} = state
-    case elem.__struct__ do
-      ^struct_name ->
-        elem = %{elem | struct_member => [element_acc | Map.fetch!(elem, struct_member)]}
-        %{state | element_stack: [elem | element_stack]}
-      _ -> state
-    end
-  end
-
-  # map attributes to a ... map. ahem.
-  defp map_attributes(state, attributes, struct_member, struct_name) do
-    %ParserState{element_stack: [elem | element_stack]} = state
-    case elem.__struct__ do
-      ^struct_name ->
-        attribute_map = Enum.reduce(attributes, %{}, fn({_,key,_,_,value}, acc) -> 
-          Map.put(acc, List.to_atom(key), value)
-        end)
-        elem = %{elem | struct_member => attribute_map}
-        %{state | element_stack: [elem | element_stack]}
-      _ -> state
-    end
-  end
-
-  # try to parse the current character map to an integer, 
-  # set it to nil on failure
-  # pass on result via state
-  defp parse_character_content_to_integer(state) do
-    %ParserState{element_acc: element_acc} = state
-    element_acc = case Integer.parse(element_acc) do
-      {value, _} -> value
-      :error -> nil
-    end
-    %{state | element_acc: element_acc}
-  end
-
-  # try to parse the current character acc to a timex date
-  # parsing is pretty picky, at the lightest sniff of
-  # problems, nil is returned.
-  defp parse_character_content_to_date(state) do
-    %ParserState{element_acc: element_acc} = state
-    %{state | element_acc: parse_datetime(element_acc)}
-  end
-
-  # parse the value into a date or return nil
-  defp parse_datetime(text) do
-    case text |> DateFormat.parse("{RFC1123}") do
-      {:ok, date} -> date
-      _ -> nil
-    end
-  end
 
 
 end

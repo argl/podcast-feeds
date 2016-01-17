@@ -88,6 +88,16 @@ defmodule PodcastFeeds do
               title: nil
   end
 
+  defmodule SkipDays do
+    defstruct days: []
+  end
+
+  defmodule SkipHours do
+    defstruct hours: []
+  end
+
+
+
   @chunk_size 4096
 
   def parse_file(filename) do
