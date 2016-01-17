@@ -1,7 +1,7 @@
 Podcast-Feeds
 ======
 
-Elixir RSS/Atom parser optiomized for Podcast feeds. Built on the erlsom xml parser in SAX mode.
+Elixir RSS/Atom parser for Podcast feeds. Built on the [erlsom](https://github.com/willemdj/erlsom) xml parser in SAX mode.
 It uses [timex](https://github.com/bitwalker/timex) for parsing dates.
 
 ## Setup
