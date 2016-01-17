@@ -35,8 +35,8 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     fstream = File.stream!(sample1, [], @chunk_size)
 
     res = RSS2.parse(fstream)
-    assert {:ok, feed, rest} = res
-    m = feed.meta
+    assert {:ok, state, rest} = res
+    m = state.feed.meta
     assert rest == '\n'
     assert m.title == "Podcast Title"
     assert m.link == "http://localhost:8081/"
@@ -65,6 +65,18 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.width == 200
     assert i.height == 100
 
+  end
+
+  test "parse namespaces", %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    {:ok, state, rest} = RSS2.parse(fstream)
+    namespaces = state.namespaces
+    assert namespaces == [
+      psc: "http://podlove.org/simple-chapters",
+      content: "http://purl.org/rss/1.0/modules/content/",
+      itunes: "http://www.itunes.com/dtds/podcast-1.0.dtd",
+      atom: "http://www.w3.org/2005/Atom"
+    ]
   end
 
   # test "parse_meta with atom links", %{sample3: sample3} do

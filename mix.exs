@@ -5,7 +5,7 @@ defmodule Feedme.Mixfile do
     [app: :podcast_feeds,
      version: "1.0.0",
      elixir: "~> 1.2",
-     description: "Elixir RSS/Atom parser, optimized for POdcast feeds, based on erlsom",
+     description: "Elixir RSS/Atom parser, optimized for Podcast feeds, based on erlsom",
      package: package,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,

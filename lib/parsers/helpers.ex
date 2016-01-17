@@ -6,7 +6,8 @@ defmodule PodcastFeeds.Parsers.Helpers do
     element_acc: nil,         # accumulates character data
     # checkout_elem: nil,     # holds a funtion to get our current element we work on
     # checkin_elem: nil,      # holds a function to put our current element back
-    element_stack: []         # holds our element stack
+    element_stack: [],         # holds our element stack
+    namespaces: []
     # element_name_stack: []  # holds the curent element name
     # meta: nil,              # meta information on the feed, stuff from the <channel> element
     # entry: nil,             # entry struct, corresponds to the <item> elements of the feed

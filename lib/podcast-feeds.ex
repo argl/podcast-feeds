@@ -55,7 +55,8 @@ defmodule PodcastFeeds do
 
   defmodule Feed do
     defstruct meta: nil, 
-              entries: []
+              entries: [],
+              namespaces: []
   end
 
   defmodule Itunes do
@@ -108,6 +109,9 @@ defmodule PodcastFeeds do
   def parse_stream(stream) do
     stream
     |> PodcastFeeds.Parsers.RSS2.parse
+    |> (fn({:ok, state, rest})-> 
+      {:ok, state.feed, state.namespaces, rest} 
+    end).()
   end
 
   # defp parse_document({:ok, parser, document}) do

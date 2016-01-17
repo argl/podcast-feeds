@@ -44,7 +44,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
 
   defp sax_event_handler(:endDocument, state) do
     # IO.puts "-> endDocument: #{state}"
-    state.feed
+    state
   end
 
   defp sax_event_handler({:startElement, _uri, 'rss', [], _attributes}, state) do
@@ -289,9 +289,9 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     |> Helpers.map_character_content(:height, PodcastFeeds.Image)
   end
 
-  defp sax_event_handler({:startElement, uri, name, 'atom', _attributes}, state) do
+  defp sax_event_handler({:startElement, uri, name, 'atom', attributes}, state) do
     # forward to atom module
-    PodcastFeeds.Parsers.Ext.Atom.sax_event_handler({:startElement, uri, name, 'atom', _attributes}, state)
+    PodcastFeeds.Parsers.Ext.Atom.sax_event_handler({:startElement, uri, name, 'atom', attributes}, state)
   end
   defp sax_event_handler({:endElement, uri, name, 'atom'}, state) do 
     # forward to atom module
@@ -319,9 +319,10 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
 
 
-  defp sax_event_handler({:startPrefixMapping, _prefix, _uri}, state) do
+  defp sax_event_handler({:startPrefixMapping, prefix, uri}, state) do
     #IO.puts "-> startPrefixMapping: #{prefix}=#{uri}"
-    state
+    namespaces = Keyword.put_new(state.namespaces, List.to_atom(prefix), to_string(uri))
+    %{state | namespaces: namespaces}
   end
 
   defp sax_event_handler({:endPrefixMapping, _prefix}, state) do
