@@ -28,7 +28,7 @@ Then run ```mix deps.get``` to install podcast-feeds.
 
 ### TODO
 
-[x] factor out all parse utils into its own module, accessible from extension modules
-[ ] record used namespaces
-[ ] implement itunes namespace
-[ ] introduce some kind of error/warning stack for feed shaming
+- [x] factor out all parse utils into its own module, accessible from extension modules
+- [ ] record used namespaces
+- [ ] implement itunes namespace
+- [ ] introduce some kind of error/warning stack for feed shaming
