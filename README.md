@@ -24,3 +24,7 @@ Then run ```mix deps.get``` to install podcast-feeds.
 ```elixir
 {:ok, feed, _rest} = PodcastFeeds.parse_file("./test/fixtures/rss2/sample.xml")
 ```
+
+
+### TODO
+[ ] factor out all parse utils into its own module, accessible from extension modules
