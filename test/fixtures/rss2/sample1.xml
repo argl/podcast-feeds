@@ -42,7 +42,16 @@
 
     <itunes:author>Itunes Author</itunes:author>
     <itunes:summary>Itunes Summary</itunes:summary>
-    <itunes:category text="Itunes Category"/>
+ 
+    <itunes:category text="Arts" />
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="History" />
+      <itunes:category text="Another Subcategory" />
+    </itunes:category>
+    <itunes:category text="Technology">
+      <itunes:category text="Gadgets" />
+    </itunes:category>
+
     <itunes:owner>
       <itunes:name>Itunes Owner Name</itunes:name>
       <itunes:email>Itunes Owner Email</itunes:email>

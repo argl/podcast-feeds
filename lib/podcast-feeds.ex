@@ -64,7 +64,7 @@ defmodule PodcastFeeds do
   defmodule Itunes do
     defstruct author: nil,
               block: nil,
-              category: nil,
+              categories: [],
               image: nil,
               duration: nil,
               explicit: false,
