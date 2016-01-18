@@ -67,8 +67,15 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   end
   def sax_event_handler({:endElement, _uri, 'block', @prefix}, state) do
     state
+    |> (fn(state) ->
+      case state.element_acc do
+        "yes" -> state
+        _ -> %{state | element_acc: nil}
+      end
+    end).()
     |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :block)
   end
+
 
 
 

@@ -107,8 +107,24 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     {:ok, state, _rest} = RSS2.parse(fstream)
     i = state.feed.meta.itunes
     assert i.author == "Itunes Author"
+
+    assert i.block == nil
+    
   end
 
+  test "parse itunes namespace in entry" , %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    {:ok, state, _rest} = RSS2.parse(fstream)
+    [e | rest] = state.feed.entries
+
+    i = e.itunes
+    assert i
+    assert i.block == nil
+    [e | _rest] = rest
+    i = e.itunes
+    assert i
+    assert i.block == "yes"
+  end
 
 
   test "namespaces info", %{sample1: sample1} do

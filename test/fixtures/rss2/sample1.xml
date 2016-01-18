@@ -65,6 +65,7 @@
       <category>item category 1</category>
       <category>item category 2</category>
 
+      <itunes:block>yes</itunes:block>
       <itunes:duration>01:00:00</itunes:duration>
       <itunes:author>Item 1 Itunes Author</itunes:author>
       <itunes:subtitle>Item 1 Subtitle</itunes:subtitle>
