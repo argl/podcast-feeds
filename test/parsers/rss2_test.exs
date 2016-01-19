@@ -107,7 +107,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     {:ok, state, _rest} = RSS2.parse(fstream)
     i = state.feed.meta.itunes
     assert i.author == "Itunes Author"
-
+    assert i.categories ==  ["Arts", "Society & Culture", ["History", "Another Subcategory"], "Technology", ["Gadgets"]]
     assert i.block == nil
     
   end

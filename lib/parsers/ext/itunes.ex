@@ -94,31 +94,55 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   #   <itunes:category text="Gadgets" />
   # </itunes:category>
 
-  # %{
-  #   "Arts" => %{}
-  #   "Society & Culture" => %{
-  #     "History" => %{},
-  #     "Another Subcategory" => %{}
-  #   },
-  #   "Technology" => %{
-  #     "Gadgets" => %{}
-  #   }
-  # }
-
   def sax_event_handler({:startElement, _uri, 'category', @prefix, attr}, state) do
-    # IO.puts "===== start"
-    %ParserState{element_stack: [elem | element_stack], element_acc: element_acc} = state
-
+    [elem | element_stack] = state.element_stack
+    catstack = state.catstack
+    subcatstack = state.subcatstack
+    level = state.level
     category = Helpers.extract_attributes(attr).text
-    _accessor = fn() -> Map.fetch(element_acc, category) end
 
-    %{state | element_stack: [elem | element_stack], element_acc: element_acc}
+    catstack = case level do
+      0 -> [category | catstack]
+      1 -> catstack
+    end
+
+    subcatstack = case level do
+      0 -> subcatstack
+      1 -> [category | subcatstack]
+    end
+
+    level = level + 1
+
+    state = put_in state.level, level
+    state = put_in state.catstack, catstack
+    state = put_in state.subcatstack, subcatstack
+    %{state | element_stack: [elem | element_stack]}
   end
   def sax_event_handler({:endElement, _uri, 'category', @prefix}, state) do
-    # IO.puts "===== end"
-    %ParserState{element_stack: [elem | element_stack], element_acc: element_acc} = state
+    [elem | element_stack] = state.element_stack
+    catstack = state.catstack
+    subcatstack = state.subcatstack
+    level = state.level
+    level = level - 1
 
-    %{state | element_stack: [elem | element_stack], element_acc: element_acc}
+    catstack = case level do
+      0 -> case subcatstack do
+        [] -> catstack
+        _ -> [Enum.reverse(subcatstack) | catstack]
+      end
+      1 -> catstack
+    end
+
+    subcatstack = case level do
+      0 -> []
+      1 -> subcatstack
+    end
+
+    state = put_in state.level, level
+    state = put_in state.catstack, catstack
+    state = put_in state.subcatstack, subcatstack
+    elem = put_in elem.itunes.categories, Enum.reverse(catstack)
+    %{state | element_stack: [elem | element_stack]}
   end
 
 
