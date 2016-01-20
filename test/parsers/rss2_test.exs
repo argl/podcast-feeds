@@ -110,6 +110,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.categories ==  ["Arts", "Society & Culture", ["History", "Another Subcategory"], "Technology", ["Gadgets"]]
     assert i.block == nil
     assert i.image_href == "http://localhost:8081/podcast-image.jpg"
+    assert i.explicit == "no"
   end
 
   test "parse itunes namespace in entry" , %{sample1: sample1} do
@@ -120,12 +121,15 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     i = e.itunes
     assert i
     assert i.block == nil
-    [e | _rest] = rest
+
+    [e | _] = rest
     i = e.itunes
     assert i
     assert i.block == "yes"
     assert i.image_href == "http://localhost:8081/item1-image.jpg"
     assert i.duration == "01:00:00"
+    assert i.explicit == "clean"
+    assert i.is_closed_captioned == "yes"
   end
 
 

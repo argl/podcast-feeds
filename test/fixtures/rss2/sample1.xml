@@ -80,6 +80,8 @@
       <itunes:subtitle>Item 1 Subtitle</itunes:subtitle>
       <itunes:summary>Item 1 Itunes Summary</itunes:summary>
       <itunes:image href="http://localhost:8081/item1-image.jpg"/>
+      <itunes:explicit>clean</itunes:explicit>
+      <itunes:isClosedCaptioned>yes</itunes:isClosedCaptioned>
       
       <content:encoded><![CDATA[Item 1 Content Encoded]]></content:encoded>
 

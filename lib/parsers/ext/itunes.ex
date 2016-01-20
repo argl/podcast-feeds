@@ -173,17 +173,41 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     %{state | element_acc: ""}
   end
   def sax_event_handler({:endElement, _uri, 'duration', @prefix}, state) do
-    [elem | element_stack] = state.element_stack
-    duration = state.element_acc
-    case elem.__struct__ do
-      PodcastFeeds.Entry -> 
-        elem = put_in elem.itunes.duration, duration
-        %{state | element_stack: [elem | element_stack]}
-      _ -> state
-    end
+    state
+    |> handle_character_content_for_itunes([PodcastFeeds.Entry], :duration)
   end
 
+  # <itunes:explicit>
+  # The <itunes:explicit> tag indicates whether your podcast contains explicit material. The two usable values 
+  # for this tag are “yes” and “clean”.
+  # If you populate this tag with the “yes” value, indicating the presence of explicit content, an “explicit” 
+  # parental advisory graphic will appear.
+  # If you populate this tag with the “clean” value, indicating that none of your podcast episodes contain explicit 
+  # language or adult content, a “clean” parental advisory graphic will appear.
+  # If you populate this tag with any other value besides “yes” or “clean,” neither of the parental advisory graphics 
+  # will appear and that space will remain blank.
+  # Note that podcasts that contain explicit material are not available in some iTunes Store territories.
+  def sax_event_handler({:startElement, _uri, 'explicit', @prefix, attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'explicit', @prefix}, state) do
+    state
+    |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :explicit)
+  end
 
+  # <itunes:isClosedCaptioned>
+  # The <itunes:isClosedCaptioned> tag should be used with a “yes” value for a video podcast episode with 
+  # embedded closed captioning.
+  # A closed-caption icon will appear next to the corresponding episode.
+  # If the closed-caption tag is present and has any other value, no closed-caption indicator will appear.
+  # This tag is only supported at the <item> (episode) level.
+  def sax_event_handler({:startElement, _uri, 'isClosedCaptioned', @prefix, attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'isClosedCaptioned', @prefix}, state) do
+    state
+    |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :is_closed_captioned)
+  end
 
 
   # fall through
