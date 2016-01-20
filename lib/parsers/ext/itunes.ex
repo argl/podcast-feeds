@@ -75,25 +75,6 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # A complete list of categories and subcategories included at the end of this document.
   # Be sure to properly escape ampersands as shown below.
 
-  # Examples:
-  # Single category:
-  # <itunes:category text="Music" />
-
-  # Category with ampersand:
-  # <itunes:category text="TV &amp; Film" />
-  # Category with subcategory:
-  # <itunes:category text="Society &amp; Culture">
-  #   <itunes:category text="History" />
-  # </itunes:category>
-
-  # Entry with multiple categories:
-  # <itunes:category text="Society &amp; Culture">
-  #   <itunes:category text="History" />
-  # </itunes:category>
-  # <itunes:category text="Technology">
-  #   <itunes:category text="Gadgets" />
-  # </itunes:category>
-
   def sax_event_handler({:startElement, _uri, 'category', @prefix, attr}, state) do
     [elem | element_stack] = state.element_stack
     catstack = state.catstack
@@ -145,6 +126,62 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     %{state | element_stack: [elem | element_stack]}
   end
 
+
+  # <itunes:image>
+
+  # The <itunes:image> tag points to the artwork for your podcast, via the URL specified in 
+  # the <a href> attribute.
+  # Cover art must be in the JPEG or PNG file formats and in the RGB color space with a minimum 
+  # size of 1400 x 1400 pixels and a maximum size of 3000 x 3000 pixels. Note that these 
+  # requirements are different from the standard RSS image tag specification.
+  # Potential subscribers will see your cover art in varying sizes depending on the device 
+  # they’re using. Make sure your design is effective at both its original size and at 
+  # thumbnail size.
+  # If the <itunes:image> tag is not present, iTunes will use the content of the RSS image tag, 
+  # but your podcast will not be considered for a potential feature placement in the Podcasts 
+  # app and the iTunes Store.
+  # We recommend including a title, brand, or source name as part of your cover art. For examples 
+  # of cover art, see the Top Podcasts section in the Podcasts app or the iTunes Store.
+  # If you update the cover art for your podcast, be sure to avoid technical issues by doing 
+  # the following:
+  # - change the cover art file name and URL at the same time
+  # - verify the web server hosting your cover art allows HTTP head requests
+  # The <itunes:image> tag is also supported at the <item> (episode) level.
+  # For best results, we also recommend embedding the same cover art within the metadata for that 
+  # episode’s media file prior to uploading to your host server. You may need to edit your media 
+  # file via Garageband or other content-creation tool to do so.
+
+  def sax_event_handler({:startElement, _uri, 'image', @prefix, attr}, state) do
+    [elem | element_stack] = state.element_stack
+    image_href = Helpers.extract_attributes(attr).href
+    elem = put_in elem.itunes.image_href, image_href
+    %{state | element_stack: [elem | element_stack]}
+  end
+  def sax_event_handler({:endElement, _uri, 'image', @prefix}, state) do
+    state
+  end
+
+
+  # <itunes:duration>
+  # The content of the <itunes:duration> tag is shown in the Time column in the List View on iTunes.
+  # The value provided for this tag can be formatted as HH:MM:SS, H:MM:SS, MM:SS, or M:SS, where 
+  # H = hours, M = minutes, S = seconds. If a single number is provided as a value (no colons are used), 
+  # the value is assumed to be in seconds. If one colon is present, the number to the left is assumed to 
+  # be minutes, and the number to the right is assumed to be seconds. If more than two colons are present, 
+  # the numbers farthest to the right are ignored.
+  def sax_event_handler({:startElement, _uri, 'duration', @prefix, attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'duration', @prefix}, state) do
+    [elem | element_stack] = state.element_stack
+    duration = state.element_acc
+    case elem.__struct__ do
+      PodcastFeeds.Entry -> 
+        elem = put_in elem.itunes.duration, duration
+        %{state | element_stack: [elem | element_stack]}
+      _ -> state
+    end
+  end
 
 
 

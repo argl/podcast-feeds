@@ -65,7 +65,7 @@ defmodule PodcastFeeds do
     defstruct author: nil,
               block: nil,
               categories: [],
-              image: nil,
+              image_href: nil,
               duration: nil,
               explicit: false,
               is_closed_captioned: false,
