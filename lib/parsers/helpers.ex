@@ -4,11 +4,12 @@ defmodule PodcastFeeds.Parsers.Helpers do
   defmodule ParserState do
     defstruct feed: nil,      # the feed structure we try to fill
     element_acc: nil,         # accumulates character data
-    element_stack: [],        # holds our main element stack (channel, item, etc)
-    namespaces: [],           # gobbls up namespace info (usually in xml declaration at the top)
+    element_stack: [],        # holds our internal element stack (channel, item, etc)
+    namespaces: [],           # gobbles up namespace info (usually in xml declaration at the top)
     catstack: [],             # itunes category stack. the not-quite-infinitely-recursive monster
     subcatstack: [],          # see catstack
-    level: 0                  # see catstack
+    level: 0,                 # see catstack
+    feed_shaming: []          # record problems with the feed here
   end
 
   # set the current character content to a struct member

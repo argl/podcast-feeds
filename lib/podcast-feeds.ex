@@ -59,12 +59,14 @@ defmodule PodcastFeeds do
               contributors: []
   end
 
+  # A Feed
   defmodule Feed do
     defstruct meta: nil, 
               entries: [],
               namespaces: []
   end
 
+  # Itunes struct, used in Meta and Entry structs
   defmodule Itunes do
     defstruct author: nil,
               block: false,
@@ -81,6 +83,7 @@ defmodule PodcastFeeds do
               summary: nil
   end
 
+  # Podcasr Simple Chapter chapters element
   defmodule Psc do
     defstruct start: nil,
               title: nil,
@@ -88,6 +91,7 @@ defmodule PodcastFeeds do
               image: nil
   end
 
+  # atom:link element, used in various contexts
   defmodule AtomLink do
     defstruct rel: nil,
               type: nil,
@@ -95,6 +99,7 @@ defmodule PodcastFeeds do
               title: nil
   end
 
+  # RSS2 Skip days, probably totally useless
   defmodule SkipDays do
     defstruct days: []
   end
@@ -130,20 +135,6 @@ defmodule PodcastFeeds do
       {:ok, state.feed, state.namespaces, rest} 
     end).()
   end
-
-  # defp parse_document({:ok, parser, document}) do
-  #   {:ok, parser.parse(document)}
-  # end
-
-  # defp parse_document(other), do: other
-
-  # defp detect_parser({:ok, document}) do
-  #   cond do
-  #     RSS2.valid?(document) -> {:ok, RSS2, document}
-  #     Atom.valid?(document) -> {:ok, Atom, document}
-  #     true -> {:error, "Feed format not valid"}
-  #   end
-  # end
 
   defp detect_parser(other), do: other
 

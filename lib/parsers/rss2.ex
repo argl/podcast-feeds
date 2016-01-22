@@ -10,18 +10,13 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Entry
   alias PodcastFeeds.Meta
   alias PodcastFeeds.Itunes
-  # alias PodcastFeeds.AtomLink
-  # alias PodcastFeeds.Psc
   alias PodcastFeeds.Image
-  # alias PodcastFeeds.Enclosure
-  # alias Timex.DateFormat
   alias PodcastFeeds.SkipDays
   alias PodcastFeeds.SkipHours
 
 
 
   def parse(stream) do
-
     :erlsom.parse_sax(
       "", 
       nil, 
@@ -30,6 +25,8 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     )
   end
 
+  # this is considered bad practice. "this is not how streams are supposed to be used"
+  # so, maybe this should be refactored to pass the callback further up the data provider
   def continue_stream(tail, stream) do
     case Enum.take(stream, 1) do
       [] -> {tail, Stream.drop(stream, 1)}
@@ -37,23 +34,20 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     end
   end
 
+  # parser callbacks
+
   defp sax_event_handler(:startDocument, _state) do
-    # IO.puts "-> startDocument: #{state}"
     %ParserState{}
   end
 
   defp sax_event_handler(:endDocument, state) do
-    # IO.puts "-> endDocument: #{state}"
     state
   end
 
   defp sax_event_handler({:startElement, _uri, 'rss', [], _attributes}, state) do
-    # state = %{state | element_name_stack: [element_name | element_name_stack] }
     %{state | feed: %Feed{} }
   end
   defp sax_event_handler({:endElement, _uri, 'rss', []}, state) do
-    # feed = %{state.feed | entries: entries}
-    # %{state | feed: feed}
     state
   end
 
@@ -75,7 +69,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     %{state | element_stack: element_stack, feed: feed}
   end
 
-  #basics on channel and items
+  # parse basics on channel and items
 
   defp sax_event_handler({:startElement, _uri, 'title', [], _attributes}, state) do
     %{state | element_acc: ""}
