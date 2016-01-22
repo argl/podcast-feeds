@@ -1,5 +1,6 @@
 defmodule PodcastFeeds do
 
+  # RSS2 image element
   defmodule Image do
     defstruct title: nil,
               url: nil,
@@ -9,12 +10,14 @@ defmodule PodcastFeeds do
               description: nil
   end
 
+  # RSS2 enclosure element
   defmodule Enclosure do
     defstruct url: nil,
               length: nil,
               type: nil
   end
 
+  # Feed Meta / Channel data
   defmodule Meta do
     defstruct title: nil,
               link: nil,
@@ -38,6 +41,7 @@ defmodule PodcastFeeds do
               contributors: []
   end
 
+  # Feed Entry / Episode / Item data
   defmodule Entry do
     defstruct title: nil,
               link: nil,
