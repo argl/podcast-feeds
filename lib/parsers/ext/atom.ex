@@ -3,7 +3,7 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
   alias PodcastFeeds.Parsers.Helpers
   alias PodcastFeeds.Parsers.Helpers.ParserState
   alias PodcastFeeds.Contributor
-  alias PodcastFeeds.Entry
+  # alias PodcastFeeds.Entry
   
   @prefix 'atom'
 

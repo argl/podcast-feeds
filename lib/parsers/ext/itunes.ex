@@ -2,8 +2,10 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
 
   alias PodcastFeeds.Parsers.Helpers
   alias PodcastFeeds.Parsers.Helpers.ParserState
-  alias PodcastFeeds.Contributor
-  alias PodcastFeeds.Entry
+  alias PodcastFeeds.Meta
+  alias PodcastFeeds.Owner
+  # alias PodcastFeeds.Contributor
+  # alias PodcastFeeds.Entry
   
   @prefix 'itunes'
 
@@ -50,12 +52,7 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   end
   def sax_event_handler({:endElement, _uri, 'block', @prefix}, state) do
     state
-    |> (fn(state) ->
-      case state.element_acc do
-        "yes" -> state
-        _ -> %{state | element_acc: nil}
-      end
-    end).()
+    |> Helpers.parse_character_content_to_boolean
     |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :block)
   end
 
@@ -169,7 +166,7 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # the value is assumed to be in seconds. If one colon is present, the number to the left is assumed to 
   # be minutes, and the number to the right is assumed to be seconds. If more than two colons are present, 
   # the numbers farthest to the right are ignored.
-  def sax_event_handler({:startElement, _uri, 'duration', @prefix, attr}, state) do
+  def sax_event_handler({:startElement, _uri, 'duration', @prefix, _attr}, state) do
     %{state | element_acc: ""}
   end
   def sax_event_handler({:endElement, _uri, 'duration', @prefix}, state) do
@@ -187,7 +184,7 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # If you populate this tag with any other value besides “yes” or “clean,” neither of the parental advisory graphics 
   # will appear and that space will remain blank.
   # Note that podcasts that contain explicit material are not available in some iTunes Store territories.
-  def sax_event_handler({:startElement, _uri, 'explicit', @prefix, attr}, state) do
+  def sax_event_handler({:startElement, _uri, 'explicit', @prefix, _attr}, state) do
     %{state | element_acc: ""}
   end
   def sax_event_handler({:endElement, _uri, 'explicit', @prefix}, state) do
@@ -201,13 +198,135 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # A closed-caption icon will appear next to the corresponding episode.
   # If the closed-caption tag is present and has any other value, no closed-caption indicator will appear.
   # This tag is only supported at the <item> (episode) level.
-  def sax_event_handler({:startElement, _uri, 'isClosedCaptioned', @prefix, attr}, state) do
+  def sax_event_handler({:startElement, _uri, 'isClosedCaptioned', @prefix, _attr}, state) do
     %{state | element_acc: ""}
   end
   def sax_event_handler({:endElement, _uri, 'isClosedCaptioned', @prefix}, state) do
     state
+    |> Helpers.parse_character_content_to_boolean
     |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :is_closed_captioned)
   end
+
+  # <itunes:order>
+  # The <itunes:order> tag can be used to override the default ordering of episodes on the iTunes Store by 
+  # populating it with the number value in which you would like the episode to appear. For example, if you 
+  # would like an <item> to appear as the first episode of the podcast, you would populate the <itunes:order> 
+  # tag with “1.” If conflicting order values are present in multiple episodes, the store will order by 
+  # <pubDate>.
+  def sax_event_handler({:startElement, _uri, 'order', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'order', @prefix}, state) do
+    state
+    |> Helpers.parse_character_content_to_integer
+    |> handle_character_content_for_itunes([PodcastFeeds.Entry], :order)
+  end
+
+  # <itunes:complete>
+  # The <itunes:complete> tag, populated with a “yes” value, indicates that a podcast has been completed 
+  # and no further episodes will be posted in the future.
+  # If you populate this tag with any other value, it will have no effect.
+  # This tag is only supported at a <channel> (podcast) level.
+  def sax_event_handler({:startElement, _uri, 'complete', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'complete', @prefix}, state) do
+    state
+    |> Helpers.parse_character_content_to_boolean
+    |> handle_character_content_for_itunes([PodcastFeeds.Meta], :complete)
+  end
+
+  # <itunes:new-feed-url>
+  # The <itunes:new-feed-url> tag allows you to change the URL where the RSS podcast feed is located, for example:
+  # <itunes:new-feed-url>http://newlocation.com/example.rss</itunes:new-feed-url>
+  # After adding the tag to your old feed, you should maintain the old feed for 48 hours before retiring it.
+  # For more information, please see the “Changing Your Feed URL” section earlier in this document.
+  # This tag is only supported at a <channel> (podcast) level.
+  def sax_event_handler({:startElement, _uri, 'new-feed-url', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'new-feed-url', @prefix}, state) do
+    state
+    |> handle_character_content_for_itunes([PodcastFeeds.Meta], :new_feed_url)
+  end
+
+  # <itunes:owner>
+  # The <itunes:owner> tag contains contact information for the owner of the podcast intended to be used 
+  # for administrative communication about the podcast. This information is not displayed on the iTunes Store.
+  # The email address of the owner should be included in a nested <itunes:email> element. Include the name 
+  # of the owner in a nested <itunes:name> element.
+  def sax_event_handler({:startElement, _uri, 'owner', @prefix, _attributes}, state) do
+    [current_element | _]  = state.element_stack
+    case current_element do
+      %Meta{} -> 
+        put_in state.element_stack, [%Owner{} | state.element_stack]
+      _ -> state # put any shaming error here
+    end
+  end
+  def sax_event_handler({:endElement, _uri, 'owner', @prefix}, %ParserState{element_stack: element_stack} = state) do
+    [owner | element_stack] = element_stack
+    case owner do
+      %Owner{} -> 
+        [meta | element_stack] = element_stack
+        meta = put_in meta.itunes.owner, owner
+        %{state | element_stack: [meta | element_stack]}
+      _ -> state # element was ignored on startElement
+    end
+  end
+  def sax_event_handler({:startElement, _uri, 'name', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'name', @prefix}, %ParserState{element_acc: element_acc} = state) do
+    [owner | element_stack]  = state.element_stack
+    owner = case owner do
+      %Owner{} ->
+        put_in owner.name, element_acc
+      _ -> owner
+    end
+    %{state | element_stack: [owner | element_stack]}
+  end
+  def sax_event_handler({:startElement, _uri, 'email', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'email', @prefix}, %ParserState{element_acc: element_acc} = state) do
+    [owner | element_stack]  = state.element_stack
+    owner = case owner do
+      %Owner{} ->
+        put_in owner.email, element_acc
+      _ -> owner
+    end
+    %{state | element_stack: [owner | element_stack]}
+  end
+
+
+
+  # <itunes:subtitle>
+  # The contents of the <itunes:subtitle> tag are displayed in the Description column in iTunes. For best 
+  # results, choose a subtitle that is only a few words long.
+  def sax_event_handler({:startElement, _uri, 'subtitle', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'subtitle', @prefix}, state) do
+    state
+    |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :subtitle)
+  end
+
+
+  # <itunes:summary>
+  # The contents of the <itunes:summary> tag are shown on the iTunes Store page for your podcast. The 
+  # information also appears in a separate window if the information (“i”) icon in the Description 
+  # column is clicked. This field can be up to 4000 characters.
+  # If a <itunes:summary> tag is not included, the contents of the <description> tag are used.
+  def sax_event_handler({:startElement, _uri, 'summary', @prefix, _attr}, state) do
+    %{state | element_acc: ""}
+  end
+  def sax_event_handler({:endElement, _uri, 'summary', @prefix}, state) do
+    state
+    |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :summary)
+  end
+
+
+
 
 
   # fall through
@@ -220,7 +339,7 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
 
 
 
-  # helper
+  # helper, this could certainly be inproved massively
   defp handle_character_content_for_itunes(state, allowed_structs, key) do
     %ParserState{element_stack: [elem | element_stack], element_acc: element_acc} = state    
     case Enum.find(allowed_structs, &(&1 == elem.__struct__)) do

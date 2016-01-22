@@ -42,7 +42,7 @@
 
     <itunes:author>Itunes Author</itunes:author>
     <itunes:summary>Itunes Summary</itunes:summary>
- 
+    <itunes:complete>yes</itunes:complete>
     <itunes:category text="Arts" />
     <itunes:category text="Society &amp; Culture">
       <itunes:category text="History" />
@@ -61,6 +61,7 @@
     <itunes:keywords/>
     <itunes:block>no</itunes:block>
     <itunes:explicit>no</itunes:explicit>
+    <itunes:new-feed-url>http://new-feed-url.example.com/new-feed</itunes:new-feed-url> 
 
     <item>
       <title>Item 1 Title</title>
@@ -82,6 +83,7 @@
       <itunes:image href="http://localhost:8081/item1-image.jpg"/>
       <itunes:explicit>clean</itunes:explicit>
       <itunes:isClosedCaptioned>yes</itunes:isClosedCaptioned>
+      <itunes:order>10</itunes:order>
       
       <content:encoded><![CDATA[Item 1 Content Encoded]]></content:encoded>
 
@@ -117,6 +119,8 @@
       <itunes:subtitle>Item 2 Subtitle</itunes:subtitle>
       <itunes:summary>Item 2 Itunes Summary</itunes:summary>
       <itunes:image href="http://localhost:8081/item2-image.jpg"/>
+      <itunes:order>9</itunes:order>
+
       <content:encoded><![CDATA[Item 2 Content Encoded]]></content:encoded>
       <psc:chapters xmlns:psc="http://podlove.org/simple-chapters" version="1.2">
         <psc:chapter start="00:00:00.000" title="Item 2 Chapter 1"/>

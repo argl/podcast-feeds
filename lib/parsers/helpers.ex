@@ -57,6 +57,20 @@ defmodule PodcastFeeds.Parsers.Helpers do
     %{state | element_acc: element_acc}
   end
 
+  # try to parse the current character map to a boolean, 
+  # set it to false on failure
+  # pass on result via state
+  def parse_character_content_to_boolean(state) do
+    %ParserState{element_acc: element_acc} = state
+    element_acc = case element_acc do
+      "yes" -> true
+      "YES" -> true
+      "Yes" -> true
+      _ -> false
+    end
+    %{state | element_acc: element_acc}
+  end
+
   # try to parse the current character acc to a timex date
   # parsing is pretty picky, at the lightest sniff of
   # problems, nil is returned.

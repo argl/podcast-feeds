@@ -304,8 +304,17 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     # make sure we have an itunes element intialized
     # either on meta or entry elements allowed
     [elem | element_stack] = state.element_stack
-    elem = case elem.itunes do
-      nil -> %{elem | itunes: %Itunes{}}
+    elem = case elem do
+      %Meta{} -> 
+        case elem.itunes do
+          nil -> %{elem | itunes: %Itunes{}}
+          _ -> elem
+        end
+      %Entry{} ->
+        case elem.itunes do
+          nil -> %{elem | itunes: %Itunes{}}
+          _ -> elem
+        end
       _ -> elem
     end
     state = %{state | element_stack: [elem | element_stack]}

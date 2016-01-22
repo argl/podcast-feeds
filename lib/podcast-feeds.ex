@@ -63,7 +63,7 @@ defmodule PodcastFeeds do
 
   defmodule Itunes do
     defstruct author: nil,
-              block: nil,
+              block: false,
               categories: [],
               image_href: nil,
               duration: nil,
@@ -72,7 +72,7 @@ defmodule PodcastFeeds do
               order: nil,
               complete: false,
               new_feed_url: nil,
-              owner: nil,              
+              owner: nil,
               subtitle: nil,
               summary: nil
   end
@@ -105,6 +105,11 @@ defmodule PodcastFeeds do
       uri: nil
   end
 
+  # itunes owner
+  defmodule Owner do
+    defstruct name: nil,
+      email: nil
+  end
 
 
   @chunk_size 4096
