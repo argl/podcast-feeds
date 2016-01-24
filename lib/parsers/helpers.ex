@@ -1,16 +1,7 @@
 defmodule PodcastFeeds.Parsers.Helpers do
   use Timex
 
-  defmodule ParserState do
-    defstruct feed: nil,      # the feed structure we try to fill
-    element_acc: nil,         # accumulates character data
-    element_stack: [],        # holds our internal element stack (channel, item, etc)
-    namespaces: [],           # gobbles up namespace info (usually in xml declaration at the top)
-    catstack: [],             # itunes category stack. the not-quite-infinitely-recursive monster
-    subcatstack: [],          # see catstack
-    level: 0,                 # see catstack
-    feed_shaming: []          # record problems with the feed here
-  end
+  alias PodcastFeeds.Parsers.RSS2.ParserState
 
   # set the current character content to a struct member
   def map_character_content(state, struct_member, struct_name) do

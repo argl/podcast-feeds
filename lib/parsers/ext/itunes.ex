@@ -1,7 +1,7 @@
 defmodule PodcastFeeds.Parsers.Ext.Itunes do
 
   alias PodcastFeeds.Parsers.Helpers
-  alias PodcastFeeds.Parsers.Helpers.ParserState
+  alias PodcastFeeds.Parsers.RSS2.ParserState
   alias PodcastFeeds.Meta
   alias PodcastFeeds.Owner
   # alias PodcastFeeds.Contributor

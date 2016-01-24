@@ -11,7 +11,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     ]}
   end
 
-
+  @tag skip: "disabled"
   test "parse_meta", %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
 
@@ -47,6 +47,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.height == 100
   end
 
+  @tag skip: "disabled"
   test "parse atom namespace in meta" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     {:ok, state, _rest} = RSS2.parse(fstream)
@@ -62,6 +63,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert atom_first.href == "http://localhost:8081/example.xml"
   end
 
+  @tag skip: "disabled"
   test "parse atom namespace in entry" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     {:ok, state, _rest} = RSS2.parse(fstream)
@@ -83,6 +85,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert atom_deep.href == "http://localhost:8081/example.xml#"
   end
 
+  @tag skip: "disabled"
   test "parse itunes namespace in meta" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     {:ok, state, _rest} = RSS2.parse(fstream)
@@ -102,6 +105,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.summary == "Itunes Summary"
   end
 
+  @tag skip: "disabled"
   test "parse itunes namespace in entry" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     {:ok, state, _rest} = RSS2.parse(fstream)
@@ -125,6 +129,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
 
+  @tag skip: "disabled"
   test "namespaces info", %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     {:ok, state, _rest} = RSS2.parse(fstream)
