@@ -1,9 +1,74 @@
 defmodule PodcastFeeds.Parsers.Ext.Atom do
 
-  # alias PodcastFeeds.Parsers.Helpers
-  # alias PodcastFeeds.Parsers.RSS2.ParserState
+  use Timex
+  import SweetXml
+
+  alias PodcastFeeds.Feed
+  alias PodcastFeeds.Entry
+  alias PodcastFeeds.Meta
+  alias PodcastFeeds.Itunes
+  alias PodcastFeeds.Image
+  alias PodcastFeeds.SkipDays
+  alias PodcastFeeds.SkipHours
+  alias PodcastFeeds.Cloud
+
+  alias PodcastFeeds.Parsers.Helpers
+
+  alias PodcastFeeds.Parsers.RSS2.ParserState
   # alias PodcastFeeds.Contributor
 
+  # atom:link element, used in various contexts
+  defmodule Link do
+    defstruct rel: nil,
+              type: nil,
+              href: nil,
+              title: nil
+  end
+
+
+  @namespace_uri "http://www.w3.org/2005/Atom"
+
+  def do_parse(%ParserState{doc: doc, feed: feed} = state) do
+    state
+    |> do_parse_meta
+    |> do_parse_entries
+  end
+
+  def do_parse_meta(%ParserState{doc: doc, feed: feed} = state) do
+    atom_links = doc
+    |> xpath(~x"/rss/channel/*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
+    |> Enum.map(fn(node) -> 
+      %Link{
+        rel: node |> xpath(~x"@rel"s) |> Helpers.strip_nil,
+        type: node |> xpath(~x"@type"s) |> Helpers.strip_nil,
+        href: node |> xpath(~x"@href"s) |> Helpers.strip_nil,
+        title: node |> xpath(~x"@title"s) |> Helpers.strip_nil,
+      }      
+    end)
+    # |> IO.inspect
+    state = put_in state.feed.meta.atom_links, atom_links
+    state
+  end
+
+  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state) do
+    entries = doc
+    |> xpath(~x"/rss/channel/item"el)
+    |> Enum.map(fn(node) -> 
+      node 
+      |> xpath(~x"/rss/channel/*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
+      |> Enum.map(fn(node) -> 
+        %Link{
+          rel: node |> xpath(~x"@rel"s) |> Helpers.strip_nil,
+          type: node |> xpath(~x"@type"s) |> Helpers.strip_nil,
+          href: node |> xpath(~x"@href"s) |> Helpers.strip_nil,
+          title: node |> xpath(~x"@title"s) |> Helpers.strip_nil,
+        }      
+      end)
+    end)
+    # |> IO.inspect
+    #state = put_in state.feed.entries, entries
+    state
+  end
   
   # @prefix 'atom'
 

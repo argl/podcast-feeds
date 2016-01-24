@@ -91,13 +91,6 @@ defmodule PodcastFeeds do
               image: nil
   end
 
-  # atom:link element, used in various contexts
-  defmodule AtomLink do
-    defstruct rel: nil,
-              type: nil,
-              href: nil,
-              title: nil
-  end
 
   # RSS2 Skip days, probably totally useless
   defmodule SkipDays do

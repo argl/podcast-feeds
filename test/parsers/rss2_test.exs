@@ -44,10 +44,30 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert i.height == 100
   end
 
-  @tag skip: "disabled"
+  test "parse_entry", %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    state = RSS2.parse_feed(fstream)
+    assert 2 == length(state.feed.entries)
+    [e | rest] = state.feed.entries
+    assert e.title == "Item 1 Title"
+    assert e.link == "http://localhost:8081/item1"
+    assert e.description == "Item 1 Description"
+    assert e.author == "author@example.com"
+    assert e.categories == ["item category 1", "item category 2"]
+    assert e.comments == "http://example.com/item1/#coments"
+    assert e.enclosure == %PodcastFeeds.Enclosure{length: "123456", type: "audio/mp4", url: "http://localhost:8081/item1.m4a"}
+    assert e.guid == "guid-item-1"
+    assert e.publication_date == %Timex.DateTime{
+      calendar: :gregorian, day: 11, hour: 1, minute: 0, month: 11, ms: 0, second: 0, year: 2015,
+      timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min, full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}
+    }
+    assert e.source == "http://localhost:8081/example.xml"
+  end
+
+
   test "parse atom namespace in meta" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
-    {:ok, state, _rest} = RSS2.parse(fstream)
+    state = RSS2.parse_feed(fstream)
     m = state.feed.meta
     atom_links = m.atom_links
     assert length(atom_links) == 4
@@ -63,10 +83,13 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   @tag skip: "disabled"
   test "parse atom namespace in entry" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
-    {:ok, state, _rest} = RSS2.parse(fstream)
+    state = RSS2.parse_feed(fstream)
+    assert 2 == length(state.feed.entries)
     [e | rest] = state.feed.entries
+
     contributors = e.contributors
     assert length(contributors) == 1
+
     [e | _rest] = rest
     contributors = e.contributors
     assert length(contributors) == 2

@@ -69,7 +69,9 @@
       <pubDate>Tue, 11 Nov 2015 01:00:00 +0000</pubDate>
       <guid isPermaLink="false">guid-item-1</guid>
       <description><![CDATA[Item 1 Description]]></description>
-      
+      <author>author@example.com</author>
+      <comments>http://example.com/item1/#coments</comments>
+      <source>http://localhost:8081/example.xml</source>
       <enclosure url="http://localhost:8081/item1.m4a" length="123456" type="audio/mp4"/>
 
       <category>item category 1</category>
