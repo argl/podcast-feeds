@@ -38,7 +38,7 @@ defmodule Feedme.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:erlsom, "~> 1.2"},
+      {:sweet_xml, "~> 0.5.0"},
       {:timex, "~> 1.0.0-rc3"},
       {:mix_test_watch, "~> 0.2", only: :dev}
     ]

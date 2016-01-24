@@ -11,14 +11,11 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     ]}
   end
 
-  @tag skip: "disabled"
   test "parse_meta", %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
 
-    res = RSS2.parse(fstream)
-    assert {:ok, state, rest} = res
+    state = RSS2.parse_feed(fstream)
     m = state.feed.meta
-    assert rest == '\n'
     assert m.title == "Podcast Title"
     assert m.link == "http://localhost:8081/"
     assert m.description == "Podcast Description"
@@ -28,12 +25,12 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert m.publication_date == %Timex.DateTime{calendar: :gregorian, day: 13, hour: 0, minute: 0, month: 11, ms: 0, second: 0, timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min, full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2015}
     assert m.last_build_date == %Timex.DateTime{calendar: :gregorian, day: 12, hour: 22, minute: 47, month: 11, ms: 0, second: 30, timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min, full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2015}
     assert m.generator == "Generator"
-    assert m.cloud == %{domain: "cloud.example.com", path: "/path", port: "80", protocol: "xml-rpc", registerProcedure: "cloud.register"}
+    assert m.cloud == %PodcastFeeds.Cloud{domain: "cloud.example.com", path: "/path", port: 80, protocol: "xml-rpc", register_procedure: "cloud.register"}
     assert m.ttl == 60
     assert m.managing_editor == "podcast-editor@example.com (Paula Podcaster)"
     assert m.web_master == "podcast-webmaster@example.com (Wendy Webmaster)"
 
-    assert m.categories == ["channel category 2", "channel category 1"]
+    assert m.categories == ["channel category 1", "channel category 2"]
     assert m.skip_hours == [1, 2]
     assert m.skip_days == ["Monday", "Tuesday"]
     assert m.image != nil

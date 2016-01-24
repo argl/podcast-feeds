@@ -114,6 +114,15 @@ defmodule PodcastFeeds do
       uri: nil
   end
 
+  # rss cloud element
+  defmodule Cloud do
+    defstruct domain: nil,
+      port: nil,
+      path: nil,
+      register_procedure: nil,
+      protocol: nil
+  end
+
   # itunes owner
   defmodule Owner do
     defstruct name: nil,
@@ -121,7 +130,10 @@ defmodule PodcastFeeds do
   end
 
 
+
   @chunk_size 4096
+
+  def parse
 
   def parse_file(filename) do
     File.stream!(filename, [], @chunk_size)
@@ -130,12 +142,12 @@ defmodule PodcastFeeds do
 
   def parse_stream(stream) do
     stream
-    |> PodcastFeeds.Parsers.RSS2.parse
-    |> (fn({:ok, state, rest})-> 
-      {:ok, state.feed, state.namespaces, rest} 
+    |> PodcastFeeds.Parsers.RSS2.parse_feed
+    |> (fn(state)-> 
+      {:ok, state.feed} 
     end).()
   end
 
-  defp detect_parser(other), do: other
+  # defp detect_parser(other), do: other
 
 end

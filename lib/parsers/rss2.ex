@@ -1,8 +1,7 @@
 defmodule PodcastFeeds.Parsers.RSS2 do
 
-  # use GenServer
   use Timex
-
+  import SweetXml
 
   alias PodcastFeeds.Feed
   alias PodcastFeeds.Entry
@@ -11,97 +10,94 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Image
   alias PodcastFeeds.SkipDays
   alias PodcastFeeds.SkipHours
+  alias PodcastFeeds.Cloud
 
   alias PodcastFeeds.Parsers.Helpers
 
   defmodule ParserState do
-    defstruct feed: nil,      # the feed structure we try to fill
-    element_acc: nil,         # accumulates character data
-    element_stack: [],        # holds our internal element stack (channel, item, etc)
-
-    namespaces: [],
-    parser_modules: %{},
-
-    catstack: [],             # itunes category stack. the not-quite-infinitely-recursive monster
-    subcatstack: [],          # see catstack
-    level: 0,                 # see catstack
-    feed_shaming: []          # record problems with the feed here
+    defstruct doc: nil,
+      feed: nil
   end
 
-
-
-  def parse(stream) do
-    :erlsom.parse_sax(
-      "", 
-      nil, 
-      &sax_event_handler/2,
-      [{:continuation_function, &continue_stream/2, stream}]
-    )
+  def parse_feed(xml) do
+    %ParserState{doc: xml, feed: %Feed{} }
+    |> do_parse
+    # |> Atom.parse_feed
+    # |> Itunes.parse_feed
+    # |> PSC.parse_feed
   end
 
-  # this is considered bad practice. "this is not how streams are supposed to be used"
-  # so, maybe this should be refactored to pass the callback further up the data provider
-  def continue_stream(tail, stream) do
-    case Enum.take(stream, 1) do
-      [] -> {tail, Stream.drop(stream, 1)}
-      [data] -> {<<tail :: binary, data::binary>>, Stream.drop(stream, 1)}
-    end
+  def do_parse(%ParserState{doc: doc, feed: feed} = state) do
+    state
+    |> do_parse_meta
+    |> do_parse_entries
   end
 
-  # parser callbacks
-
-  def sax_event_handler(:startDocument, _state) do
-    %ParserState{
-      namespaces: [ %{[] => ""} ],
-      parser_modules: %{
-        "" => PodcastFeeds.Parsers.RSS2,
-        "http://www.w3.org/2005/Atom" => PodcastFeeds.Parsers.Ext.Atom,
-        "http://www.itunes.com/dtds/podcast-1.0.dtd" => PodcastFeeds.Parsers.Ext.Itunes
+  def do_parse_meta(%ParserState{doc: doc, feed: feed} = state) do
+    meta = doc 
+    |> xpath(~x"/rss/channel")
+    |> (fn(node) ->
+      %Meta{
+        # required: title, link, description
+        title: node |> xpath(~x"./title/text()"s) |> Helpers.strip_nil,
+        link: node |> xpath(~x"./link/text()"s) |> Helpers.strip_nil,
+        description: node |> xpath(~x"./description/text()"s) |> Helpers.strip_nil,
+        # optional:
+        # language, copyright, managingEditor, webMaster, pubDate, lastBuildDate, category (a list), 
+        # generator, docs (ignored), cloud, ttl, image, rating (ignored), textInput (ignored), 
+        # skipHours, skipDays
+        # author? its not in the specs at http://cyber.law.harvard.edu/rss/rss.html, but we'll be tolerant here
+        author: node |> xpath(~x"./author/text()"os) |> Helpers.strip_nil |> Helpers.parse_email,
+        language: node |> xpath(~x"./language/text()"os) |> Helpers.strip_nil,
+        copyright:  node |> xpath(~x"./copyright/text()"os) |> Helpers.strip_nil,
+        managing_editor: node |> xpath(~x"./managingEditor/text()"os) |> Helpers.strip_nil |> Helpers.parse_email,
+        web_master: node |> xpath(~x"./webMaster/text()"os) |> Helpers.strip_nil |> Helpers.parse_email,
+        publication_date: node |> xpath(~x"./pubDate/text()"os) |> Helpers.parse_date,
+        last_build_date: node |> xpath(~x"./lastBuildDate/text()"os) |> Helpers.parse_date,
+        categories: node |> xpath(~x"./category/text()"osl)
+          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end) 
+          |> Enum.filter(fn(el)-> el != nil end),
+        generator: node |> xpath(~x"./generator/text()"os) |> Helpers.strip_nil,
+        cloud: node |> xpath(~x"./cloud"oe) |> parse_cloud_element,
+        ttl: node |> xpath(~x"./ttl/text()"os) |> Helpers.parse_integer,
+        image: node |> xpath(~x"./image"oe) |>parse_image_element,
+        skip_hours: node |> xpath(~x"./skipHours/hour/text()"osl) 
+          |> Enum.map(fn(el) -> Helpers.parse_integer(el) end) 
+          |> Enum.filter(fn(el)-> el != nil end),
+        skip_days: node |> xpath(~x"./skipDays/day/text()"osl)
+          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end) 
+          |> Enum.filter(fn(el)-> el != nil end),
       }
-    }
-  end
-
-  def sax_event_handler(:endDocument, state) do
+    end).()
+    # |> IO.inspect
+    state = put_in state.feed.meta, meta
     state
   end
 
-
-  def sax_event_handler({:startElement, uri, name, prefix, attributes}, state) do
-    # get the current namespace map
-    [current_prefix_map | _other_maps] = state.namespaces
-    # get the namespace from the maps
-    namespace = Map.get(current_prefix_map, prefix)
-    case namespace do
-      nil ->
-        IO.inspect "prefix #{prefix} not found in current namespace map"
-        state
-      _ ->
-        # forward to the proper module
-        module = state.parser_modules[namespace]
-        # also, put the current element on the element stack
-        state = %{state | element_stack: [%{_element_name: "#{namespace}#{name}"} | state.element_stack]}
-        # now forward everything to the proper module
-        # module.sax_event_handler({:startElement, uri, name, prefix, attributes}, state)
-    end
+  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state) do
+    state
   end
 
-  def sax_event_handler({:endElement, uri, name, prefix}, state) do
-    [current_prefix_map | _other_maps] = state.namespaces
-    namespace = Map.get(current_prefix_map, prefix)
-    case namespace do
-      nil -> 
-        state
-      _ ->
-        module = state.parser_modules[namespace]
-        state = %{state | element_stack: [%{_element_name: "#{namespace}#{name}"} | state.element_stack]}
-        # module.sax_event_handler({:startElement, uri, name, prefix, attributes}, state)
-    end
-    module = state.parser_modules[namespace]
-    [_ | element_stack] = state.element_stack
-    state = %{state | element_stack: element_stack}
-    # module.sax_event_handler({:endElement, uri, name, prefix}, state)
+  defp parse_cloud_element(node) do
+    %Cloud{
+      domain: node |> xpath(~x"@domain"s) |> Helpers.strip_nil,
+      port: node |> xpath(~x"@port"s) |> Helpers.parse_integer,
+      path: node |> xpath(~x"@path"s) |> Helpers.strip_nil,
+      register_procedure: node |> xpath(~x"@registerProcedure"s),
+      protocol: node |> xpath(~x"@protocol"s)
+    }
   end
 
+  defp parse_image_element(node) do
+    %Image{
+      title: node |> xpath(~x"./title/text()"os) |> Helpers.strip_nil,
+      url: node |> xpath(~x"./url/text()"os) |> Helpers.strip_nil,
+      link: node |> xpath(~x"./link/text()"os) |> Helpers.strip_nil,
+      width: node |> xpath(~x"./width/text()"os) |> Helpers.parse_integer,
+      height: node |> xpath(~x"./height/text()"os) |> Helpers.parse_integer,
+      description: node |> xpath(~x"./description/text()"os) |> Helpers.strip_nil
+    }
+  end
 
   # defp sax_event_handler({:startElement, _uri, 'rss', [], _attributes}, state) do
   #   %{state | feed: %Feed{} }
@@ -386,45 +382,45 @@ defmodule PodcastFeeds.Parsers.RSS2 do
 
 
   # push all chars onto the accumulator
-  def sax_event_handler({:characters, chars}, state) do
-    x = "#{state.element_acc}#{chars}"
-    %{state | element_acc: x}
-  end
+  # def sax_event_handler({:characters, chars}, state) do
+  #   x = "#{state.element_acc}#{chars}"
+  #   %{state | element_acc: x}
+  # end
 
 
 
-  def sax_event_handler({:processingInstruction, _target, _data}, state) do
-    # IO.puts "-> processingInstruction: target=#{target}, data=#{data}"
-    state
-  end
+  # def sax_event_handler({:processingInstruction, _target, _data}, state) do
+  #   # IO.puts "-> processingInstruction: target=#{target}, data=#{data}"
+  #   state
+  # end
 
 
-  def sax_event_handler({:startPrefixMapping, prefix, uri}, state) do
-    IO.puts "-> startPrefixMapping: #{prefix} -> #{uri}"
-    [current_prefix_map | namespaces] = state.namespaces
-    current_prefix_map = put_in current_prefix_map[prefix], uri
-    namespaces = [current_prefix_map | namespaces]
-    %{state | namespaces: namespaces}
-  end
+  # def sax_event_handler({:startPrefixMapping, prefix, uri}, state) do
+  #   IO.puts "-> startPrefixMapping: #{prefix} -> #{uri}"
+  #   [current_prefix_map | namespaces] = state.namespaces
+  #   current_prefix_map = put_in current_prefix_map[prefix], uri
+  #   namespaces = [current_prefix_map | namespaces]
+  #   %{state | namespaces: namespaces}
+  # end
 
-  def sax_event_handler({:endPrefixMapping, prefix}, state) do
-    IO.puts "-> endPrefixMapping: #{prefix}"
-    state
-  end
+  # def sax_event_handler({:endPrefixMapping, prefix}, state) do
+  #   IO.puts "-> endPrefixMapping: #{prefix}"
+  #   state
+  # end
 
-  def sax_event_handler({:ignorableWhitespace, _characters}, state) do
-    # IO.puts "-> ignorableWhitespace: #{state}: '#{characters}'"
-    state
-  end
+  # def sax_event_handler({:ignorableWhitespace, _characters}, state) do
+  #   # IO.puts "-> ignorableWhitespace: #{state}: '#{characters}'"
+  #   state
+  # end
 
 
-  def sax_event_handler(:error, description) do
-    IO.puts "error: #{description}"
-  end
+  # def sax_event_handler(:error, description) do
+  #   IO.puts "error: #{description}"
+  # end
 
-  def sax_event_handler(:internalError, description) do
-    IO.puts "internal error: #{description}"
-  end
+  # def sax_event_handler(:internalError, description) do
+  #   IO.puts "internal error: #{description}"
+  # end
 
 
 
