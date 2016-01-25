@@ -92,21 +92,6 @@ defmodule PodcastFeeds do
   end
 
 
-  # RSS2 Skip days, probably totally useless
-  defmodule SkipDays do
-    defstruct days: []
-  end
-
-  defmodule SkipHours do
-    defstruct hours: []
-  end
-
-  defmodule Contributor do
-    defstruct name: nil,
-      email: nil,
-      uri: nil
-  end
-
   # rss cloud element
   defmodule Cloud do
     defstruct domain: nil,

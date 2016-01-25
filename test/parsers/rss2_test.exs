@@ -48,7 +48,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     fstream = File.stream!(sample1, [], @chunk_size)
     state = RSS2.parse_feed(fstream)
     assert 2 == length(state.feed.entries)
-    [e | rest] = state.feed.entries
+    [e | _rest] = state.feed.entries
     assert e.title == "Item 1 Title"
     assert e.link == "http://localhost:8081/item1"
     assert e.description == "Item 1 Description"
@@ -80,20 +80,19 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert atom_first.href == "http://localhost:8081/example.xml"
   end
 
-  @tag skip: "disabled"
   test "parse atom namespace in entry" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
     state = RSS2.parse_feed(fstream)
     assert 2 == length(state.feed.entries)
     [e | rest] = state.feed.entries
 
-    contributors = e.contributors
-    assert length(contributors) == 1
+    assert length(e.contributors) == 2
+    [contributor | contributors] = e.contributors
+    assert contributor.name == "Conrad Contributor"
+    assert contributor.uri == "http://contributor.example.com/conrad"
+    assert contributor.email == "conrad@contributor.example.com"
 
-    [e | _rest] = rest
-    contributors = e.contributors
-    assert length(contributors) == 2
-    contributor = hd(contributors)
+    [contributor | _contributors] = contributors
     assert contributor.name == "Caspar Contributor"
     assert contributor.uri == "http://contributor.example.com/caspar"
     assert contributor.email == "caspar@contributor.example.com"
@@ -103,6 +102,10 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     atom_deep = Enum.find(atom_links, 0, fn(link) -> link.rel == "http://localhost:8081/deep-link" end)
     assert atom_deep
     assert atom_deep.href == "http://localhost:8081/example.xml#"
+
+    [e | _rest] = rest
+    contributors = e.contributors
+    assert length(contributors) == 1
   end
 
   @tag skip: "disabled"
