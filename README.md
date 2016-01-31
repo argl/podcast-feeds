@@ -1,6 +1,8 @@
 Podcast-Feeds
 ======
 
+[![Build Status](https://travis-ci.org/argl/podcast-feeds.svg?branch=master)](https://travis-ci.org/argl/podcast-feeds)
+
 Elixir RSS/Atom parser for Podcast feeds. Built on the [erlsom](https://github.com/willemdj/erlsom) xml parser in SAX mode.
 It uses [timex](https://github.com/bitwalker/timex) for parsing dates.
 
