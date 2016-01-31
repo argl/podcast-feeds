@@ -34,6 +34,18 @@ defmodule PodcastFeeds.Parsers.Helpers do
     end
   end
 
+  def parse_yes_no_boolean(val) do
+    case val do
+      nil -> false
+      val when is_binary(val) ->
+        case String.downcase(val) do
+          "yes" -> true
+          _ -> false
+        end
+      _ -> false
+    end
+  end
+
 
   # alias PodcastFeeds.Parsers.RSS2.ParserState
 

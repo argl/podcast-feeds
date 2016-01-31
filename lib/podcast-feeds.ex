@@ -66,22 +66,6 @@ defmodule PodcastFeeds do
               namespaces: []
   end
 
-  # Itunes struct, used in Meta and Entry structs
-  defmodule Itunes do
-    defstruct author: nil,
-              block: false,
-              categories: [],
-              image_href: nil,
-              duration: nil,
-              explicit: false,
-              is_closed_captioned: false,
-              order: nil,
-              complete: false,
-              new_feed_url: nil,
-              owner: nil,
-              subtitle: nil,
-              summary: nil
-  end
 
   # Podcasr Simple Chapter chapters element
   defmodule Psc do
@@ -101,11 +85,7 @@ defmodule PodcastFeeds do
       protocol: nil
   end
 
-  # itunes owner
-  defmodule Owner do
-    defstruct name: nil,
-      email: nil
-  end
+
 
 
 

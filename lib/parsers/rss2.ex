@@ -13,6 +13,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Parsers.Helpers
 
   alias PodcastFeeds.Parsers.Ext.Atom
+  alias PodcastFeeds.Parsers.Ext.Itunes
 
   defmodule ParserState do
     defstruct doc: nil,
@@ -23,7 +24,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     %ParserState{doc: xml, feed: %Feed{} }
     |> do_parse
     |> Atom.do_parse
-    # |> Itunes.do_parse
+    |> Itunes.do_parse
     # |> PSC.do_parse
   end
 

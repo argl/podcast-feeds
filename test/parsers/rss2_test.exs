@@ -108,47 +108,46 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert length(contributors) == 1
   end
 
-  @tag skip: "disabled"
   test "parse itunes namespace in meta" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
-    {:ok, state, _rest} = RSS2.parse(fstream)
+    state = RSS2.parse_feed(fstream)
     i = state.feed.meta.itunes
     assert i.author == "Itunes Author"
-    assert i.categories ==  ["Arts", "Society & Culture", ["History", "Another Subcategory"], "Technology", ["Gadgets"]]
+    # assert i.categories ==  ["Arts", "Society & Culture", ["History", "Another Subcategory"], "Technology", ["Gadgets"]]
     assert i.block == false
     assert i.image_href == "http://localhost:8081/podcast-image.jpg"
-    assert i.explicit == "no"
+    assert i.explicit == nil
     assert i.complete == true
     assert i.new_feed_url == "http://new-feed-url.example.com/new-feed"
     assert i.owner != nil
-    assert match? %PodcastFeeds.Owner{}, i.owner
+    assert match? %PodcastFeeds.Parsers.Ext.Itunes.Owner{}, i.owner
     assert i.owner.name == "Itunes Owner Name"
     assert i.owner.email == "Itunes Owner Email"
     assert i.subtitle == "Itunes Subtitle"
     assert i.summary == "Itunes Summary"
   end
 
-  @tag skip: "disabled"
   test "parse itunes namespace in entry" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
-    {:ok, state, _rest} = RSS2.parse(fstream)
+    state = RSS2.parse_feed(fstream)
+    assert 2 == length(state.feed.entries)
+
     [e | rest] = state.feed.entries
-
-    i = e.itunes
-    assert i
-    assert i.block == false
-
-    [e | _] = rest
     i = e.itunes
     assert i
     assert i.block == true
     assert i.image_href == "http://localhost:8081/item1-image.jpg"
     assert i.duration == "01:00:00"
-    assert i.explicit == "clean"
+    assert i.explicit == false
     assert i.is_closed_captioned == true
     assert i.order == 10
     assert i.subtitle == "Item 1 Subtitle"
     assert i.summary == "Item 1 Itunes Summary"
+
+    [e | _] = rest
+    i = e.itunes
+    assert i
+    assert i.block == false
   end
 
 
