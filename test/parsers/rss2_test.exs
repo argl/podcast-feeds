@@ -113,7 +113,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     state = RSS2.parse_feed(fstream)
     i = state.feed.meta.itunes
     assert i.author == "Itunes Author"
-    # assert i.categories ==  ["Arts", "Society & Culture", ["History", "Another Subcategory"], "Technology", ["Gadgets"]]
+    assert i.categories ==  [["Arts", "Design"], ["Society & Culture", "History"], ["Technology", "Gadgets"]]
     assert i.block == false
     assert i.image_href == "http://localhost:8081/podcast-image.jpg"
     assert i.explicit == nil

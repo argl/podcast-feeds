@@ -43,13 +43,18 @@
     <itunes:author>Itunes Author</itunes:author>
     <itunes:summary>Itunes Summary</itunes:summary>
     <itunes:complete>yes</itunes:complete>
-    <itunes:category text="Arts" />
+    <itunes:category text="Arts">
+      <itunes:category text="Design" />
+    </itunes:category>
     <itunes:category text="Society &amp; Culture">
       <itunes:category text="History" />
-      <itunes:category text="Another Subcategory" />
     </itunes:category>
     <itunes:category text="Technology">
       <itunes:category text="Gadgets" />
+    </itunes:category>
+    <itunes:category text="Non-existing Category" />
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Non-exiting Subcategory" />
     </itunes:category>
 
     <itunes:owner>

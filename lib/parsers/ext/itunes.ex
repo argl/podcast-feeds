@@ -32,6 +32,8 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   end
 
 
+
+
   def do_parse(%ParserState{} = state) do
     state
     |> do_parse_meta
@@ -76,14 +78,23 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
         # If the <itunes:block> tag is populated with any other value, it will have no effect.
         block: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='block']/text()"os) |> Helpers.parse_yes_no_boolean,
 
-        # category: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # image: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # explicit: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # complete: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # new_feed_url: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # owner: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # subtitle: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
-        # summary: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
+
+        # <itunes:category>
+        # Users can browse podcast subject categories on iTunes using one of two methods:
+        # - click Browse under Features at the bottom of the iTunes Store window to open a text-
+        # based table
+        # - choose a category from the Podcasts pop-up menu in the navigation bar, which leads 
+        # to pages that include the podcast art.
+        # Within the older, text-based browsing system, podcast feeds may list up to three 
+        # category and subcategory pairs. (For example, “Music” counts as one of the three items, 
+        #   as does “Business > Careers.”)
+        # Use the <itunes:category> tag to specify the browsing category. You must also define 
+        # a subcategory if one is available within your category.
+        # Within the newer browsing system based on Category links, including the Top Podcasts 
+        # and Top Episodes lists, only the first category listed in the feed will be recognized. 
+        # A complete list of categories and subcategories included at the end of this document.
+        # Be sure to properly escape ampersands as shown below.
+        categories: node |> parse_categories,
 
         # <itunes:image>
         # The <itunes:image> tag points to the artwork for your podcast, via the URL specified in 
@@ -229,23 +240,115 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     end
   end
 
+  defp parse_categories(node) do
+    node 
+    |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='category']"el)
+    |> Enum.map(fn(category_element) -> 
+      category_name = category_element |> xpath(~x"./@text"os) |> Helpers.strip_nil
+      case category_name do
+        nil -> nil
+        _ -> 
+          subcategory_name = category_element |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='category']/@text"os) |> Helpers.strip_nil
+          case categories[category_name] do
+            [] -> [category_name]
+            subcategories when is_list(subcategories) ->
+              case Enum.find(subcategories, fn(x) -> x == subcategory_name end) do
+                nil -> nil
+                _ -> [category_name, subcategory_name]
+              end
+            _ -> nil
+          end
+      end
+    end)
+    |> Enum.filter(fn(x) ->
+      is_list(x)
+    end)
+    # |> IO.inspect
+  end
 
+  defp categories do
+    %{
+      "Arts" => [
+        "Design",
+        "Fashion & Beauty",
+        "Food",
+        "Literature",
+        "Performing Arts",
+        "Visual Arts"
+      ],
+      "Business" => [
+        "Business News",
+        "Careers",
+        "Investing",
+        "Management & Marketing",
+        "Shopping"
+      ],
+      "Comedy" => [],
+      "Education" => [
+        "Educational Technology",
+        "Higher Education",
+        "K-12",
+        "Language Courses",
+        "Training"
+      ],
+      "Games & Hobbies" => [
+        "Automotive",
+        "Aviation",
+        "Hobbies",
+        "Other Games",
+        "Video Games"
+      ],
+      "Government & Organizations" => [
+        "Local",
+        "National",
+        "Non-Profit",
+        "Regional"
+      ],
+      "Health" => [
+        "Alternative Health",
+        "Fitness & Nutrition",
+        "Self-Help",
+        "Sexuality"
+      ],
+      "Kids & Family" => [],
+      "Music" => [],
+      "News & Politics" => [],
+      "Religion & Spirituality" => [
+        "Buddhism",
+        "Christianity",
+        "Hinduism",
+        "Islam",
+        "Judaism",
+        "Other",
+        "Spirituality"
+      ],
+      "Science & Medicine" => [
+        "Medicine",
+        "Natural Sciences",
+        "Social Sciences"
+      ],
+      "Society & Culture" => [
+        "History",
+        "Personal Journals",
+        "Philosophy",
+        "Places & Travel"
+      ],
+      "Sports & Recreation" => [
+        "Amateur",
+        "College & High School",
+        "Outdoor",
+        "Professional"
+      ],
+      "Technology" => [
+        "Gadgets",
+        "Tech News",
+        "Podcasting",
+        "Software How-To"
+      ],
+      "TV & Film" => []
+    }
+  end
 
-  # <itunes:category>
-  # Users can browse podcast subject categories on iTunes using one of two methods:
-  # - click Browse under Features at the bottom of the iTunes Store window to open a text-
-  # based table
-  # - choose a category from the Podcasts pop-up menu in the navigation bar, which leads 
-  # to pages that include the podcast art.
-  # Within the older, text-based browsing system, podcast feeds may list up to three 
-  # category and subcategory pairs. (For example, “Music” counts as one of the three items, 
-  #   as does “Business > Careers.”)
-  # Use the <itunes:category> tag to specify the browsing category. You must also define 
-  # a subcategory if one is available within your category.
-  # Within the newer browsing system based on Category links, including the Top Podcasts 
-  # and Top Episodes lists, only the first category listed in the feed will be recognized. 
-  # A complete list of categories and subcategories included at the end of this document.
-  # Be sure to properly escape ampersands as shown below.
 
   # <itunes:duration>
   # The content of the <itunes:duration> tag is shown in the Time column in the List View on iTunes.
@@ -260,125 +363,6 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # def sax_event_handler({:endElement, _uri, 'duration', @prefix}, state) do
   #   state
   #   |> handle_character_content_for_itunes([PodcastFeeds.Entry], :duration)
-  # end
-
-  # <itunes:isClosedCaptioned>
-  # The <itunes:isClosedCaptioned> tag should be used with a “yes” value for a video podcast episode with 
-  # embedded closed captioning.
-  # A closed-caption icon will appear next to the corresponding episode.
-  # If the closed-caption tag is present and has any other value, no closed-caption indicator will appear.
-  # This tag is only supported at the <item> (episode) level.
-  # def sax_event_handler({:startElement, _uri, 'isClosedCaptioned', @prefix, _attr}, state) do
-  #   %{state | element_acc: ""}
-  # end
-  # def sax_event_handler({:endElement, _uri, 'isClosedCaptioned', @prefix}, state) do
-  #   state
-  #   |> Helpers.parse_character_content_to_boolean
-  #   |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :is_closed_captioned)
-  # end
-
-  # <itunes:order>
-  # The <itunes:order> tag can be used to override the default ordering of episodes on the iTunes Store by 
-  # populating it with the number value in which you would like the episode to appear. For example, if you 
-  # would like an <item> to appear as the first episode of the podcast, you would populate the <itunes:order> 
-  # tag with “1.” If conflicting order values are present in multiple episodes, the store will order by 
-  # <pubDate>.
-  # def sax_event_handler({:startElement, _uri, 'order', @prefix, _attr}, state) do
-  #   %{state | element_acc: ""}
-  # end
-  # def sax_event_handler({:endElement, _uri, 'order', @prefix}, state) do
-  #   state
-  #   |> Helpers.parse_character_content_to_integer
-  #   |> handle_character_content_for_itunes([PodcastFeeds.Entry], :order)
-  # end
-
-
-
-  # <itunes:owner>
-  # The <itunes:owner> tag contains contact information for the owner of the podcast intended to be used 
-  # for administrative communication about the podcast. This information is not displayed on the iTunes Store.
-  # The email address of the owner should be included in a nested <itunes:email> element. Include the name 
-  # of the owner in a nested <itunes:name> element.
-  # def sax_event_handler({:startElement, _uri, 'owner', @prefix, _attributes}, state) do
-  #   [current_element | _]  = state.element_stack
-  #   case current_element do
-  #     %Meta{} -> 
-  #       put_in state.element_stack, [%Owner{} | state.element_stack]
-  #     _ -> state # put any shaming error here
-  #   end
-  # end
-  # def sax_event_handler({:endElement, _uri, 'owner', @prefix}, %ParserState{element_stack: element_stack} = state) do
-  #   [owner | element_stack] = element_stack
-  #   case owner do
-  #     %Owner{} -> 
-  #       [meta | element_stack] = element_stack
-  #       meta = put_in meta.itunes.owner, owner
-  #       %{state | element_stack: [meta | element_stack]}
-  #     _ -> state # element was ignored on startElement
-  #   end
-  # end
-  # def sax_event_handler({:startElement, _uri, 'name', @prefix, _attr}, state) do
-  #   %{state | element_acc: ""}
-  # end
-  # def sax_event_handler({:endElement, _uri, 'name', @prefix}, %ParserState{element_acc: element_acc} = state) do
-  #   [owner | element_stack]  = state.element_stack
-  #   owner = case owner do
-  #     %Owner{} ->
-  #       put_in owner.name, element_acc
-  #     _ -> owner
-  #   end
-  #   %{state | element_stack: [owner | element_stack]}
-  # end
-  # def sax_event_handler({:startElement, _uri, 'email', @prefix, _attr}, state) do
-  #   %{state | element_acc: ""}
-  # end
-  # def sax_event_handler({:endElement, _uri, 'email', @prefix}, %ParserState{element_acc: element_acc} = state) do
-  #   [owner | element_stack]  = state.element_stack
-  #   owner = case owner do
-  #     %Owner{} ->
-  #       put_in owner.email, element_acc
-  #     _ -> owner
-  #   end
-  #   %{state | element_stack: [owner | element_stack]}
-  # end
-
-  # <itunes:summary>
-  # The contents of the <itunes:summary> tag are shown on the iTunes Store page for your podcast. The 
-  # information also appears in a separate window if the information (“i”) icon in the Description 
-  # column is clicked. This field can be up to 4000 characters.
-  # If a <itunes:summary> tag is not included, the contents of the <description> tag are used.
-  # def sax_event_handler({:startElement, _uri, 'summary', @prefix, _attr}, state) do
-  #   %{state | element_acc: ""}
-  # end
-  # def sax_event_handler({:endElement, _uri, 'summary', @prefix}, state) do
-  #   state
-  #   |> handle_character_content_for_itunes([PodcastFeeds.Meta, PodcastFeeds.Entry], :summary)
-  # end
-
-
-
-
-
-  # fall through
-  # def sax_event_handler({:startElement, _uri, _name, @prefix, _attributes}, state) do
-  #   state
-  # end
-  # def sax_event_handler({:endElement, _uri, _name, @prefix}, state) do
-  #   state
-  # end
-
-
-
-  # helper, this could certainly be inproved massively
-  # defp handle_character_content_for_itunes(state, allowed_structs, key) do
-  #   %ParserState{element_stack: [elem | element_stack], element_acc: element_acc} = state    
-  #   case Enum.find(allowed_structs, &(&1 == elem.__struct__)) do
-  #     nil -> state
-  #     _ok ->
-  #       itunes = %{elem.itunes | key => element_acc}
-  #       elem = %{elem | itunes: itunes}
-  #       %{state | element_stack: [elem | element_stack]}
-  #   end
   # end
 
 end
