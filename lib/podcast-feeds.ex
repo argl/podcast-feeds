@@ -56,7 +56,8 @@ defmodule PodcastFeeds do
               itunes: nil,
               chapters: [],
               atom_links: [],
-              contributors: []
+              contributors: [],
+              content_encoded: nil
   end
 
   # A Feed

@@ -171,6 +171,14 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
     assert c.image == nil
   end
 
+  test "parse content namespace in entry" , %{sample1: sample1} do
+    fstream = File.stream!(sample1, [], @chunk_size)
+    state = RSS2.parse_feed(fstream)
+    [e | _entries] = state.feed.entries
+    content = e.content_encoded
+    assert content
+    assert content == "Item 1 Content <em>Encoded</em>"
+  end
 
 
 end

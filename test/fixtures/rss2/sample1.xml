@@ -92,7 +92,7 @@
       <itunes:isClosedCaptioned>yes</itunes:isClosedCaptioned>
       <itunes:order>10</itunes:order>
       
-      <content:encoded><![CDATA[Item 1 Content Encoded]]></content:encoded>
+      <content:encoded><![CDATA[Item 1 Content <em>Encoded</em>]]></content:encoded>
 
       <atom:link rel="http://localhost:8081/deep-link" href="http://localhost:8081/example.xml#"/>
       <atom:contributor>
