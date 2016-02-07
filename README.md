@@ -34,5 +34,5 @@ Then run ```mix deps.get``` to install podcast-feeds.
 - [x] record used namespaces
 - [x] implement atom namespace
 - [x] implement itunes namespace
-- [ ] implement psc namespace
+- [x] implement psc namespace
 - [ ] introduce some kind of error/warning stack for feed shaming

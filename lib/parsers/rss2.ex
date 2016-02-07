@@ -14,6 +14,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
 
   alias PodcastFeeds.Parsers.Ext.Atom
   alias PodcastFeeds.Parsers.Ext.Itunes
+  alias PodcastFeeds.Parsers.Ext.Psc
 
   defmodule ParserState do
     defstruct doc: nil,
@@ -25,7 +26,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     |> do_parse
     |> Atom.do_parse
     |> Itunes.do_parse
-    # |> PSC.do_parse
+    |> Psc.do_parse
   end
 
   def do_parse(%ParserState{} = state) do

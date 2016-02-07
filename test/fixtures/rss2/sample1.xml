@@ -107,7 +107,7 @@
       </atom:contributor>
 
       <psc:chapters>
-        <psc:chapter start="00:00:00.000" title="Item 1 Chapter 1"/>
+        <psc:chapter start="00:00:00.000" title="Item 1 Chapter 1" href="http://example.com/test-chapter-ref" image="http://example.com/test-chapter-image.jpeg"/>
         <psc:chapter start="00:01:00.000" title="Item 1 Chapter 2"/>
         <psc:chapter start="00:02:00.000" title="Item 1 Chapter 3"/>
       </psc:chapters>

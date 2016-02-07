@@ -151,15 +151,26 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
 
-  @tag skip: "disabled"
-  test "namespaces info", %{sample1: sample1} do
+  test "parse psc namespace in entry" , %{sample1: sample1} do
     fstream = File.stream!(sample1, [], @chunk_size)
-    {:ok, state, _rest} = RSS2.parse(fstream)
-    namespaces = state.namespaces
-    assert is_list(namespaces)
-    assert length(namespaces) == 4
-    assert Keyword.get(namespaces, :psc) == "http://podlove.org/simple-chapters"
-    assert Keyword.get(namespaces, :itunes) == "http://www.itunes.com/dtds/podcast-1.0.dtd"
+    state = RSS2.parse_feed(fstream)
+    [e | _entries] = state.feed.entries
+    chapters = e.chapters
+    assert chapters
+    assert length(chapters) == 3
+    [c | chapters] = chapters
+    assert c.start == "00:00:00.000"
+    assert c.title == "Item 1 Chapter 1"
+    assert c.href == "http://example.com/test-chapter-ref"
+    assert c.image == "http://example.com/test-chapter-image.jpeg"
+
+    [c | _chapters] = chapters
+    assert c.start == "00:01:00.000"
+    assert c.title == "Item 1 Chapter 2"
+    assert c.href == nil
+    assert c.image == nil
   end
+
+
 
 end

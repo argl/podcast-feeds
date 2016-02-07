@@ -54,7 +54,7 @@ defmodule PodcastFeeds do
               publication_date: nil,
               source: nil,
               itunes: nil,
-              psc: [],
+              chapters: [],
               atom_links: [],
               contributors: []
   end
@@ -66,14 +66,6 @@ defmodule PodcastFeeds do
               namespaces: []
   end
 
-
-  # Podcasr Simple Chapter chapters element
-  defmodule Psc do
-    defstruct start: nil,
-              title: nil,
-              href: nil,
-              image: nil
-  end
 
 
   # rss cloud element
