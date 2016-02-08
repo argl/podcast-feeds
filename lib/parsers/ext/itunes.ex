@@ -34,10 +34,10 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
 
 
 
-  def do_parse(%ParserState{} = state) do
+  def do_parse(%ParserState{} = state, {root_path, entries_path}) do
     state
-    |> do_parse_meta
-    |> do_parse_entries
+    |> do_parse_meta(root_path)
+    |> do_parse_entries(entries_path)
   end
 
 
@@ -57,9 +57,9 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # <itunes:summary>              Y   Y     When the "circled i” icon in the Description column is clicked
 
 
-  def do_parse_meta(%ParserState{doc: doc} = state) do
+  def do_parse_meta(%ParserState{doc: doc} = state, root_path \\ ~x"/rss/channel") do
     itunes = doc 
-    |> xpath(~x"/rss/channel")
+    |> xpath(root_path)
     |> (fn(node) ->
       %Itunes{
         # <itunes:author>
@@ -172,10 +172,10 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     state
   end
 
-  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state) do
+  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state, entries_path \\ ~x"/rss/channel/item"el) do
     entries = feed.entries
     entries = doc
-    |> xpath(~x"/rss/channel/item"el)
+    |> xpath(entries_path)
     |> Enum.zip(entries)
     |> Enum.map(fn({node, entry}) -> 
       put_in entry.itunes, %Itunes{

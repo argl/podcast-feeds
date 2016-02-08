@@ -29,10 +29,10 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   def parse_feed(xml) do
     %ParserState{doc: xml, feed: %Feed{} }
     |> do_parse
-    |> Atom.do_parse
-    |> Itunes.do_parse
-    |> Psc.do_parse
-    |> Content.do_parse
+    |> Atom.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
+    |> Itunes.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
+    |> Psc.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
+    |> Content.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
   end
 
   def do_parse(%ParserState{} = state) do

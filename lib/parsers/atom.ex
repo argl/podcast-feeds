@@ -10,9 +10,9 @@ defmodule PodcastFeeds.Parsers.Atom do
 
   alias PodcastFeeds.Parsers.Helpers
 
-  # alias PodcastFeeds.Parsers.Ext.Itunes
-  # alias PodcastFeeds.Parsers.Ext.Psc
-  # alias PodcastFeeds.Parsers.Ext.Content
+  alias PodcastFeeds.Parsers.Ext.Itunes
+  alias PodcastFeeds.Parsers.Ext.Psc
+  alias PodcastFeeds.Parsers.Ext.Content
 
   alias PodcastFeeds.Parsers.ParserState
 
@@ -32,9 +32,9 @@ defmodule PodcastFeeds.Parsers.Atom do
     state
     |> do_parse_meta
     |> do_parse_entries
-    # |> Itunes.do_parse
-    # |> Psc.do_parse
-    # |> Content.do_parse
+    |> Itunes.do_parse({~x"/feed", ~x"/feed/entry"el})
+    |> Psc.do_parse({~x"/feed", ~x"/feed/entry"el})
+    |> Content.do_parse({~x"/feed", ~x"/feed/entry"el})
   end
 
   def do_parse_meta(%ParserState{doc: doc} = state) do

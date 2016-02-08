@@ -32,15 +32,16 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
   # # <atom:link rel="first" href="http://cre.fm/feed/m4a"/>
   # # <atom:link rel="last" href="http://cre.fm/feed/m4a?paged=4"/>
 
-  def do_parse(%ParserState{} = state) do
+  def do_parse(%ParserState{} = state, {root_path, entries_path}) do
     state
-    |> do_parse_meta
-    |> do_parse_entries
+    |> do_parse_meta(root_path)
+    |> do_parse_entries(entries_path)
   end
 
-  def do_parse_meta(%ParserState{doc: doc} = state) do
+  def do_parse_meta(%ParserState{doc: doc} = state, root_path) do
     atom_links = doc
-    |> xpath(~x"/rss/channel/*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
+    |> xpath(root_path)
+    |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
     |> Enum.map(fn(node) -> 
       %Link{
         rel: node |> xpath(~x"@rel"s) |> Helpers.strip_nil,
@@ -54,11 +55,11 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
     state
   end
 
-  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state) do
+  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state, entries_path) do
     entries = feed.entries
     entries = doc
     # extract atom links
-    |> xpath(~x"/rss/channel/item"el)
+    |> xpath(entries_path)
     |> Enum.zip(entries)
     |> Enum.map(fn({node, entry}) -> 
       node 
