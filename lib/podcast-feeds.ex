@@ -78,11 +78,6 @@ defmodule PodcastFeeds do
               protocol: nil
   end
 
-  defmodule ParserState do
-    defstruct doc: nil,
-      feed: nil,
-      annotations: [] # feed shaming info goes here
-  end
 
 
 
