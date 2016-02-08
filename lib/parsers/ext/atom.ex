@@ -5,7 +5,7 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
 
   alias PodcastFeeds.Parsers.Helpers
 
-  alias PodcastFeeds.Parsers.RSS2.ParserState
+  alias PodcastFeeds.Parsers.ParserState
 
   # atom:link element, used in various contexts
   defmodule Link do

@@ -9,8 +9,8 @@ defmodule PodcastFeeds.Parsers.Helpers do
     end
   end
 
-  def parse_date(datestring) do
-    case datestring |> DateFormat.parse("{RFC1123}") do
+  def parse_date(datestring, format \\ "{RFC1123}") do
+    case datestring |> DateFormat.parse(format) do
       {:ok, date} -> date
       _ -> nil
     end

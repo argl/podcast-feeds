@@ -17,9 +17,13 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Parsers.Ext.Psc
   alias PodcastFeeds.Parsers.Ext.Content
 
-  defmodule ParserState do
-    defstruct doc: nil,
-      feed: nil
+  alias PodcastFeeds.Parsers.ParserState
+
+  def valid?(xml) do
+    case xpath(xml, ~x"/rss") do
+      nil -> false
+      _ -> true
+    end      
   end
 
   def parse_feed(xml) do

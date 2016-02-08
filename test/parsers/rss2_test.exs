@@ -12,7 +12,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
   test "parse_meta", %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
 
     state = RSS2.parse_feed(fstream)
     m = state.feed.meta
@@ -45,7 +45,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
   test "parse_entry", %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     assert 2 == length(state.feed.entries)
     [e | _rest] = state.feed.entries
@@ -66,7 +66,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
 
 
   test "parse atom namespace in meta" , %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     m = state.feed.meta
     atom_links = m.atom_links
@@ -81,7 +81,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
   test "parse atom namespace in entry" , %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     assert 2 == length(state.feed.entries)
     [e | rest] = state.feed.entries
@@ -109,7 +109,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
   test "parse itunes namespace in meta" , %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     i = state.feed.meta.itunes
     assert i.author == "Itunes Author"
@@ -128,7 +128,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
   test "parse itunes namespace in entry" , %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     assert 2 == length(state.feed.entries)
 
@@ -152,7 +152,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
 
 
   test "parse psc namespace in entry" , %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     [e | _entries] = state.feed.entries
     chapters = e.chapters
@@ -172,7 +172,7 @@ defmodule PodcastFeeds.Test.Parsers.RSS2 do
   end
 
   test "parse content namespace in entry" , %{sample1: sample1} do
-    fstream = File.stream!(sample1, [], @chunk_size)
+    fstream = File.read!(sample1)
     state = RSS2.parse_feed(fstream)
     [e | _entries] = state.feed.entries
     content = e.content_encoded

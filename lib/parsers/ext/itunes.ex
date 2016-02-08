@@ -4,7 +4,7 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   import SweetXml
 
   alias PodcastFeeds.Parsers.Helpers
-  alias PodcastFeeds.Parsers.RSS2.ParserState
+  alias PodcastFeeds.Parsers.ParserState
 
   @namespace_uri "http://www.itunes.com/dtds/podcast-1.0.dtd"
 

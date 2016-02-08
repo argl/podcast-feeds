@@ -7,7 +7,7 @@ defmodule PodcastFeeds.Parsers.Ext.Content do
 
   alias PodcastFeeds.Parsers.Helpers
 
-  alias PodcastFeeds.Parsers.RSS2.ParserState
+  alias PodcastFeeds.Parsers.ParserState
 
   @namespace_uri "http://purl.org/rss/1.0/modules/content/"
 

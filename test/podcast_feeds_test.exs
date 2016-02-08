@@ -3,16 +3,22 @@ defmodule PodcastFeeds.Test do
 
   setup do
     sample1 = "test/fixtures/rss2/sample1.xml"
+    sample2 = "test/fixtures/atom/sample1.xml"
 
     {:ok, [
       sample1: sample1, 
+      sample2: sample2, 
     ]}
   end
 
-  test "parse file" , %{sample1: sample1} do
-    res = PodcastFeeds.parse_file(sample1)
-    #res |> IO.inspect
-    #assert {:ok, %PodcastFeeds.Feed{} = _feed, _namespaces, _rest} = res
+  test "parse" , %{sample1: sample1, sample2: sample2} do
+    document = File.read!(sample1)
+    res = PodcastFeeds.parse(document)
+    assert {:ok, %PodcastFeeds.Feed{} = _feed} = res
+  
+    document = File.read!(sample2)
+    res = PodcastFeeds.parse(document)
+    assert {:ok, %PodcastFeeds.Feed{} = _feed} = res
   end
 
 end

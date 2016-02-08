@@ -5,7 +5,7 @@ defmodule PodcastFeeds.Parsers.Ext.Psc do
 
   alias PodcastFeeds.Parsers.Helpers
 
-  alias PodcastFeeds.Parsers.RSS2.ParserState
+  alias PodcastFeeds.Parsers.ParserState
 
   # Podcast Simple Chapter chapter element
   defmodule Chapter do
