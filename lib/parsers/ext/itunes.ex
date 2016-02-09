@@ -217,14 +217,12 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     state
   end
 
-  defp parse_owner(el) do
-    case el do
-      nil -> nil
-      node -> %Owner{
-        name: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='name']/text()"os) |> Helpers.strip_nil,
-        email: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='email']/text()"os) |> Helpers.strip_nil |> Helpers.parse_email
-      }
-    end
+  defp parse_owner(nil), do: nil
+  defp parse_owner(node) do
+    %Owner{
+      name: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='name']/text()"os) |> Helpers.strip_nil,
+      email: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='email']/text()"os) |> Helpers.strip_nil |> Helpers.parse_email
+    }
   end
 
   defp parse_explicit_value(val) do
@@ -240,6 +238,7 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     end
   end
 
+  defp parse_categories(nil), do: nil
   defp parse_categories(node) do
     node 
     |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='category']"el)
@@ -348,21 +347,5 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
       "TV & Film" => []
     }
   end
-
-
-  # <itunes:duration>
-  # The content of the <itunes:duration> tag is shown in the Time column in the List View on iTunes.
-  # The value provided for this tag can be formatted as HH:MM:SS, H:MM:SS, MM:SS, or M:SS, where 
-  # H = hours, M = minutes, S = seconds. If a single number is provided as a value (no colons are used), 
-  # the value is assumed to be in seconds. If one colon is present, the number to the left is assumed to 
-  # be minutes, and the number to the right is assumed to be seconds. If more than two colons are present, 
-  # the numbers farthest to the right are ignored.
-  # def sax_event_handler({:startElement, _uri, 'duration', @prefix, _attr}, state) do
-  #   %{state | element_acc: ""}
-  # end
-  # def sax_event_handler({:endElement, _uri, 'duration', @prefix}, state) do
-  #   state
-  #   |> handle_character_content_for_itunes([PodcastFeeds.Entry], :duration)
-  # end
 
 end

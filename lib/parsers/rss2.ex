@@ -118,6 +118,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     }
   end
 
+  defp parse_cloud_element(nil), do: nil
 
   defp parse_cloud_element(node) do
     %Cloud{
