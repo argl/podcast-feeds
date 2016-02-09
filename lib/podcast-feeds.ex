@@ -63,8 +63,7 @@ defmodule PodcastFeeds do
   # A Feed
   defmodule Feed do
     defstruct meta: nil, 
-              entries: [],
-              namespaces: []
+              entries: []
   end
 
 
