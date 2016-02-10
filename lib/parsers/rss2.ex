@@ -29,10 +29,6 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   def parse_feed(xml) do
     %ParserState{doc: xml, feed: %Feed{} }
     |> do_parse
-    |> Atom.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
-    |> Itunes.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
-    |> Psc.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
-    |> Content.do_parse({~x"/rss/channel", ~x"/rss/channel/item"el})
   end
 
   def do_parse(%ParserState{} = state) do
@@ -77,8 +73,11 @@ defmodule PodcastFeeds.Parsers.RSS2 do
           |> Enum.map(fn(el) -> Helpers.strip_nil(el) end) 
           |> Enum.filter(fn(el)-> el != nil end),
       }
+      |> Atom.do_parse_meta_node(node)
+      |> Itunes.do_parse_meta_node(node)
+      |> Psc.do_parse_meta_node(node)
+      |> Content.do_parse_meta_node(node)
     end).()
-    # |> IO.inspect
     state = put_in state.feed.meta, meta
     state
   end
@@ -104,6 +103,10 @@ defmodule PodcastFeeds.Parsers.RSS2 do
         publication_date: node |> xpath(~x"./pubDate/text()"os) |> Helpers.parse_date,
         source: node |> xpath(~x"./source/text()"os) |> Helpers.strip_nil,
       }
+      |> Atom.do_parse_entry_node(node)
+      |> Itunes.do_parse_entry_node(node)
+      |> Psc.do_parse_entry_node(node)
+      |> Content.do_parse_entry_node(node)
     end)
     # |> IO.inspect
     state = put_in state.feed.entries, entries

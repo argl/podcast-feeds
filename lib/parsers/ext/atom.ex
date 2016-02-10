@@ -5,7 +5,6 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
 
   alias PodcastFeeds.Parsers.Helpers
 
-  alias PodcastFeeds.Parsers.ParserState
 
   # atom:link element, used in various contexts
   defmodule Link do
@@ -32,15 +31,8 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
   # # <atom:link rel="first" href="http://cre.fm/feed/m4a"/>
   # # <atom:link rel="last" href="http://cre.fm/feed/m4a?paged=4"/>
 
-  def do_parse(%ParserState{} = state, {root_path, entries_path}) do
-    state
-    |> do_parse_meta(root_path)
-    |> do_parse_entries(entries_path)
-  end
-
-  def do_parse_meta(%ParserState{doc: doc} = state, root_path) do
-    atom_links = doc
-    |> xpath(root_path)
+  def do_parse_meta_node(meta, node) do
+    atom_links = node
     |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
     |> Enum.map(fn(node) -> 
       %Link{
@@ -50,59 +42,32 @@ defmodule PodcastFeeds.Parsers.Ext.Atom do
         title: node |> xpath(~x"@title"s) |> Helpers.strip_nil,
       }      
     end)
-    # |> IO.inspect
-    state = put_in state.feed.meta.atom_links, atom_links
-    state
+    put_in meta.atom_links, atom_links
   end
 
-  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state, entries_path) do
-    entries = feed.entries
-    entries = doc
-    # extract atom links
-    |> xpath(entries_path)
-    |> Enum.zip(entries)
-    |> Enum.map(fn({node, entry}) -> 
-      node 
-      |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
-      |> Enum.map(fn(atom_node) -> 
-        %Link{
-          rel: atom_node |> xpath(~x"@rel"s) |> Helpers.strip_nil,
-          type: atom_node |> xpath(~x"@type"s) |> Helpers.strip_nil,
-          href: atom_node |> xpath(~x"@href"s) |> Helpers.strip_nil,
-          title: atom_node |> xpath(~x"@title"s) |> Helpers.strip_nil,
-        }      
-      end)
-      |> (fn(atom_links)-> 
-        put_in entry.atom_links, atom_links
-      end).()
+  def do_parse_entry_node(entry, node) do
+    atom_links = node
+    |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='link']"el)
+    |> Enum.map(fn(atom_node) -> 
+      %Link{
+        rel: atom_node |> xpath(~x"@rel"s) |> Helpers.strip_nil,
+        type: atom_node |> xpath(~x"@type"s) |> Helpers.strip_nil,
+        href: atom_node |> xpath(~x"@href"s) |> Helpers.strip_nil,
+        title: atom_node |> xpath(~x"@title"s) |> Helpers.strip_nil,
+      }      
     end)
+    entry = put_in entry.atom_links, atom_links
 
-
-    # <atom:contributor>
-    #   <atom:name>Harry Schwitzer</atom:name>
-    #   <atom:email>h.schwitzer@celawi.eu </atom:email>
-    #   <atom:uri>http://www.celawi.eu/harry </atom:uri>
-    # </atom:contributor> 
-
-    entries = doc
-    # extract contributors
-    |> xpath(~x"/rss/channel/item"el)
-    |> Enum.zip(entries)
-    |> Enum.map(fn({node, entry}) -> 
-      node 
-      |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='contributor']"el)
-      |> Enum.map(fn(atom_node) -> 
-        %Contributor{
-          name: atom_node |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='name']/text()"s) |> Helpers.strip_nil,
-          email: atom_node |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='email']/text()"s) |> Helpers.strip_nil |> Helpers.parse_email,
-          uri: atom_node |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='uri']/text()"s) |> Helpers.strip_nil,
-        }
-      end)
-      |> (fn(contributors)-> 
-        put_in entry.contributors, contributors
-      end).()
+    contributors = node 
+    |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='contributor']"el)
+    |> Enum.map(fn(atom_node) -> 
+      %Contributor{
+        name: atom_node |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='name']/text()"s) |> Helpers.strip_nil,
+        email: atom_node |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='email']/text()"s) |> Helpers.strip_nil |> Helpers.parse_email,
+        uri: atom_node |> xpath(~x"*[namespace-uri()='#{@namespace_uri}' and local-name()='uri']/text()"s) |> Helpers.strip_nil,
+      }
     end)
-    put_in state.feed.entries, entries
+    put_in entry.contributors, contributors
   end
 
 end

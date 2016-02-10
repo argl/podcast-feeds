@@ -4,7 +4,6 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   import SweetXml
 
   alias PodcastFeeds.Parsers.Helpers
-  alias PodcastFeeds.Parsers.ParserState
 
   @namespace_uri "http://www.itunes.com/dtds/podcast-1.0.dtd"
 
@@ -31,16 +30,6 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
       email: nil
   end
 
-
-
-
-  def do_parse(%ParserState{} = state, {root_path, entries_path}) do
-    state
-    |> do_parse_meta(root_path)
-    |> do_parse_entries(entries_path)
-  end
-
-
   # xml tag                 channel   item  Location of content in iTunes / Notes
   # <itunes:author>               Y   Y     Visible under podcast title and in iTunes Store Browse
   # <itunes:block>                Y   Y     Prevent an episode or podcast from appearing
@@ -57,9 +46,8 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
   # <itunes:summary>              Y   Y     When the "circled i” icon in the Description column is clicked
 
 
-  def do_parse_meta(%ParserState{doc: doc} = state, root_path \\ ~x"/rss/channel") do
-    itunes = doc 
-    |> xpath(root_path)
+  def do_parse_meta_node(meta, node) do
+    itunes = node
     |> (fn(node) ->
       %Itunes{
         # <itunes:author>
@@ -167,18 +155,13 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
         summary: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='summary']/text()"os) |> Helpers.strip_nil,
       }
     end).()
-
-    state = put_in state.feed.meta.itunes, itunes
-    state
+    put_in meta.itunes, itunes
   end
 
-  def do_parse_entries(%ParserState{doc: doc, feed: feed} = state, entries_path \\ ~x"/rss/channel/item"el) do
-    entries = feed.entries
-    entries = doc
-    |> xpath(entries_path)
-    |> Enum.zip(entries)
-    |> Enum.map(fn({node, entry}) -> 
-      put_in entry.itunes, %Itunes{
+  def do_parse_entry_node(entry, node) do
+    itunes = node
+    |> (fn(node) ->
+      %Itunes{
         author: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='author']/text()"os) |> Helpers.strip_nil,
         block: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='block']/text()"os) |> Helpers.parse_yes_no_boolean,
         image_href: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='image']/@href"os) |> Helpers.strip_nil,
@@ -212,10 +195,10 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
         subtitle: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='subtitle']/text()"os) |> Helpers.strip_nil,
         summary: node |> xpath(~x"./*[namespace-uri()='#{@namespace_uri}' and local-name()='summary']/text()"os) |> Helpers.strip_nil,
       }
-    end)
-    state = put_in state.feed.entries, entries
-    state
+    end).()
+    put_in entry.itunes, itunes
   end
+
 
   defp parse_owner(nil), do: nil
   defp parse_owner(node) do

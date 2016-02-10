@@ -40,7 +40,8 @@ defmodule Feedme.Mixfile do
     [
       {:sweet_xml, "~> 0.5.0"},
       {:timex, "~> 1.0.0-rc3"},
-      {:mix_test_watch, "~> 0.2", only: :dev}
+      {:mix_test_watch, "~> 0.2", only: :dev},
+      {:exprof, "~> 0.2.0"}
     ]
   end
 end
