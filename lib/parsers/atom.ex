@@ -21,7 +21,7 @@ defmodule PodcastFeeds.Parsers.Atom do
     case xpath(xml, ~x"/feed") do
       nil -> false
       _ -> true
-    end      
+    end
   end
 
   def parse_feed(xml) do

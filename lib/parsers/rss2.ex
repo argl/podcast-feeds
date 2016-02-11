@@ -20,10 +20,10 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   alias PodcastFeeds.Parsers.ParserState
 
   def valid?(xml) do
-    case xpath(xml, ~x"/rss") do
+    case xpath(xml, ~x"/rss/channel") do
       nil -> false
       _ -> true
-    end      
+    end
   end
 
   def parse_feed(xml) do

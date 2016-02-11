@@ -1,5 +1,5 @@
 defmodule PodcastFeeds.Test.Parsers.RSS2 do
-  use ExUnit.Case, async: false
+  use ExUnit.Case, async: true
 
   alias PodcastFeeds.Parsers.RSS2
 

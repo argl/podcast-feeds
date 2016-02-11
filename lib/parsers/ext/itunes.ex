@@ -199,7 +199,6 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     put_in entry.itunes, itunes
   end
 
-
   defp parse_owner(nil), do: nil
   defp parse_owner(node) do
     %Owner{
@@ -208,18 +207,15 @@ defmodule PodcastFeeds.Parsers.Ext.Itunes do
     }
   end
 
-  defp parse_explicit_value(val) do
-    case val do
-      nil -> nil
-      val when is_binary(val) ->
-        case String.downcase(val) do
-          "yes" -> true
-          "clean" -> false
-          _ -> nil
-        end
+  defp parse_explicit_value(nil), do: nil
+  defp parse_explicit_value(val) when is_binary(val) do
+    case String.downcase(val) do
+      "yes" -> true
+      "clean" -> false
       _ -> nil
     end
   end
+  defp parse_explicit_value(_), do: nil
 
   defp parse_categories(nil), do: nil
   defp parse_categories(node) do

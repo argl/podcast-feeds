@@ -96,25 +96,19 @@ defmodule PodcastFeeds do
   defp parse_document(other), do: other
 
   defp detect_parser(document) do
-    cond do
-      PodcastFeeds.Parsers.RSS2.valid?(document) -> {:ok, PodcastFeeds.Parsers.RSS2, document}
-      PodcastFeeds.Parsers.Atom.valid?(document) -> {:ok, PodcastFeeds.Parsers.Atom, document}
-      true -> {:error, "Unknown feed format"}
+    try do
+      document = SweetXml.parse(document)
+      cond do
+        PodcastFeeds.Parsers.RSS2.valid?(document) -> {:ok, PodcastFeeds.Parsers.RSS2, document}
+        PodcastFeeds.Parsers.Atom.valid?(document) -> {:ok, PodcastFeeds.Parsers.Atom, document}
+        true -> {:error, "Unknown feed format"}
+      end
+    catch
+      :exit, {:fatal, {parse_error, _, {:line, line_number}, {:col, col_number}}} -> 
+        {:error, "#{parse_error} at line #{line_number} col #{col_number}"}
+      :exit, reason -> 
+        {:error, reason}
     end
   end
-
-  # def parse_file(filename) do
-  #   File.stream!(filename, [], @chunk_size)
-  #   |> parse_stream
-  # end
-
-  # def parse_stream(stream) do
-  #   stream
-  #   |> PodcastFeeds.Parsers.RSS2.parse_feed
-  #   |> (fn(state)-> 
-  #     {:ok, state.feed} 
-  #   end).()
-  # end
-
 
 end
