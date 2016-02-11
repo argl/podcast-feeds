@@ -113,6 +113,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     state
   end
 
+  defp parse_enclosure_element(nil), do: nil
   defp parse_enclosure_element(node) do
     %Enclosure{
       url: node |> xpath(~x"@url"s) |> Helpers.strip_nil,

@@ -31,6 +31,12 @@ defmodule PodcastFeeds.Test do
     assert {:ok, %PodcastFeeds.Feed{} = _feed} = res
   end
 
+  test "parse aem feed" do
+    document = File.read!("test/fixtures/rss2/aem.xml")
+    res = PodcastFeeds.parse(document)
+    assert {:ok, %PodcastFeeds.Feed{} = _feed} = res
+  end
+
   test "parse rlm feed" do
     document = File.read!("test/fixtures/rss2/rlm.xml")
     res = PodcastFeeds.parse(document)
