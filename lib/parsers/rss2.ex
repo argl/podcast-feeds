@@ -122,7 +122,6 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   end
 
   defp parse_cloud_element(nil), do: nil
-
   defp parse_cloud_element(node) do
     %Cloud{
       domain: node |> xpath(~x"@domain"s) |> Helpers.strip_nil,
@@ -133,6 +132,7 @@ defmodule PodcastFeeds.Parsers.RSS2 do
     }
   end
 
+  defp parse_image_element(nil), do: nil
   defp parse_image_element(node) do
     %Image{
       title: node |> xpath(~x"./title/text()"os) |> Helpers.strip_nil,
