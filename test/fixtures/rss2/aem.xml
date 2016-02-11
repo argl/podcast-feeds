@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Adobe Experience Manager Podcast</title>
+	<atom:link href="http://aempodcast.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://aempodcast.com</link>
+	<description>CQ5 Help &#124; AEM Implementation &#124; An Axis41 Blog</description>
+	<lastBuildDate>Wed, 10 Feb 2016 17:11:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=4.1</generator>
+	<item>
+		<title>JCR Compare: A Quick Review</title>
+		<link>http://aempodcast.com/2016/acs-aem-commons/jcr-compare-quick-review/</link>
+		<comments>http://aempodcast.com/2016/acs-aem-commons/jcr-compare-quick-review/#comments</comments>
+		<pubDate>Tue, 09 Feb 2016 14:55:30 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Nash]]></dc:creator>
+				<category><![CDATA[ACS AEM Commons]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM]]></category>
+		<category><![CDATA[AEM 6.0]]></category>
+		<category><![CDATA[AEM 6.1]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[JCR Compare]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1812</guid>
+		<description><![CDATA[We did a podcast about the JCR Compare in which we talked about the usefulness of this feature. Here is a written breakdown of that podcast for this specific ACS AEM Commons feature. What is it? From the ACS Adobe Experience Manager Commons GitHub page: “Quickly compares the contents of Adobe Experience Manager instances. JCR &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/05287_JCR-Compare_A-Quick-Review.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/05287_JCR-Compare_A-Quick-Review.jpg" alt="05287_JCR-Compare_A-Quick-Review" width="612" height="374" class="alignnone size-full wp-image-1777" /></a><br />
+We did a <a href="http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-deep-dive-part-4/" title="podcast about jcr compare" target="_blank">podcast about the JCR Compare</a> in which we talked about the usefulness of this feature. Here is a written breakdown of that podcast for this specific ACS AEM Commons feature. </p>
+<p><strong>What is it?</strong><br />
+From the <a href="http://adobe-consulting-services.github.io/acs-aem-commons/features/jcr-checksum-compare.html" title="ACS AEM Commons jcr compare" target="_blank">ACS Adobe Experience Manager Commons GitHub page</a>: “Quickly compares the contents of Adobe Experience Manager instances. JCR Compare computes checksums for specified node types (via an aggregated checksum of that node’s descendants) across multiple AEM instances and then compares the checksum results to identify what node (and node sub-systems) are the same or different.</p>
+<p>This is a useful tool for checking for content inconsistencies across Adobe Experience Manager instances that would be otherwise difficult to find.”</p>
+<p><strong>How it works</strong><br />
+You tell an AEM instance where it should find the instance to compare itself to, and define a number of useful comparisons to run, including based on a recursive path crawl, a JCR query, a list of known nodeTypes to include or exclude, and so on. It uses smart aggregate hashing to do the comparison and gives you the ability to drill into results to identify exactly what has changed.</p>
+<p><strong>Audience Impact (authors, devs, admins)</strong></p>
+<ul>
+<li>Devs – Allows them to see if they missed something in the migration or development phase</li>
+<li>Authors – Allows them to verify what was changed between two environments</li>
+<li>Admins – Allows them to quickly smoke test auto-scaled instances</li>
+</ul>
+<p><strong>Example application</strong><br />
+Backup verification for a SysAdmin via curl.  Or if you need to have a content author verify/validate two different Author or Publish instances to see if content has gotten out of sync between them (this assumes a clustered environment).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/acs-aem-commons/jcr-compare-quick-review/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>AEM 6.1 Service Pack 1 Released</title>
+		<link>http://aempodcast.com/2016/infrastucture/aem-6-1-service-pack-1-released/</link>
+		<comments>http://aempodcast.com/2016/infrastucture/aem-6-1-service-pack-1-released/#comments</comments>
+		<pubDate>Fri, 05 Feb 2016 16:05:12 +0000</pubDate>
+		<dc:creator><![CDATA[Joey Smith]]></dc:creator>
+				<category><![CDATA[Infrastucture]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM]]></category>
+		<category><![CDATA[AEM 6.1]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[SP1]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1815</guid>
+		<description><![CDATA[We&#8217;ve been waiting anxiously for Service Pack 1 for AEM 6.1 environments, and are happy to announce that it has been released. This hotfix includes many important updates, including Jackrabbit Oak version 1.2.7 (which brings both stability and performance improvements); a host of Touch-UI updates; and a number of other critical updates. Customers of Axis41&#8217;s &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/02/AEM-6-Service-Pack-1-Released.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/02/AEM-6-Service-Pack-1-Released.jpg" alt="AEM-6-Service-Pack-1-Released" width="612" height="374" class="alignnone size-full wp-image-1817" /></a><br />
+We&#8217;ve been waiting anxiously for Service Pack 1 for AEM 6.1 environments, and are happy to announce that it has been <a href="https://docs.adobe.com/docs/en/aem/6-1/release-notes-sp1.html" title="aem 6.1 sp1 release notes" target="_blank">released</a>. This hotfix includes many important updates, including Jackrabbit Oak version 1.2.7 (which brings both stability and performance improvements); a host of Touch-UI updates; and a number of other critical updates.</p>
+<p>Customers of <a href="http://www.axis41.com/expertise/deploy/cms-integration/aem-management/" title="Axis41 aem managed services" target="_blank">Axis41&#8217;s AEM Managed Services offering</a> are already receiving this update from their Systems Engineers. We recommend you deploy this hotfix in your pre-production environments and perform a full QA cycle before deploying it to your production environments.</p>
+<p>If you have questions about the service pack, or would like help getting it deployed in your own environments, please reach out to us via <a href="mailto: systems@axis41.com">systems@axis41.com</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/infrastucture/aem-6-1-service-pack-1-released/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>System Notifications: A Quick Review</title>
+		<link>http://aempodcast.com/2016/acs-aem-commons/system-notifications-quick-review/</link>
+		<comments>http://aempodcast.com/2016/acs-aem-commons/system-notifications-quick-review/#comments</comments>
+		<pubDate>Tue, 02 Feb 2016 15:39:40 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Nash]]></dc:creator>
+				<category><![CDATA[ACS AEM Commons]]></category>
+		<category><![CDATA[Adobe CQ]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM 6.0]]></category>
+		<category><![CDATA[AEM 6.1]]></category>
+		<category><![CDATA[Classic UI]]></category>
+		<category><![CDATA[System Notifications]]></category>
+		<category><![CDATA[Touch UI]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1800</guid>
+		<description><![CDATA[We did a podcast about the System Notifications in which we talked about the usefulness of this feature. Here is a written breakdown of that podcast for this specific ACS Adobe Experience Manager Commons feature. What is it? From the ACS Adobe Experience Manager Commons GitHub page: “ACS AEM Commons System Notifications provide a means &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/05287_System_Notifications_A_Quick_Review.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/05287_System_Notifications_A_Quick_Review.jpg" alt="05287_System_Notifications_A_Quick_Review" width="612" height="374" class="alignnone size-full wp-image-1772" /></a><br />
+We did a <a href="http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-deep-dive-part-4/" title="acs aem commons podcast 4" target="_blank">podcast about the System Notifications</a> in which we talked about the usefulness of this feature. Here is a written breakdown of that podcast for this specific ACS Adobe Experience Manager Commons feature. </p>
+<p><strong>What is it?</strong><br />
+From the <a href="http://adobe-consulting-services.github.io/acs-aem-commons/features/2015/10/20/system-notifications.html" title="acs aem commons github page" target="_blank">ACS Adobe Experience Manager Commons GitHub page</a>: “ACS AEM Commons System Notifications provide a means to deliver on-platform notifications to Authors using the system.  This is a great way to communicate when system activities will occur, are occurring, and have ended.”  This is one of the few ACS AEM Commons features that are set up to work in both Classic and Touch UI.  </p>
+<p><strong>How it works</strong><br />
+It allows you to author a page using a scaffolding-like UI to populate and schedule messages that will show to anyone logged into an author instance. You have a few simple controls, such as basic styling, &#8220;On&#8221; and &#8220;Off&#8221; times, a title and body, and the ability to disable a notification so it can be reused in the future without annoying the authors in the interim.  Other customizations can be done, but you will have to code them in yourself (such as color/branding changes, size, etc.).  You can make notifications “not dismissable” so that the message stays up. We have only seen System Notifications implemented for all users.  You are not able to customize it to a specific user group. </p>
+<p>Since we posted our podcast about this, we were lucky to have a brief email exchange with <a href="https://github.com/davidjgonzalez" title="David Gonzalez" target="_blank">David Gonzalez, Solution Architect at Adobe and co-project lead of ACS AEM Commons and ACS AEM Tools</a>, giving us a bit more information about styling and the nature of the dismissable.  Here are his comments:<br />
+“It’s not that straightforward to style the Adobe Experience Manager Notifications; the ‘easiest’ way would be to overlay the CSS classes and change the ‘color’ styles. IIRC the style options are hardcoded into the JSP and not pulled off some configurable list. </p>
+<p>* If Dismissable is UNCHECKED, then on EVERY page load the notification will display. You can click ‘Dismiss’ on it to hide it on THAT page, but it keeps showing up. I found that making it totally not-dismissible made it hard to navigate the UI (ex. to turn off the notification).</p>
+<p>* If Dismissable is CHECKED, then the dismiss state for THAT notification is stored in a cookie. The key for checking if a notification is dismissed is the path to the notification + the lastModified time of that node—so if anything is changed on that notification, it will show up again.”</p>
+<p><strong>Audience impact (authors, admins)</strong></p>
+<ul>
+<li>admins – A great way for admins to set expectations around, and communicate with, the authors about a variety of things.</li>
+<li>authors – It notifies them!</li>
+</ul>
+<p><strong>Example application</strong><br />
+If you have a content freeze for a migration or other system event, you can warn authors before they get involved in a new content project.  Or, you can inform users of an issue that is affecting the site or of a software upgrade, etc.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/acs-aem-commons/system-notifications-quick-review/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Simple Touch UI Dialog Extensions for AEM</title>
+		<link>http://aempodcast.com/2016/javascript/simple-touch-ui-dialog-extensions-aem/</link>
+		<comments>http://aempodcast.com/2016/javascript/simple-touch-ui-dialog-extensions-aem/#comments</comments>
+		<pubDate>Tue, 26 Jan 2016 15:10:32 +0000</pubDate>
+		<dc:creator><![CDATA[RJ Spiker]]></dc:creator>
+				<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM]]></category>
+		<category><![CDATA[AEM 6.0]]></category>
+		<category><![CDATA[AEM 6.1]]></category>
+		<category><![CDATA[Client Library]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[Touch UI]]></category>
+		<category><![CDATA[User Interface]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1794</guid>
+		<description><![CDATA[While there are a number of tools at a developer’s disposal to create clean, engaging dialogs within AEM, there are times when you may need to extend dialog functionalities in your Adobe Experience Manager implementation to suit your clients’ needs. Oftentimes, this can be achieved without too much effort. As an exercise, we’ll use AEM &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/05287_Simple-Touch-UI-Dialog-Extensions-for-AEM.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/05287_Simple-Touch-UI-Dialog-Extensions-for-AEM.jpg" alt="05287_Simple-Touch-UI-Dialog-Extensions-for-AEM" width="612" height="374" class="alignnone size-full wp-image-1776" /></a><br />
+While there are a number of tools at a developer’s disposal to create clean, engaging dialogs within AEM, there are times when you may need to extend dialog functionalities in your Adobe Experience Manager implementation to suit your clients’ needs.  Oftentimes, this can be achieved without too much effort.</p>
+<p>As an exercise, we’ll use AEM 6.0 to create a Touch UI dialog.  This dialog will contain a checkbox that toggles the visibility of a container that holds additional authorable fields.</p>
+<p><strong>Setting up the Dialog</strong><br />
+There are two nodes that will be required to make our toggleable container in our Touch UI dialog: the toggle and the toggleable container itself.  Each has its own important attributes.  Let’s take a look at the cq:dialog.</p>
+<p>We’ll start with the checkbox toggle:</p>
+<p></p><pre class="crayon-plain-tag"><toggle
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+    text="Show/Hide Toggle"
+    id="toggle"
+    value="true"
+    name="./toggle"
+    class="showhide"
+    showhide-target=".showhide-target"/></pre><p></p>
+<p>There are a few key attributes that we want to look at here:  </p>
+<ul>
+<li>The “class” attribute will add that class to the checkbox when the dialog is rendered.  This will allow us to target that checkbox later using JavaScript, allowing us to listen for any events on the checkbox.  We’re using “showhide” as our class name.  </li>
+<li>The “value” attribute determines what the value of the checkbox will be when the checkbox is toggled.</li>
+<li>The “showhide-target” will create a “data-showhide-target” attribute in our checkbox’s markup when the dialog is rendered.  Our JavaScript will use this value to determine what it is we are trying to show or hide.  We’ll target elements with the class name of “.showhide-target” for this example.</li>
+</ul>
+<p>Let’s take a look at our toggleable container:</p>
+<p></p><pre class="crayon-plain-tag"><someContainer
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container"
+    class="showhide-target"
+    showhide-target-value="true">
+    <items jcr:primaryType="nt:unstructured">
+        <someInput
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                fieldDescription="You can only see me if you toggle the checkbox."
+                fieldLabel="Some Input"
+                name="./someInput"/>
+        <someOtherInput
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                fieldDescription="You can only see me if you toggle the checkbox."
+                fieldLabel="Some Other Input"
+                name="./someOtherInput"/>
+    </items>
+</someContainer></pre><p></p>
+<p>Above, we have a container with two textfields inside.  We want to be able to show or hide this container dependent on whether or not our checkbox is checked.  This container has two important attributes pertaining to our experiment:</p>
+<ul>
+<li>The container’s “class” attribute will add the “showhide-target” class.  Notice that this is the same class name that we are using in the “showhide-target” attribute of the checkbox.  The toggle will target this container because of this class.</li>
+<li>The “showhide-target-value” will create a “data-showhide-target” in our container’s markup when the dialog is rendered.  This attribute will be set to the same value as the “value” attribute used in the checkbox.  Our logic will check to see that our target container’s value of “true” matches that of the checkbox.  If the checkbox is checked, they will match and we’ll show the container.  If not, we’ll hide it.</li>
+</ul>
+<p><strong>Extending the Component with JavaScript</strong><br />
+Our JavaScript will need to be added to a “cq:ClientLibraryFolder” that belongs to the “cq.authoring.dialog” category and depends on the “granite.jquery” client library.  Let’s break down some of its functionality.</p>
+<p>First, we’ll look at our event listeners.</p>
+<p></p><pre class="crayon-plain-tag">$(document).on("foundation-contentloaded", function (e) {
+  $(".showhide").each(function () {
+    showHide($(this));
+  });
+});
+
+$(document).on("change", ".showhide", function (e) {
+  showHide($(this));
+});</pre><p></p>
+<p>We’ve set up two listeners here.  Our first will listen for the creation of our dialog (the “foundation-contentloaded” event).  It will check for any toggle we may have set up and call the showHide function, passing the toggle object as a parameter. (Note: This allows us to see if a toggle is already checked when it is rendered.  If it is, we’ll go ahead and show our toggleable container from the get-go.)</p>
+<p>The second listener will look for any changes to the toggle.  If a change event is triggered, we’ll again call the showHide function, passing the toggle object as a parameter.</p>
+<p>Notice that we are looking for the “showhide” class in both listeners, which is the same class we gave to the checkbox toggle.</p>
+<p>The showHide function is what is going to do the majority of the work:</p>
+<p></p><pre class="crayon-plain-tag">function showHide(el) {
+  var target = el.data("showhideTarget"),
+    value = el.prop("checked") ? el.val() : "";
+
+  // hide all targets by default
+  $(target).not(".hide").addClass("hide");
+
+  // show any targets with a matching target value
+  $(target).filter("[data-showhide-target-value=\"" + value + "\"]").removeClass("hide");
+}</pre><p></p>
+<p>This function will take the value of the checkbox (el) and compare it to the “data-showhide-target-value” of the toggleable container (target).  If the values match, we’ll remove any “hide” class associated with the toggleable container.  Otherwise, we’ll add that “hide” class to the container, which will hide it.</p>
+<p>Here is a look at the JavaScript in its entirety:</p>
+<p></p><pre class="crayon-plain-tag">(function (document, $) {
+  "use strict";
+
+  // listen for dialog injection
+  $(document).on("foundation-contentloaded", function (e) {
+    $(".showhide").each(function () {
+      showHide($(this));
+    });
+  });
+
+  // listen for toggle change
+  $(document).on("change", ".showhide", function (e) {
+    showHide($(this));
+  });
+
+  // show/hide our target depending on toggle state
+  function showHide(el) {
+    var target = el.data("showhideTarget"),
+      value = el.prop("checked") ? el.val() : "";
+
+    // hide all targets by default
+    $(target).not(".hide").addClass("hide");
+
+    // show any targets with a matching target value
+    $(target).filter("[data-showhide-target-value=\"" + value + "\"]").removeClass("hide");
+  }
+
+})(document, Granite.$);</pre><p></p>
+<p>Through this simple exercise, you can see how easy it can be to build out more complex dialogs, allowing for a much improved authoring experience for your clients. We have talked about how we at Axis41 have extended some simple, out-of-the-box Adobe Experience Manager components in a <a href="http://aempodcast.com/2015/aem-resources/example-box-components-extended-aem/" title="blog post about extending components" target="_blank">prior blog post by Peter Nash</a>.  If you have other ideas about how to extend components or want to take a crack at sharing your method for extending more complex dialogs, then drop a line to <a href="mailto: info@aempodcast.com">info@aempodcast.com</a>.  </p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/javascript/simple-touch-ui-dialog-extensions-aem/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Adobe Critical Security Hotfix for AEM 5.5.0-6.1</title>
+		<link>http://aempodcast.com/2016/infrastucture/adobe-critical-security-hotfix-aem-5-5-0-6-1/</link>
+		<comments>http://aempodcast.com/2016/infrastucture/adobe-critical-security-hotfix-aem-5-5-0-6-1/#comments</comments>
+		<pubDate>Thu, 21 Jan 2016 00:55:15 +0000</pubDate>
+		<dc:creator><![CDATA[Joey Smith]]></dc:creator>
+				<category><![CDATA[Infrastucture]]></category>
+		<category><![CDATA[Adobe CQ]]></category>
+		<category><![CDATA[Adobe CQ 5.5]]></category>
+		<category><![CDATA[Adobe CQ 5.6]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM 5.6]]></category>
+		<category><![CDATA[AEM 6.0]]></category>
+		<category><![CDATA[AEM 6.1]]></category>
+		<category><![CDATA[CQ5]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[Hotfix]]></category>
+		<category><![CDATA[Security]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1791</guid>
+		<description><![CDATA[Adobe today released a Critical Hotfix for AEM to patch a flaw (CVE-2015-7501) classified as CVSS 10.0 (highest criticality in the Common Vulnerability Scoring System). You can find information about the Hotfix by logging into your Adobe PackageShare, or by visiting https://www.adobeaemcloud.com/content/marketplace/marketplaceProxy.html?packagePath=/content/companies/public/adobe/packages/cq/hotfix/cq-ALL-hotfix-NPR-8364. We join with Adobe in recommending that this Hotfix be applied as soon &#8230;]]></description>
+				<content:encoded><![CDATA[<p>Adobe today released a Critical Hotfix for AEM to patch a flaw (CVE-2015-7501) classified as CVSS 10.0 (highest criticality in the Common Vulnerability Scoring System). You can find information about the Hotfix by logging into your Adobe PackageShare, or by visiting <a title="critical security hotfix" href="https://www.adobeaemcloud.com/content/marketplace/marketplaceProxy.html?packagePath=/content/companies/public/adobe/packages/cq/hotfix/cq-ALL-hotfix-NPR-8364" target="_blank">https://www.adobeaemcloud.com/content/marketplace/marketplaceProxy.html?packagePath=/content/companies/public/adobe/packages/cq/hotfix/cq-ALL-hotfix-NPR-8364</a>.</p>
+<p>We join with Adobe in recommending that this Hotfix be applied <span style="text-decoration: underline;"><strong>as soon as possible</strong></span> to all AEM servers 5.5.0-6.1.</p>
+<p>If you need any background on the issue, or help figuring out how to apply this to your environments, please don&#8217;t hesitate to contact us: <a title="Axis41 Twitter" href="https://twitter.com/axis41" target="_blank">@axis41</a> or <a href="mailto: info@aempodcast.com">info@aempodcast.com</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/infrastucture/adobe-critical-security-hotfix-aem-5-5-0-6-1/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Ins and Outs of Code Package Deployments in AEM</title>
+		<link>http://aempodcast.com/2016/aem-resources/ins-outs-code-package-deployments-aem/</link>
+		<comments>http://aempodcast.com/2016/aem-resources/ins-outs-code-package-deployments-aem/#comments</comments>
+		<pubDate>Tue, 19 Jan 2016 14:09:47 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Eersels]]></dc:creator>
+				<category><![CDATA[AEM Resources]]></category>
+		<category><![CDATA[Adobe CQ]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[Package Deployments]]></category>
+		<category><![CDATA[Package Manager]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1782</guid>
+		<description><![CDATA[This page documents what to include in and what to leave out of Adobe Experience Manager code packages based on past experience. The contents of a code package can be configured in the file src/main/content/META-INF/vault/filter.xml. This file tells the AEM Package Manager which repository paths are included in the package and what to do with &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/05287_The-Ins-and-Outs-of-Code-Package-Deployments-in-AEM.jpg"><img class="alignnone size-large wp-image-1773" src="http://aempodcast.com/wp-content/uploads/2016/01/05287_The-Ins-and-Outs-of-Code-Package-Deployments-in-AEM-612x374.jpg" alt="05287_The-Ins-and-Outs-of-Code-Package-Deployments-in-AEM" width="612" height="374" /></a><br />
+This page documents what to include in and what to leave out of Adobe Experience Manager code packages based on past experience. The contents of a code package can be configured in the file src/main/content/META-INF/vault/filter.xml. This file tells the AEM Package Manager which repository paths are included in the package and what to do with them at deployment time.</p>
+<p>There are three supported import modes for the Package Manager:</p>
+<ol>
+<li>replace: Normal behavior. Existing content is replaced completely by the imported content, i.e., is overridden or deleted accordingly.</li>
+<li>merge: Existing content is not modified, i.e., only new content is added and none is deleted or modified.</li>
+<li>update: Existing content is only updated but never deleted.</li>
+</ol>
+<p><strong>Possible things to include</strong></p><pre class="crayon-plain-tag"><filter root="/apps/cq/ui/widgets/source/widgets/wcm/EditBase.js"/></pre><p>In case you wish to disable the “Target” context menu item on all components because clicking on it “breaks” the content component involved, then you are required to overlay this file and add line “config.disableTargeting = true;” to function addTargetingActions: function(items, ctrlDef, isTargeted, config).</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/apps/sling"/></pre><p>In case you want to implement a custom 404 page, as described in <a href="https://docs.adobe.com/docs/en/cq/5-6-1/developing/customizing_error_handler_pages.html" title="custom errohandler" target="_blank">Customizing errorhandler pages</a>, it is normally located at “/apps/sling/servlet/errorhandler/404.jsp”.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/apps/<projectname>"/></pre><p>Part that contains the custom code you are running. This should always be in your code package.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/acs-commons/dispatcher-flush" /></pre><p>By including this node in your code package, you can deploy Dispatcher Flush pages (previously created on a development environment) to all other Adobe Experience Manager (DTAP) environments.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/clientcontext/<sitename>/contextstores"/></pre><p>This node contains the active contextstores available to your site.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/designs/<sitename>/<subfolder>"/></pre><p>Here you list the folders that are used by your site’s front-end design.</p>
+<p>Possible subfolders to include could be:</p>
+<ul>
+<li>clientlibs: client libraries used by your site</li>
+<li>frontend: this folder should always be included in your code package. It should contain an info.html file has a link to the front-end design used on your site. The front-end design itself is hosted on a dedicated front-end server that contains the static html.</li>
+<li>icons</li>
+<li>images</li>
+</ul>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/notification/<projectname>"/></pre><p>Here you can store any mail templates used by custom workflows.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/workflow/models/<projectname>"/></pre><p>Node containing custom workflow to allow for storing the content entered by the customer and also send it as an email to a specified email address.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/workflow/models/dam/update_asset"/></pre><p>Customization of DAM Update Asset workflow (to generate a custom rendition).</p>
+<p><strong>Things to exclude</strong></p><pre class="crayon-plain-tag"><filter root="/etc/designs/<projectname>"/></pre><p>Only add this to your code package in the initial (go-live) release!<br />
+In the repository you will find a jcr:content node right under /etc/designs/<sitename>, which contains content information like the URL to the logo image, settings of which components are allowed in which paragraphs on which templates, which (custom) clientcontext to use, etc&#8230; Should you include this repository path in your code package, this means that everything under this level will be overwritten with the content from your package (info not in the package is deleted on the server!).</p>
+<p>Of course this is the desired behavior in case you are deploying design changes to the AEM server, but you will lose all the above mentioned information in the process. And as this is all content that can be configured by content authors; you should not store it in source code management and deploy with your package as this content can change over time, even between code releases.</p>
+<p>So this is why you should place all front-end design related files in subfolders, allowing you to include these in the code package and avoid deploying to the root level of your design on the Adobe Experience Manager server. (You can&#8217;t fix this by adding import mode “merge” to the filter pointing to the root path of your design, as this would mean that only new files are added and existing design files are never deleted NOR MODIFIED.)</p>
+<p>However, you do need to make sure the root of the design gets deployed at least once—otherwise the jcr:content node at the root of the /etc/designs/
+<projectname> folder might not be created, and it is under there that all design settings are stored.</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/tags"/></pre><p>This repository node contains all the tags that are created on the AEM server. As these can be created by content authors and used on pages, assets, etc.,you don&#8217;t want to have this information in your code package. This tends to change over time between releases, and if you deploy this, all tags not mentioned in the package are deleted!</p>
+<p></p><pre class="crayon-plain-tag"><filter root="/etc/clientcontext/osudiosite/content"/></pre><p>The clientcontext can also be configured by the content author using clientcontext content components. When including this in the code package, you again risk resetting this content on the AEM server.</p>
+<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/ivo_eersels2.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/ivo_eersels2-150x150.jpg" alt="ivo_eersels2" width="150" height="150" class="alignnone size-thumbnail wp-image-1786" style="float:right;" /></a><strong>Author bio</strong><br />
+Ivo Eersels is an industrial engineer and has been a software engineer on the Intershop Suite 6 E-commerce platform at <a title="Osudio" href="https://www.osudio.com/" target="_blank">Osudio</a>, one of Europe’s largest e-business specialists, since 2007. He has been working with AEM since 2013. Ivo plays a large role in setting up projects, DTAP servers, deployment strategies, guidelines, and development.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/aem-resources/ins-outs-code-package-deployments-aem/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Using Client Libraries and Avoiding jQuery Headaches</title>
+		<link>http://aempodcast.com/2016/client-library/using-client-libraries-avoiding-jquery-headaches/</link>
+		<comments>http://aempodcast.com/2016/client-library/using-client-libraries-avoiding-jquery-headaches/#comments</comments>
+		<pubDate>Wed, 06 Jan 2016 23:41:26 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Eersels]]></dc:creator>
+				<category><![CDATA[Client Library]]></category>
+		<category><![CDATA[Adobe CQ]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM]]></category>
+		<category><![CDATA[Clientlibs]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[jQuery]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1761</guid>
+		<description><![CDATA[AEM provides a feature called client libraries to allow for managing CSS and JavaScript in your site. It allows you to bundle your files into one large file so you have fewer requests on your pages. It allows you to minify them to make the download less expensive and faster. It allows you to “categorize” &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/05287_Using-Client-Libraries-and-Avoiding-jQuery-Headaches-in-AEM.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/05287_Using-Client-Libraries-and-Avoiding-jQuery-Headaches-in-AEM-612x374.jpg" alt="05287_Using Client Libraries and Avoiding jQuery Headaches in AEM" width="612" height="374" class="alignnone size-large wp-image-1774" /></a><br />
+AEM provides a feature called client libraries to allow for managing CSS and JavaScript in your site.</p>
+<ul>
+<li>It allows you to bundle your files into one large file so you have fewer requests on your pages.</li>
+<li>It allows you to minify them to make the download less expensive and faster.</li>
+<li>It allows you to “categorize” them so you can define dependencies and control the order in which they are loaded (this is mainly important for JavaScript).</li>
+<li>It allows you to store the JavaScript that is component specific in the repository location of the components (/apps/<em>projectname</em>/components/<em>componentname</em>/clientlibs). You can then load them by referring to their category from the “dependencies” or “embed” property of the clientlibs in your front-end design under /etc/designs/<em>projectname</em>/clientlibs.</li>
+</ul>
+<p><strong>App-specific client library folders</strong><br />
+It is a best practice to keep all application-related files in their application folder below /apps. It is also a best practice to deny access for website visitors to the /apps folder. To satisfy both best practices, create a client library folder below the /etc folder that embeds the client library<br />
+that is below /apps.</p>
+<p>However there is one snag you need to be very wary of…</p>
+<p>The front-end designers tend to develop their code based on a recent version of jQuery and forget to mention this as a dependency (sometimes this jQuery library is not even provided together with the front-end design)! What this means is that all the custom JavaScript you received needs this version of jQuery to work properly.</p>
+<p>Most of Adobe Experience Manager&#8217;s edit functionalities are JavaScript-based and it also uses jQuery! However, AEM 6.0 comes bundled with jQuery version 1.11.0, which is kind of prehistoric.</p><pre class="crayon-plain-tag">/etc/clientlibs/foundation/jquery: categories: cq.jquery, dependencies:
+granite.jquery
+/etc/clientlibs/granite/jquery/granite: categories: granite.jquery, dependencies:
+jquery, granite.utils
+/etc/clientlibs/granite/jquery: categories: jquery
+/etc/clientlibs/granite/jquery/js.txt
+#base=source
+1.11.0/jquery-1.11.0.js
+browser/browser.js</pre><p></p>
+<p>You are loading the jQuery library from AEM itself when you include the following line in a (custom) page component:</p><pre class="crayon-plain-tag"><cq:include script="/libs/foundation/components/page/stats.jsp"/></pre><p></p>
+<p>as this standard JSP contains the following code:</p><pre class="crayon-plain-tag"><cq:includeClientLib categories="cq.jquery"/></pre><p></p>
+<p>But even if you don&#8217;t load it explicitly this way, if you load other client libraries from Adobe Experience Manager, it is quite possible that some of them depend on “cq.jquery” so the standard jQuery will get loaded after all.</p>
+<p>So the extra challenge is:</p>
+<ol>
+<li>Make sure the correct jQuery version required by the front-end design is added to the client libraries used by your AEM site (to avoid getting strange design issues that do not occur in the original front-end design)</li>
+<li>Make sure it is loaded before any custom code (component-specific JavaScript, front-end design JavaScript)</li>
+<li>Make sure it doesn&#8217;t conflict with the jQuery functionality of AEM itself</li>
+</ol>
+<p>Load correct jQuery version into the client libraries used by the design of your site</p>
+<ol>
+<li>Put all CSS and JavaScript of the front-end design into a “clientlibs” folder under “/etc/designs/<em>projectname</em>” and categorize it as “<em>sitename</em>.frontend” (add a multivalue String property “categories”)</li>
+<li>Add the correct front-end jQuery library to the client libraries used by the design of your site to make sure it gets loaded, but&#8230;</li>
+<li>Due to the dependencies of other (standard) client libraries, the old Adobe Experience Manager jQuery library version will still be loaded and this can lead to nasty conflicts.
+<ol>
+<li>Do not attempt to categorize your new jQuery client library as cq.jquery in the hopes of preventing the old one from loading. It will still do. The only way this might work is to use the identical folder structure and file names as the standard AEM jQuery library. But it wouldn&#8217;t make sense and be very confusing to rename a newer version to “1.11.0/jquery-1.11.0.js”. So just don&#8217;t.</li>
+<li>Also it may not be a good idea to try to overlay the AEM native jQuery library in the first place as it is part of the platform and we may break native functionality this way. Even if we succeeded to “upgrade” the native jQuery library, all sites running on the server would then be forced to use this version and each site design could depend on another jQuery version.</li>
+<li>Do not attempt to create a custom overlay of /libs/foundation/components/page/stats.jsp so it no longer includes cq.jquery, but apps.<em>yourproject</em>.jquery and provide a specific clientlibrary folder under /etc/designs/<em>projectname</em>/clientlibs. As other AEM native client libraries will still mention dependency “cq.jquery”, the AEM native jQuery will keep on getting loaded.</li>
+</ol>
+</li>
+<li>Accept that loading the native AEM jQuery 1.11.0 version is unavoidable.</li>
+</ol>
+<p>Load correct jQuery version before any custom JavaScript is loaded (component-specific or general front-end design stuff).</p>
+<ol>
+<li>Put the correct jQuery library inside its own “jquery” subfolder in your “clientlibs” folder and categorize it as “<em>sitename</em>.jquery” (add a multivalue String property “categories”).
+<ol>
+<li>Put the correct jQuery library inside its own “jquery” subfolder in your “clientlibs” folder and categorize it as “<em>sitename</em>.jquery” (add a multivalue String property “categories”) and make it depend on the AEM native client library “jquery” (add a multivalue String property “dependencies=’[jquery]&#8217;”) to make sure this one is loaded before the your custom front-end jQuery library.<br />
+<a href="http://aempodcast.com/wp-content/uploads/2016/01/jquery.jpg"><img class="alignnone size-large wp-image-1766" src="http://aempodcast.com/wp-content/uploads/2016/01/jquery-612x195.jpg" alt="jquery" width="540" /></a></li>
+</ol>
+</li>
+<li>Categorize all “clientlibs” folders on your custom components as “<em>projectname</em>.components” (add a multivalue String property “categories”). (You can optionally categorize them as “<em>projectname</em>.components.<em>componentname</em>” as well, should you need to load only clientlibs for a specific component somewhere.)</li>
+<li>Now the magic words&#8230; To the “clientlibs” folder of your site under “/etc/designs/<em>projectname</em>”.
+<ol>
+<li>Add a multivalue String property “dependencies=’[<em>sitename</em>.jquery]’” to make sure the jQuery library required by your front-end design is loaded before your own site design client libraries (and therefore before any custom JavaScript).</li>
+<li>Add a multivalue String property “embed=’[<em>sitename</em>.components,cq.foundation]’” to make sure the client libraries of your custom components are loaded after the jQuery library of your front-end design but can still be bundled together with your other site design client libraries into one big JavaScript file and minified.<br />
+<a href="http://aempodcast.com/wp-content/uploads/2016/01/clientlibs.jpg"><img class="alignnone size-large wp-image-1765" src="http://aempodcast.com/wp-content/uploads/2016/01/clientlibs-612x190.jpg" alt="clientlibs" width="540" /></a></li>
+</ol>
+</li>
+<li>This still leaves that fact that you are loading two different jQuery versions at the same time and both probably use $, which is a cause for conflicts.</li>
+</ol>
+<p>&#8211; Replaced all $ with $j in components related .js file which didn&#8217;t refer to AEM, CQ, Granite specific .js libraries.</p>
+<p>Load correct jQuery version into the client libraries used by the design of your site.</p>
+<ol>
+<li>Replace all $ in your custom JavaScript (component-specific clientlibs with JavaScript files, front-end design JavaScript files) with another reference like “$j” to avoid that your custom code uses the native AEM jQuery that is assigned to $ and $CQ.
+<ol>
+<li>Also communicate this to your front-end designer so he never ever uses $ in their front-end design for your Adobe Experience Manager project again.</li>
+</ol>
+</li>
+<li>Lift the conflict between your front-end jQuery library and the one native to AEM (<a title="jquery" href="https://api.jquery.com/jquery.noconflict/" target="_blank">https://api.jquery.com/jquery.noconflict/</a> -&gt; If for some reason two versions of jQuery are loaded (which is not recommended), calling $.noConflict( true ) from the second version will return the globally scoped jQuery variables to those of the first version.)
+<ol>
+<li>Add a new JavaScript file “jquery.noconflict.js” to the “source” folder inside the “jquery” clientlib folder (which you created in the first point of the previous topic) in your front-end design “clientlibs” Make sure it gets loaded by mentioning it in the accompanying “js.txt” file. Inside this new JavaScript you put the code.</li>
+</ol>
+</li>
+</ol>
+<p></p><pre class="crayon-plain-tag">var $j = jQuery.noConflict(true);</pre><p></p>
+<p>Add debug code to the body of your generic page component to be able to easily<br />
+check if the correct jQuery version is being used.  Add code that will:</p>
+<ol>
+<li>Print the version of the jQuery libraries assigned to references $ and $CQ (hopefully the native Adobe Experience Manager one)</li>
+<li>Then load the custom JavaScript from your front-end design client libraries, which
+<ol>
+<li>First loads the native AEM jQuery if it wasn&#8217;t already loaded (your front-end design depends on your custom design jQuery, which depends on the native AEM jQuery)</li>
+<li>Then loads your custom design jQuery and at the end executes the noConflict code, which assigns it to reference $j</li>
+<li>Then adds the custom JavaScript from your custom components</li>
+<li>And finally loads all remaining custom JavaScript from your front-end design</li>
+</ol>
+</li>
+<li>Then prints the version of the jQuery libraries assigned to references $, $CQ and $j. Here you should see that $ and $CQ are still assigned to the native AEM jQuery version and the $j to your custom design jQuery version.</li>
+</ol>
+<p></p><pre class="crayon-plain-tag"><%-- JQuery library loading debug code
+<div id="log">
+<h3>Before $.noConflict(true)</h3>
+</div>
+<script>
+var $log = $( "#log" );
+$log.append( "jQuery version linked to ($): " + $.fn.jquery + "<br>" );
+$log.append( "jQuery version linked to ($CQ): " + $CQ.fn.jquery + "<br>" );
+</script>
+--%>
+<cq:includeClientLib js="osudiosite.frontend"/>
+<%-- JQuery library loading debug code
+<script>
+var $log = $( "#log" );
+$log.append( "<h3>After $.noConflict(true)</h3>" );
+$log.append( "jQuery version linked to ($): " + $.fn.jquery + "<br>" );
+$log.append( "jQuery version linked to ($CQ): " + $CQ.fn.jquery + "<br>" );
+$log.append( "jQuery version linked to ($j): " + $j.fn.jquery + "<br>" );
+</script>
+--%></pre><p></p>
+<p>For further client libraries debugging tools, check out this other <a title="client libraries article" href="http://aempodcast.com/2014/client-library/debug-client-libs-adobe-experience-manager-formerly-adobe-cq/" target="_blank">AEM Podcast article</a> on this topic.</p>
+<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/ivo_eersels2.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/ivo_eersels2-150x150.jpg" alt="ivo_eersels2" width="150" height="150" class="alignnone size-thumbnail wp-image-1786" style="float:right;" /></a><strong>Author bio</strong><br />
+Ivo Eersels is an industrial engineer and has been a software engineer on the Intershop Suite 6 E-commerce platform at <a href="https://www.osudio.com" title="Osudio" target="_blank">Osudio</a>, one of Europe’s largest e-business specialists, since 2007. He has been working with AEM since 2013. Ivo plays a large role in setting up projects, DTAP servers, deployment strategies, guidelines, and development.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/client-library/using-client-libraries-avoiding-jquery-headaches/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Indexing Properties and Nodes for AEM 6.0 and 6.1</title>
+		<link>http://aempodcast.com/2016/aem-resources/indexing-properties-nodes-aem-6-0-6-1/</link>
+		<comments>http://aempodcast.com/2016/aem-resources/indexing-properties-nodes-aem-6-0-6-1/#comments</comments>
+		<pubDate>Tue, 05 Jan 2016 15:05:19 +0000</pubDate>
+		<dc:creator><![CDATA[Adam Twede]]></dc:creator>
+				<category><![CDATA[AEM Resources]]></category>
+		<category><![CDATA[Adobe CQ]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM 6.0]]></category>
+		<category><![CDATA[AEM 6.1]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[Indexing Nodes]]></category>
+		<category><![CDATA[Indexing Properties]]></category>
+		<category><![CDATA[Oak Indexing]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1754</guid>
+		<description><![CDATA[Due to the growth of Axis41&#8217;s AEM business, we have been spending a lot of time recently both training internal resources and customer development teams on Adobe Experience Manager. During trainings and in conversations with some of them it became clear to me that it would be good to share with the wider AEM developer &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2016/01/AEM-Podcast_Indexing-Properties-and-Nodes-for-AEM-6.jpg"><img src="http://aempodcast.com/wp-content/uploads/2016/01/AEM-Podcast_Indexing-Properties-and-Nodes-for-AEM-6-612x374.jpg" alt="AEM-Podcast_Indexing-Properties-and-Nodes-for-AEM-6" width="612" height="374" class="alignnone size-large wp-image-1757" /></a><br />
+Due to the growth of Axis41&#8217;s AEM business, we have been spending a lot of time recently both training internal resources and customer development teams on Adobe Experience Manager. During trainings and in conversations with some of them it became clear to me that it would be good to share with the wider AEM developer community. Even if you aren’t new to Adobe Experience Manager/CQ development this still might be useful or a good refresher, and if you are new then you should definitely know how to properly index properties and nodes. Consider this a new year public service announcement. <img src="http://aempodcast.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /></p>
+<p>To index a particular property, create a node directly under your oak:index of type oak:QueryIndexDefinition with the following properties:<br />
+name = propertyNames, type String[], value is the name of the property(ies) you want to index<br />
+name = type, type String, value = property<br />
+name = reindex, type Boolean, value = true</p>
+<p>To index entire nodes so that you don&#8217;t have to list all their property names (for example, if they are coming from an outside source and you don&#8217;t know them all ahead of time), you have to do different things depending on if you are on 6.0 or 6.1. The following steps concern indexing nodes (and their properties) in the DAM, but they should work for general cases:</p>
+<p>For 6.1:</p>
+<ol>
+<li>In CRXDE Lite, navigate to this path: /oak:index/damAssetLucene/aggregates/dam:Asset. You should see a list of nodes with names that start with “include” and then a number.</li>
+<li>To this list, add a new node of type nt:unstructured that follows the same naming convention and a new number one higher than the current highest (for example, if “include7” is the highest number with 7 then make a node with the name “include8”). The name probably doesn&#8217;t matter but we don&#8217;t tempt fate around here.</li>
+<li>Add a property to this node with the name “path” with a String value set to “”, for example: &#8220;jcr:content/metadata&#8221;.</li>
+<li>Click Save All.</li>
+<li>Navigate up the tree to /oak:index/damAssetLucene.</li>
+<li>Change the value of the “reindex” property on this node to “true”. This should perform a reindex on the repository.</li>
+</ol>
+<p>For 6.0:</p>
+<ol>
+<li>In CRXDE Lite, find the node /oak:index.</li>
+<li>Under the oak:index node, create a new node of type oak:QueryIndexDefinition with the name “damAssetLucene”.</li>
+<li>Set the following properties on this new node:
+<ol>
+<li>Name: async, type: String, Value: async</li>
+<li>Name: compatVersion, type: Long, Value: 1</li>
+<li>Name: evaluatePathRestrictions, type: Boolean, Value: true</li>
+<li>Name: reindex, type: Boolean, Value: false (you don&#8217;t want to trigger a reindex yet!)</li>
+<li>Name: type, type: String, Value: lucene</li>
+</ol>
+</li>
+<li>Click Save All.</li>
+<li>Under the damAssetLucene node you just created, create a new node of type nt:unstructured with the name “aggregates”.</li>
+<li>Click Save All.</li>
+<li>Under the aggregates node you just created, create a new node of type nt:unstructured with the name “dam:Asset”.</li>
+<li>Click Save All.</li>
+<li>Under the dam:Asset node you just created, create a new node of type nt:unstructured with the name “include0”.</li>
+<li>Add a property to the include0 node with the name “path” with a String value set to “”, for example: &#8220;jcr:content/metadata&#8221;.</li>
+<li>Click Save All.</li>
+<li>Navigate back up the tree to the damAssetLucene node you created earlier.</li>
+<li>Change the value of the “reindex” property on this node to “true”. This should perform a reindex on the repository.</li>
+</ol>
+<p>The key thing to note here is that you are replicating some of the same node structure on 6.0 that already exists by default on 6.1, but the compatVersion property is set to 2 in 6.1 and must be set to 1 on 6.0.</p>
+<p>With the transition to Jackrabbit Oak, a lot of people are still working out what the best practice is for indexing Oak nodes; this may not be the definitive way to do indexing for properties and nodes in AEM, but it is one way we have found that seems to work well. If you know of a better way then please let us know by tweeting us at <a title="Axis41 Twitter" href="https://twitter.com/axis41" target="_blank">@axis41</a> or emailing <a href="mailto: info@aempodcast.com">info@aempodcast.com</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2016/aem-resources/indexing-properties-nodes-aem-6-0-6-1/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Happy Holidays from the AEM Podcast Team!</title>
+		<link>http://aempodcast.com/2015/aem-resources/happy-holidays-aem-podcast-team/</link>
+		<comments>http://aempodcast.com/2015/aem-resources/happy-holidays-aem-podcast-team/#comments</comments>
+		<pubDate>Tue, 29 Dec 2015 16:47:10 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Nash]]></dc:creator>
+				<category><![CDATA[AEM Resources]]></category>
+		<category><![CDATA[AEMpodcast]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1702</guid>
+		<description><![CDATA[[From left to right: Peter Nash, Lauren Cousin (QA/text editor), Martha Christensen (Image designer), Taylor Proctor (Marketing/Promotion), &#38; Joey Smith] Happy Christmas and a Merry New Year from everyone at Axis41 and the AEM Podcast team. A heartfelt thank you to everyone who reads the blog and finds this information helpful.]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2015/12/05287_Happy-Holidays_AEM-Podcast-Team.jpg"><img class="alignnone size-large wp-image-1748" src="http://aempodcast.com/wp-content/uploads/2015/12/05287_Happy-Holidays_AEM-Podcast-Team-612x374.jpg" alt="05287_Happy-Holidays_AEM-Podcast-Team" width="612" height="374" /></a> <em>[From left to right: Peter Nash, Lauren Cousin (QA/text editor), Martha Christensen (Image designer), Taylor Proctor (Marketing/Promotion), &amp; Joey Smith]</em></p>
+<p>Happy Christmas and a Merry New Year from everyone at Axis41 and the AEM Podcast team. A heartfelt thank you to everyone who reads the blog and finds this information helpful.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2015/aem-resources/happy-holidays-aem-podcast-team/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>AEM Podcast: ACS AEM Commons Deep Dive Part 4</title>
+		<link>http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-deep-dive-part-4/</link>
+		<comments>http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-deep-dive-part-4/#comments</comments>
+		<pubDate>Tue, 22 Dec 2015 15:59:04 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Nash]]></dc:creator>
+				<category><![CDATA[Podcast]]></category>
+		<category><![CDATA[ACS AEM Commons]]></category>
+		<category><![CDATA[Adobe CQ]]></category>
+		<category><![CDATA[Adobe Experience Manager]]></category>
+		<category><![CDATA[AEM]]></category>
+		<category><![CDATA[Ensure Oak Index]]></category>
+		<category><![CDATA[Experience Manager]]></category>
+		<category><![CDATA[JCR Compare]]></category>
+		<category><![CDATA[System Notifications]]></category>
+
+		<guid isPermaLink="false">http://aempodcast.com/?p=1736</guid>
+		<description><![CDATA[We continue with our series on ACS AEM Commons. You can check out our previous podcasts in the series here: An Introduction to ACS AEM Commons, An ACS AEM Commons Interview with Justin Edelson pt1, An ACS AEM Commons Interview with Justin Edelson pt2, and ACS AEM Commons Deep Dive Part 3. Joey also wrote &#8230;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://aempodcast.com/wp-content/uploads/2015/12/05288_ACS-AEM-Commons-Deep-Dive_4.jpg"><img class="alignnone size-large wp-image-1746" src="http://aempodcast.com/wp-content/uploads/2015/12/05288_ACS-AEM-Commons-Deep-Dive_4-612x374.jpg" alt="05288_ACS-AEM-Commons-Deep-Dive_4" width="612" height="374" /></a><br />
+We continue with our series on ACS AEM Commons. You can check out our previous podcasts in the series here: <a title="An Introduction to ACS AEM Commons" href="http://aempodcast.com/2015/podcast/aem-podcast-introduction-acs-aem-commons/" target="_blank">An Introduction to ACS AEM Commons</a>, <a title="An ACS AEM Commons Interview with Justin Edelson pt1" href="http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-interview-justin-edelson-pt1/" target="_blank">An ACS AEM Commons Interview with Justin Edelson pt1</a>, <a title="An ACS AEM Commons Interview with Justin Edelson pt2" href="http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-interview-justin-edelson-pt2/" target="_blank">An ACS AEM Commons Interview with Justin Edelson pt2</a>, and <a title="ACS AEM Commons deep dive part 3" href="http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-deep-dive-part-3/" target="_blank">ACS AEM Commons Deep Dive Part 3</a>. Joey also wrote up a good <a title="acs aem commons" href="http://aempodcast.com/2015/acs-aem-commons/acs-aem-commons/" target="_blank">explanation of what ACS AEM Commons is</a>. Here is a link to the <a title="acs aem commons github page" href="http://adobe-consulting-services.github.io/acs-aem-commons/" target="_blank">ACS AEM Commons Github page</a> to see more. In this podcast we talk about the following three features of ACS AEM Commons: System Notifications, Ensure Oak Index, and JCR Compare. If you have any specific features that you would like us to cover, then please don’t hesitate to send us an email at <a href="mailto: info@aempodcast.com">info@aempodcast.com</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://aempodcast.com/2015/podcast/aem-podcast-acs-aem-commons-deep-dive-part-4/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="http://aempodcast.com/wp-content/uploads/2015/12/ACS-Commons-4.mp3" length="5242880" type="audio/mpeg" />
+		</item>
+	</channel>
+</rss>
