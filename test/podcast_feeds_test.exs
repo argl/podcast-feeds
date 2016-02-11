@@ -35,6 +35,12 @@ defmodule PodcastFeeds.Test do
     document = File.read!("test/fixtures/rss2/aem.xml")
     res = PodcastFeeds.parse(document)
     assert {:ok, %PodcastFeeds.Feed{} = _feed} = res
+  end  
+
+  test "parse bcr feed" do
+    document = File.read!("test/fixtures/rss2/bcr.xml")
+    res = PodcastFeeds.parse(document)
+    assert {:ok, %PodcastFeeds.Feed{} = _feed} = res
   end
 
   test "parse rlm feed" do
@@ -60,7 +66,13 @@ defmodule PodcastFeeds.Test do
     document = File.read!("test/fixtures/non-well-formed.xml")
     res = PodcastFeeds.parse(document)
     assert {:error, "error_scanning_entity_ref at line 4 col 37"} = res
+  end
 
+  @tag skip: "prints errors to console but otherwise runs fine"
+  test "parse html file and fail" do
+    document = File.read!("test/fixtures/html-response.xml")
+    res = PodcastFeeds.parse(document)
+    assert {:error, "parse_error end tag does not match, was: head, should have been: link at line 95 col 6"} = res
   end
 
 end

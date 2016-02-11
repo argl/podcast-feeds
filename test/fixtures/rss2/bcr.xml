@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:ddn="http://discoverydn.com/about">
+    <channel>
+        <title>Big Cat Rescue</title>
+        <link>http://animalist.com/bigcatrescue/</link>
+        <description>Big Cat Rescue is an up-close look at the day-to-day operations, conservation efforts and the more than 100 feline residents of &quot;Big Cat Rescue&quot; in Tampa, Florida.  This series will document their play, educate about conservation and show a side of the majestic animals you&#039;ve never seen before.</description>
+        <language>en-us</language>
+                                                                <itunes:category text="Natural Sciences"/>
+                        <itunes:explicit>no</itunes:explicit>
+        <itunes:summary>Big Cat Rescue is an up-close look at the day-to-day operations, conservation efforts and the more than 100 feline residents of &quot;Big Cat Rescue&quot; in Tampa, Florida.  This series will document their play, educate about conservation and show a side of the majestic animals you&#039;ve never seen before.</itunes:summary>
+        <itunes:subtitle>Big Cat Rescue is an up-close look at the day-to-day operations, conservation efforts and the more than 100 feline residents of &quot;Big Cat Rescue&quot; in Tampa, Florida.  This series will document their play, educate about conservation and show a side of the majestic animals you&#039;ve never seen before.</itunes:subtitle>
+        <itunes:author>Animalist</itunes:author>
+        <itunes:owner>
+            <itunes:email>feedback@animalist.com</itunes:email>
+            <itunes:name>Animalist</itunes:name>
+        </itunes:owner>
+        <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online</itunes:keywords>
+                <image>
+            <title>Big Cat Rescue</title>
+            <width>100</width>
+            <height>100</height>
+            <link>http://animalist.com/bigcatrescue/</link>
+            <url>http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_100x100.jpg</url>
+        </image>
+                    <atom:link rel="self" type="application/rss+xml" title="Big Cat Rescue"
+                       href="http%3A%2F%2Fanimalist.ddn.io%2Fbigcatrescue%2Fitunes%2Fmp4-large" />
+                        <item>
+                    <title>The Release Of Rain And Dancer</title>
+                    <link>http://animalist.com/bigcatrescue/the-release-of-rain-and-dancer/</link>
+                    <description>
+                        Rain and Dancer are starting a new life journey as free and wild bobcats. Watch as we release them in their natural habitat.
+                    </description>
+                    <content:encoded>
+                        Rain and Dancer are starting a new life journey as free and wild bobcats. Watch as we release them in their natural habitat.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 09 Feb 2016 15:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>226</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, rehab, bobcat, bobcat kitten, release, conservation</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Rain and Dancer are starting a new life journey as free and wild bobcats. Watch as we release them in their natural habitat.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">74116</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0164/bigcatrescue--0164--the-release-of-rain-and-dancer--large.h264.mp4?sourceFeed=itunes"
+                               length="30444822"
+                               type="video/mp4"/>
+                    <media:content duration="226"
+                                   medium="video"
+                                   fileSize="30444822"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0164/bigcatrescue--0164--the-release-of-rain-and-dancer--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>The Release Of Rain And Dancer</media:title>
+                        <media:description>
+                            Rain and Dancer are starting a new life journey as free and wild bobcats. Watch as we release them in their natural habitat.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0164/bigcatrescue--0164--the-release-of-rain-and-dancer--1455033392--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0164/bigcatrescue--0164--the-release-of-rain-and-dancer--1455033392--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0164/bigcatrescue--0164--the-release-of-rain-and-dancer--1455033392--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0164/bigcatrescue--0164--the-release-of-rain-and-dancer--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/the-release-of-rain-and-dancer/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, rehab, bobcat, bobcat kitten, release, conservation</media:keywords>
+                                            </media:content>
+                    <ddn:id>74116</ddn:id>
+                    <ddn:episode_id>72158</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Teisha Tiger&#039;s Vet Visit</title>
+                    <link>http://animalist.com/bigcatrescueextras/teisha-tigers-vet-visit/</link>
+                    <description>
+                        When Teisha was rescued she was having difficulty getting around.  Find out how her vet visit went, and learn about what we found.
+                    </description>
+                    <content:encoded>
+                        When Teisha was rescued she was having difficulty getting around.  Find out how her vet visit went, and learn about what we found.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 05 Feb 2016 19:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>140</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, tiger, lion, kitten, vet, veterinary medicine, conservation, animals, animal sanctuary</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        When Teisha was rescued she was having difficulty getting around.  Find out how her vet visit went, and learn about what we found.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">74041</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0128/bigcatrescue--bigcatrescueextras--0128--teisha-tigers-vet-visit--large.h264.mp4?sourceFeed=itunes"
+                               length="18837995"
+                               type="video/mp4"/>
+                    <media:content duration="140"
+                                   medium="video"
+                                   fileSize="18837995"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0128/bigcatrescue--bigcatrescueextras--0128--teisha-tigers-vet-visit--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Teisha Tiger&#039;s Vet Visit</media:title>
+                        <media:description>
+                            When Teisha was rescued she was having difficulty getting around.  Find out how her vet visit went, and learn about what we found.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0128/bigcatrescue--bigcatrescueextras--0128--teisha-tigers-vet-visit--1454702572--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0128/bigcatrescue--bigcatrescueextras--0128--teisha-tigers-vet-visit--1454702572--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0128/bigcatrescue--bigcatrescueextras--0128--teisha-tigers-vet-visit--1454702572--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0128/bigcatrescue--bigcatrescueextras--0128--teisha-tigers-vet-visit--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/teisha-tigers-vet-visit/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, tiger, lion, kitten, vet, veterinary medicine, conservation, animals, animal sanctuary</media:keywords>
+                                            </media:content>
+                    <ddn:id>74041</ddn:id>
+                    <ddn:episode_id>72087</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>A Tiger And Lion Vacation</title>
+                    <link>http://animalist.com/bigcatrescue/a-tiger-and-lion-vacation/</link>
+                    <description>
+                        Watch how Cameron the lion spends his vacation versus how Zabu the tiger spends hers.  These two big cats are so funny!
+                    </description>
+                    <content:encoded>
+                        Watch how Cameron the lion spends his vacation versus how Zabu the tiger spends hers.  These two big cats are so funny!
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 02 Feb 2016 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>219</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, tiger and lion, white tiger, vacation, funny, zabu, vs, versus, tiger vs lion</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Watch how Cameron the lion spends his vacation versus how Zabu the tiger spends hers.  These two big cats are so funny!
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73906</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0163/bigcatrescue--0163--a-tiger-and-lion-vacation--large.h264.mp4?sourceFeed=itunes"
+                               length="29454518"
+                               type="video/mp4"/>
+                    <media:content duration="219"
+                                   medium="video"
+                                   fileSize="29454518"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0163/bigcatrescue--0163--a-tiger-and-lion-vacation--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>A Tiger And Lion Vacation</media:title>
+                        <media:description>
+                            Watch how Cameron the lion spends his vacation versus how Zabu the tiger spends hers.  These two big cats are so funny!
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0163/bigcatrescue--0163--a-tiger-and-lion-vacation--1454423482--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0163/bigcatrescue--0163--a-tiger-and-lion-vacation--1454423482--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0163/bigcatrescue--0163--a-tiger-and-lion-vacation--1454423482--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0163/bigcatrescue--0163--a-tiger-and-lion-vacation--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/a-tiger-and-lion-vacation/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, tiger and lion, white tiger, vacation, funny, zabu, vs, versus, tiger vs lion</media:keywords>
+                                            </media:content>
+                    <ddn:id>73906</ddn:id>
+                    <ddn:episode_id>71938</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Zeus Lynx Had Surgery: You Will Never Believe What We Found</title>
+                    <link>http://animalist.com/bigcatrescueextras/zeus-lynx-had-surgery-you-will-never-believe-what-/</link>
+                    <description>
+                        Zeus lynx was acting not well, and was having stomach issues.  We sedated him for a checkup and had to do exploratory surgery.
+                    </description>
+                    <content:encoded>
+                        Zeus lynx was acting not well, and was having stomach issues.  We sedated him for a checkup and had to do exploratory surgery.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 29 Jan 2016 14:30:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>165</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, zeus, lynx, kittens, veterinary medicine, animal sanctuary, non-profit organization, surgery</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Zeus lynx was acting not well, and was having stomach issues.  We sedated him for a checkup and had to do exploratory surgery.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73817</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0126/bigcatrescue--bigcatrescueextras--0126--zeus-lynx-had-surgery-you-will-never-believe-what---large.h264.mp4?sourceFeed=itunes"
+                               length="22256999"
+                               type="video/mp4"/>
+                    <media:content duration="165"
+                                   medium="video"
+                                   fileSize="22256999"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0126/bigcatrescue--bigcatrescueextras--0126--zeus-lynx-had-surgery-you-will-never-believe-what---large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Zeus Lynx Had Surgery: You Will Never Believe What We Found</media:title>
+                        <media:description>
+                            Zeus lynx was acting not well, and was having stomach issues.  We sedated him for a checkup and had to do exploratory surgery.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0126/bigcatrescue--bigcatrescueextras--0126--zeus-lynx-had-surgery-you-will-never-believe-what---1454079415--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0126/bigcatrescue--bigcatrescueextras--0126--zeus-lynx-had-surgery-you-will-never-believe-what---1454079415--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0126/bigcatrescue--bigcatrescueextras--0126--zeus-lynx-had-surgery-you-will-never-believe-what---1454079415--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0126/bigcatrescue--bigcatrescueextras--0126--zeus-lynx-had-surgery-you-will-never-believe-what---mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/zeus-lynx-had-surgery-you-will-never-believe-what-/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, zeus, lynx, kittens, veterinary medicine, animal sanctuary, non-profit organization, surgery</media:keywords>
+                                            </media:content>
+                    <ddn:id>73817</ddn:id>
+                    <ddn:episode_id>71860</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>The Release Of Phoenix And Captiva</title>
+                    <link>http://animalist.com/bigcatrescue/the-release-of-phoenix-and-captiva/</link>
+                    <description>
+                        Phoenix and Captiva are starting a new life journey as free and wild bobcats.  Watch as we release them in their natural habitat.
+                    </description>
+                    <content:encoded>
+                        Phoenix and Captiva are starting a new life journey as free and wild bobcats.  Watch as we release them in their natural habitat.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 26 Jan 2016 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>334</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, rehab, rehabilitation, wild animals, wildlife, wild, bobcats, hunting, big cats, conservation, non-profit organization, animal sanctuary</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Phoenix and Captiva are starting a new life journey as free and wild bobcats.  Watch as we release them in their natural habitat.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73700</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0162/bigcatrescue--0162--the-release-of-phoenix-and-captiva--large.h264.mp4?sourceFeed=itunes"
+                               length="44660232"
+                               type="video/mp4"/>
+                    <media:content duration="334"
+                                   medium="video"
+                                   fileSize="44660232"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0162/bigcatrescue--0162--the-release-of-phoenix-and-captiva--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>The Release Of Phoenix And Captiva</media:title>
+                        <media:description>
+                            Phoenix and Captiva are starting a new life journey as free and wild bobcats.  Watch as we release them in their natural habitat.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0162/bigcatrescue--0162--the-release-of-phoenix-and-captiva--1453820897--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0162/bigcatrescue--0162--the-release-of-phoenix-and-captiva--1453820897--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0162/bigcatrescue--0162--the-release-of-phoenix-and-captiva--1453820897--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0162/bigcatrescue--0162--the-release-of-phoenix-and-captiva--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/the-release-of-phoenix-and-captiva/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, rehab, rehabilitation, wild animals, wildlife, wild, bobcats, hunting, big cats, conservation, non-profit organization, animal sanctuary</media:keywords>
+                                            </media:content>
+                    <ddn:id>73700</ddn:id>
+                    <ddn:episode_id>71738</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>How To Make Enrichment For Your Cat At Home</title>
+                    <link>http://animalist.com/bigcatrescue/how-to-make-enrichment-for-your-cat-at-home/</link>
+                    <description>
+                        We will explain ways to make enrichment like our big cats get for your cat at home.  It is very easy and can be lots of fun!
+                    </description>
+                    <content:encoded>
+                        We will explain ways to make enrichment like our big cats get for your cat at home.  It is very easy and can be lots of fun!
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 19 Jan 2016 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>310</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, enrichment, how-to, how to make, leopards, animal sanctuary, non-profit organization, conservation, cat play</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        We will explain ways to make enrichment like our big cats get for your cat at home.  It is very easy and can be lots of fun!
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73513</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0161/bigcatrescue--0161--how-to-make-enrichment-for-your-cat-at-home--large.h264.mp4?sourceFeed=itunes"
+                               length="42007984"
+                               type="video/mp4"/>
+                    <media:content duration="310"
+                                   medium="video"
+                                   fileSize="42007984"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0161/bigcatrescue--0161--how-to-make-enrichment-for-your-cat-at-home--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>How To Make Enrichment For Your Cat At Home</media:title>
+                        <media:description>
+                            We will explain ways to make enrichment like our big cats get for your cat at home.  It is very easy and can be lots of fun!
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0161/bigcatrescue--0161--how-to-make-enrichment-for-your-cat-at-home--1453216510--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0161/bigcatrescue--0161--how-to-make-enrichment-for-your-cat-at-home--1453216510--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0161/bigcatrescue--0161--how-to-make-enrichment-for-your-cat-at-home--1453216510--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0161/bigcatrescue--0161--how-to-make-enrichment-for-your-cat-at-home--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/how-to-make-enrichment-for-your-cat-at-home/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, enrichment, how-to, how to make, leopards, animal sanctuary, non-profit organization, conservation, cat play</media:keywords>
+                                            </media:content>
+                    <ddn:id>73513</ddn:id>
+                    <ddn:episode_id>71557</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>FAQ Friday: Big Cats And Their Scent Glands</title>
+                    <link>http://animalist.com/bigcatrescueextras/faq-friday-big-cats-and-their-scent-glands/</link>
+                    <description>
+                        Why do the big cats rub their faces on things?  Why are the big cats rubbing on the side of their enclosure?  Scent marking is the answer!
+                    </description>
+                    <content:encoded>
+                        Why do the big cats rub their faces on things?  Why are the big cats rubbing on the side of their enclosure?  Scent marking is the answer!
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 15 Jan 2016 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>107</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, scent glands, scent marking, territory, kitten, rubbing, pet, faq, faq friday, conservation, tiger, lion, leopard, bobcat, sanctuary, nonprofit organization, animals</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Why do the big cats rub their faces on things?  Why are the big cats rubbing on the side of their enclosure?  Scent marking is the answer!
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73443</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0125/bigcatrescue--bigcatrescueextras--0125--faq-friday-big-cats-and-their-scent-glands--large.h264.mp4?sourceFeed=itunes"
+                               length="14515403"
+                               type="video/mp4"/>
+                    <media:content duration="107"
+                                   medium="video"
+                                   fileSize="14515403"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0125/bigcatrescue--bigcatrescueextras--0125--faq-friday-big-cats-and-their-scent-glands--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>FAQ Friday: Big Cats And Their Scent Glands</media:title>
+                        <media:description>
+                            Why do the big cats rub their faces on things?  Why are the big cats rubbing on the side of their enclosure?  Scent marking is the answer!
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0125/bigcatrescue--bigcatrescueextras--0125--faq-friday-big-cats-and-their-scent-glands--1452870587--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0125/bigcatrescue--bigcatrescueextras--0125--faq-friday-big-cats-and-their-scent-glands--1452870587--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0125/bigcatrescue--bigcatrescueextras--0125--faq-friday-big-cats-and-their-scent-glands--1452870587--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0125/bigcatrescue--bigcatrescueextras--0125--faq-friday-big-cats-and-their-scent-glands--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/faq-friday-big-cats-and-their-scent-glands/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, scent glands, scent marking, territory, kitten, rubbing, pet, faq, faq friday, conservation, tiger, lion, leopard, bobcat, sanctuary, nonprofit organization, animals</media:keywords>
+                                            </media:content>
+                    <ddn:id>73443</ddn:id>
+                    <ddn:episode_id>71500</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Big Cat And &quot;Stinky Face&quot;</title>
+                    <link>http://animalist.com/bigcatrescue/big-cat-and-stinky-face/</link>
+                    <description>
+                        Check out the big cats doing &quot;stinky face&quot;.  Find out what that means and smile along with the big cats.
+                    </description>
+                    <content:encoded>
+                        Check out the big cats doing &quot;stinky face&quot;.  Find out what that means and smile along with the big cats.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 12 Jan 2016 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>171</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, flehmen response, flehmen, stinky face, animal sanctuary, leopards, smile</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Check out the big cats doing &quot;stinky face&quot;.  Find out what that means and smile along with the big cats.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73336</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0160/bigcatrescue--0160--big-cat-and-stinky-face--large.h264.mp4?sourceFeed=itunes"
+                               length="22908938"
+                               type="video/mp4"/>
+                    <media:content duration="171"
+                                   medium="video"
+                                   fileSize="22908938"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0160/bigcatrescue--0160--big-cat-and-stinky-face--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Big Cat And &quot;Stinky Face&quot;</media:title>
+                        <media:description>
+                            Check out the big cats doing &quot;stinky face&quot;.  Find out what that means and smile along with the big cats.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0160/bigcatrescue--0160--big-cat-and-stinky-face--1452611514--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0160/bigcatrescue--0160--big-cat-and-stinky-face--1452611514--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0160/bigcatrescue--0160--big-cat-and-stinky-face--1452611514--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0160/bigcatrescue--0160--big-cat-and-stinky-face--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/big-cat-and-stinky-face/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, flehmen response, flehmen, stinky face, animal sanctuary, leopards, smile</media:keywords>
+                                            </media:content>
+                    <ddn:id>73336</ddn:id>
+                    <ddn:episode_id>71380</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>How Do You Vaccinate A Lion That Hates You?</title>
+                    <link>http://animalist.com/bigcatrescueextras/how-do-you-vaccinate-a-lion-that-hates-you/</link>
+                    <description>
+                        Our male lion Joseph hates our veterinarian Dr. Boorstein because of past procedures.  Watch as we try to sneak up on Joseph.
+                    </description>
+                    <content:encoded>
+                        Our male lion Joseph hates our veterinarian Dr. Boorstein because of past procedures.  Watch as we try to sneak up on Joseph.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 08 Jan 2016 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>167</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, male lion, lion, mane, veterinarian, vaccine, angry lion, conservation efforts, animals sanctuary, kitten</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Our male lion Joseph hates our veterinarian Dr. Boorstein because of past procedures.  Watch as we try to sneak up on Joseph.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73244</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0124/bigcatrescue--bigcatrescueextras--0124--how-do-you-vaccinate-a-lion-that-hates-you--large.h264.mp4?sourceFeed=itunes"
+                               length="22699548"
+                               type="video/mp4"/>
+                    <media:content duration="167"
+                                   medium="video"
+                                   fileSize="22699548"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0124/bigcatrescue--bigcatrescueextras--0124--how-do-you-vaccinate-a-lion-that-hates-you--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>How Do You Vaccinate A Lion That Hates You?</media:title>
+                        <media:description>
+                            Our male lion Joseph hates our veterinarian Dr. Boorstein because of past procedures.  Watch as we try to sneak up on Joseph.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0124/bigcatrescue--bigcatrescueextras--0124--how-do-you-vaccinate-a-lion-that-hates-you--1452265008--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0124/bigcatrescue--bigcatrescueextras--0124--how-do-you-vaccinate-a-lion-that-hates-you--1452265008--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0124/bigcatrescue--bigcatrescueextras--0124--how-do-you-vaccinate-a-lion-that-hates-you--1452265008--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0124/bigcatrescue--bigcatrescueextras--0124--how-do-you-vaccinate-a-lion-that-hates-you--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/how-do-you-vaccinate-a-lion-that-hates-you/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, male lion, lion, mane, veterinarian, vaccine, angry lion, conservation efforts, animals sanctuary, kitten</media:keywords>
+                                            </media:content>
+                    <ddn:id>73244</ddn:id>
+                    <ddn:episode_id>71288</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>10 Reason To Avoid The Circus And Visit Big Cat Rescue</title>
+                    <link>http://animalist.com/bigcatrescue/10-reason-to-avoid-the-circus-and-visit-big-cat-re/</link>
+                    <description>
+                        Here are ten reasons to avoid the circus and visit a local sanctuary like Big Cat Rescue.  Pledge to be circus free by visiting nocircustige
+                    </description>
+                    <content:encoded>
+                        Here are ten reasons to avoid the circus and visit a local sanctuary like Big Cat Rescue.  Pledge to be circus free by visiting nocircustige
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 05 Jan 2016 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>309</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, circus, pledge, circus tigers, conservation efforts, animal sanctuary, non-profit organization</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Here are ten reasons to avoid the circus and visit a local sanctuary like Big Cat Rescue.  Pledge to be circus free by visiting nocircustige
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73128</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0159/bigcatrescue--0159--10-reason-to-avoid-the-circus-and-visit-big-cat-re--large.h264.mp4?sourceFeed=itunes"
+                               length="41615866"
+                               type="video/mp4"/>
+                    <media:content duration="309"
+                                   medium="video"
+                                   fileSize="41615866"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0159/bigcatrescue--0159--10-reason-to-avoid-the-circus-and-visit-big-cat-re--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>10 Reason To Avoid The Circus And Visit Big Cat Rescue</media:title>
+                        <media:description>
+                            Here are ten reasons to avoid the circus and visit a local sanctuary like Big Cat Rescue.  Pledge to be circus free by visiting nocircustige
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0159/bigcatrescue--0159--10-reason-to-avoid-the-circus-and-visit-big-cat-re--1452006279--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0159/bigcatrescue--0159--10-reason-to-avoid-the-circus-and-visit-big-cat-re--1452006279--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0159/bigcatrescue--0159--10-reason-to-avoid-the-circus-and-visit-big-cat-re--1452006279--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0159/bigcatrescue--0159--10-reason-to-avoid-the-circus-and-visit-big-cat-re--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/10-reason-to-avoid-the-circus-and-visit-big-cat-re/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, circus, pledge, circus tigers, conservation efforts, animal sanctuary, non-profit organization</media:keywords>
+                                            </media:content>
+                    <ddn:id>73128</ddn:id>
+                    <ddn:episode_id>71173</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Spending Christmas Eve With Mr. Claws</title>
+                    <link>http://animalist.com/bigcatrescueextras/spending-christmas-eve-with-mr-claws/</link>
+                    <description>
+                        We did a post operation check up on Mr. Claws on Christmas Eve.  He was cleared by our veterinarian to go to an outside enclosure.
+                    </description>
+                    <content:encoded>
+                        We did a post operation check up on Mr. Claws on Christmas Eve.  He was cleared by our veterinarian to go to an outside enclosure.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 01 Jan 2016 14:30:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>209</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, bobcats, kittens, rehab, release, conservation efforts, non-profit educational sanctuary, vet</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        We did a post operation check up on Mr. Claws on Christmas Eve.  He was cleared by our veterinarian to go to an outside enclosure.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73084</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0123/bigcatrescue--bigcatrescueextras--0123--spending-christmas-eve-with-mr-claws--large.h264.mp4?sourceFeed=itunes"
+                               length="28181879"
+                               type="video/mp4"/>
+                    <media:content duration="209"
+                                   medium="video"
+                                   fileSize="28181879"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0123/bigcatrescue--bigcatrescueextras--0123--spending-christmas-eve-with-mr-claws--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Spending Christmas Eve With Mr. Claws</media:title>
+                        <media:description>
+                            We did a post operation check up on Mr. Claws on Christmas Eve.  He was cleared by our veterinarian to go to an outside enclosure.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0123/bigcatrescue--bigcatrescueextras--0123--spending-christmas-eve-with-mr-claws--1451661045--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0123/bigcatrescue--bigcatrescueextras--0123--spending-christmas-eve-with-mr-claws--1451661045--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0123/bigcatrescue--bigcatrescueextras--0123--spending-christmas-eve-with-mr-claws--1451661045--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0123/bigcatrescue--bigcatrescueextras--0123--spending-christmas-eve-with-mr-claws--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/spending-christmas-eve-with-mr-claws/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, bobcats, kittens, rehab, release, conservation efforts, non-profit educational sanctuary, vet</media:keywords>
+                                            </media:content>
+                    <ddn:id>73084</ddn:id>
+                    <ddn:episode_id>71132</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Holiday Fun With The Small Cats</title>
+                    <link>http://animalist.com/bigcatrescue/holiday-fun-with-the-small-cats/</link>
+                    <description>
+                        From the small cats to the big cats, everyone loves holiday enrichment.  Watch to see some of our small wild cat species playing with toys.
+                    </description>
+                    <content:encoded>
+                        From the small cats to the big cats, everyone loves holiday enrichment.  Watch to see some of our small wild cat species playing with toys.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 29 Dec 2015 14:30:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>158</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, snowmen, christmas, holidays, conservation, christmas toys, bobcats, servals, caracals</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        From the small cats to the big cats, everyone loves holiday enrichment.  Watch to see some of our small wild cat species playing with toys.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73037</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0158/bigcatrescue--0158--holiday-fun-with-the-small-cats--large.h264.mp4?sourceFeed=itunes"
+                               length="21002564"
+                               type="video/mp4"/>
+                    <media:content duration="158"
+                                   medium="video"
+                                   fileSize="21002564"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0158/bigcatrescue--0158--holiday-fun-with-the-small-cats--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Holiday Fun With The Small Cats</media:title>
+                        <media:description>
+                            From the small cats to the big cats, everyone loves holiday enrichment.  Watch to see some of our small wild cat species playing with toys.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0158/bigcatrescue--0158--holiday-fun-with-the-small-cats--1451401020--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0158/bigcatrescue--0158--holiday-fun-with-the-small-cats--1451401020--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0158/bigcatrescue--0158--holiday-fun-with-the-small-cats--1451401020--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0158/bigcatrescue--0158--holiday-fun-with-the-small-cats--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/holiday-fun-with-the-small-cats/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, snowmen, christmas, holidays, conservation, christmas toys, bobcats, servals, caracals</media:keywords>
+                                            </media:content>
+                    <ddn:id>73037</ddn:id>
+                    <ddn:episode_id>71092</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Big Cat Christmas Sing Along</title>
+                    <link>http://animalist.com/bigcatrescueextras/big-cat-christmas-sing-along/</link>
+                    <description>
+                        Sing along with the big cats the classic Christmas song, O Christmas Tree.  Watch as the big cats sing and play with their Christmas trees.
+                    </description>
+                    <content:encoded>
+                        Sing along with the big cats the classic Christmas song, O Christmas Tree.  Watch as the big cats sing and play with their Christmas trees.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 25 Dec 2015 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>68</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, conservation, christmas, christmas trees, tiger, bobcat, kittens, cougar, lion, roar, non-profit educational sanctuary, holidays, holiday, leopard</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Sing along with the big cats the classic Christmas song, O Christmas Tree.  Watch as the big cats sing and play with their Christmas trees.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">73008</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0122/bigcatrescue--bigcatrescueextras--0122--big-cat-christmas-sing-along--large.h264.mp4?sourceFeed=itunes"
+                               length="9151768"
+                               type="video/mp4"/>
+                    <media:content duration="68"
+                                   medium="video"
+                                   fileSize="9151768"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0122/bigcatrescue--bigcatrescueextras--0122--big-cat-christmas-sing-along--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Big Cat Christmas Sing Along</media:title>
+                        <media:description>
+                            Sing along with the big cats the classic Christmas song, O Christmas Tree.  Watch as the big cats sing and play with their Christmas trees.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0122/bigcatrescue--bigcatrescueextras--0122--big-cat-christmas-sing-along--1450990281--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0122/bigcatrescue--bigcatrescueextras--0122--big-cat-christmas-sing-along--1450990281--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0122/bigcatrescue--bigcatrescueextras--0122--big-cat-christmas-sing-along--1450990281--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0122/bigcatrescue--bigcatrescueextras--0122--big-cat-christmas-sing-along--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/big-cat-christmas-sing-along/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, conservation, christmas, christmas trees, tiger, bobcat, kittens, cougar, lion, roar, non-profit educational sanctuary, holidays, holiday, leopard</media:keywords>
+                                            </media:content>
+                    <ddn:id>73008</ddn:id>
+                    <ddn:episode_id>71064</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Christmas Vacation: Big Cat Edition</title>
+                    <link>http://animalist.com/bigcatrescue/christmas-vacation-big-cat-edition/</link>
+                    <description>
+                        Watch as the Texas tigers, Amanda, Arthur, and Andre enjoy their Christmas vacation.  See as they destroy their gingerbread village.
+                    </description>
+                    <content:encoded>
+                        Watch as the Texas tigers, Amanda, Arthur, and Andre enjoy their Christmas vacation.  See as they destroy their gingerbread village.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 22 Dec 2015 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>171</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, christmas, christmas vacation, conservation efforts, enrichment, texas</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Watch as the Texas tigers, Amanda, Arthur, and Andre enjoy their Christmas vacation.  See as they destroy their gingerbread village.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72915</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0157/bigcatrescue--0157--christmas-vacation-big-cat-edition--large.h264.mp4?sourceFeed=itunes"
+                               length="22928423"
+                               type="video/mp4"/>
+                    <media:content duration="171"
+                                   medium="video"
+                                   fileSize="22928423"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0157/bigcatrescue--0157--christmas-vacation-big-cat-edition--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Christmas Vacation: Big Cat Edition</media:title>
+                        <media:description>
+                            Watch as the Texas tigers, Amanda, Arthur, and Andre enjoy their Christmas vacation.  See as they destroy their gingerbread village.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0157/bigcatrescue--0157--christmas-vacation-big-cat-edition--1450796752--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0157/bigcatrescue--0157--christmas-vacation-big-cat-edition--1450796752--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0157/bigcatrescue--0157--christmas-vacation-big-cat-edition--1450796752--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0157/bigcatrescue--0157--christmas-vacation-big-cat-edition--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/christmas-vacation-big-cat-edition/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, christmas, christmas vacation, conservation efforts, enrichment, texas</media:keywords>
+                                            </media:content>
+                    <ddn:id>72915</ddn:id>
+                    <ddn:episode_id>70999</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Kitten Toys Supporting The Snow Leopard Trust</title>
+                    <link>http://animalist.com/bigcatrescueextras/kitten-toys-supporting-the-snow-leopard-trust/</link>
+                    <description>
+                        Big Cat Rescue supports the Snow Leopard Trust by selling various items in our gift shop.  We just got in some really cute kitten and cat to
+                    </description>
+                    <content:encoded>
+                        Big Cat Rescue supports the Snow Leopard Trust by selling various items in our gift shop.  We just got in some really cute kitten and cat to
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 18 Dec 2015 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>106</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, kittens, toys, snow leopard, snow leopard trust, conservation, foster kittens, gift shop, christmas, presents, non-profit educational sanctuary</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Big Cat Rescue supports the Snow Leopard Trust by selling various items in our gift shop.  We just got in some really cute kitten and cat to
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72802</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0121/bigcatrescue--bigcatrescueextras--0121--kitten-toys-supporting-the-snow-leopard-trust--large.h264.mp4?sourceFeed=itunes"
+                               length="14207489"
+                               type="video/mp4"/>
+                    <media:content duration="106"
+                                   medium="video"
+                                   fileSize="14207489"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0121/bigcatrescue--bigcatrescueextras--0121--kitten-toys-supporting-the-snow-leopard-trust--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Kitten Toys Supporting The Snow Leopard Trust</media:title>
+                        <media:description>
+                            Big Cat Rescue supports the Snow Leopard Trust by selling various items in our gift shop.  We just got in some really cute kitten and cat to
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0121/bigcatrescue--bigcatrescueextras--0121--kitten-toys-supporting-the-snow-leopard-trust--1450450888--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0121/bigcatrescue--bigcatrescueextras--0121--kitten-toys-supporting-the-snow-leopard-trust--1450450888--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0121/bigcatrescue--bigcatrescueextras--0121--kitten-toys-supporting-the-snow-leopard-trust--1450450888--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0121/bigcatrescue--bigcatrescueextras--0121--kitten-toys-supporting-the-snow-leopard-trust--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/kitten-toys-supporting-the-snow-leopard-trust/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, kittens, toys, snow leopard, snow leopard trust, conservation, foster kittens, gift shop, christmas, presents, non-profit educational sanctuary</media:keywords>
+                                            </media:content>
+                    <ddn:id>72802</ddn:id>
+                    <ddn:episode_id>70895</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>December Big Cat Birthdays</title>
+                    <link>http://animalist.com/bigcatrescue/december-big-cat-birthdays/</link>
+                    <description>
+                        Check out the big cat birthdays we are celebrating for the month of December.
+                    </description>
+                    <content:encoded>
+                        Check out the big cat birthdays we are celebrating for the month of December.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 15 Dec 2015 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>180</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, birthdays, caracal, reise, conservation efforts</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Check out the big cat birthdays we are celebrating for the month of December.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72637</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0156/bigcatrescue--0156--december-big-cat-birthdays--large.h264.mp4?sourceFeed=itunes"
+                               length="24158323"
+                               type="video/mp4"/>
+                    <media:content duration="180"
+                                   medium="video"
+                                   fileSize="24158323"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0156/bigcatrescue--0156--december-big-cat-birthdays--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>December Big Cat Birthdays</media:title>
+                        <media:description>
+                            Check out the big cat birthdays we are celebrating for the month of December.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0156/bigcatrescue--0156--december-big-cat-birthdays--1450191425--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0156/bigcatrescue--0156--december-big-cat-birthdays--1450191425--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0156/bigcatrescue--0156--december-big-cat-birthdays--1450191425--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0156/bigcatrescue--0156--december-big-cat-birthdays--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/december-big-cat-birthdays/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, birthdays, caracal, reise, conservation efforts</media:keywords>
+                                            </media:content>
+                    <ddn:id>72637</ddn:id>
+                    <ddn:episode_id>70740</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Explore.org Presents Big Cat Rescue</title>
+                    <link>http://animalist.com/bigcatrescueextras/explore-org-presents-big-cat-rescue/</link>
+                    <description>
+                        Visit explore.org and watch the big cats of Big Cat Rescue through our LIVE cameras.
+                    </description>
+                    <content:encoded>
+                        Visit explore.org and watch the big cats of Big Cat Rescue through our LIVE cameras.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 11 Dec 2015 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>34</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, live camera, live, tiger, lion, vacation, feeding, feeding big cats, conservation efforts, day-to-day operations</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Visit explore.org and watch the big cats of Big Cat Rescue through our LIVE cameras.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72538</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0120/bigcatrescue--bigcatrescueextras--0120--explore-org-presents-big-cat-rescue--large.h264.mp4?sourceFeed=itunes"
+                               length="4382089"
+                               type="video/mp4"/>
+                    <media:content duration="34"
+                                   medium="video"
+                                   fileSize="4382089"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0120/bigcatrescue--bigcatrescueextras--0120--explore-org-presents-big-cat-rescue--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Explore.org Presents Big Cat Rescue</media:title>
+                        <media:description>
+                            Visit explore.org and watch the big cats of Big Cat Rescue through our LIVE cameras.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0120/bigcatrescue--bigcatrescueextras--0120--explore-org-presents-big-cat-rescue--1449846375--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0120/bigcatrescue--bigcatrescueextras--0120--explore-org-presents-big-cat-rescue--1449846375--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0120/bigcatrescue--bigcatrescueextras--0120--explore-org-presents-big-cat-rescue--1449846375--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0120/bigcatrescue--bigcatrescueextras--0120--explore-org-presents-big-cat-rescue--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/explore-org-presents-big-cat-rescue/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, live camera, live, tiger, lion, vacation, feeding, feeding big cats, conservation efforts, day-to-day operations</media:keywords>
+                                            </media:content>
+                    <ddn:id>72538</ddn:id>
+                    <ddn:episode_id>70645</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Saying Goodbye To Alex Tiger</title>
+                    <link>http://animalist.com/bigcatrescueextras/saying-goodbye-to-alex-tiger/</link>
+                    <description>
+                        It was time to say goodbye to our beloved Alex tiger.  He is forever in our hearts, and his expressive face is one we will never forget.
+                    </description>
+                    <content:encoded>
+                        It was time to say goodbye to our beloved Alex tiger.  He is forever in our hearts, and his expressive face is one we will never forget.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 04 Dec 2015 14:30:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>131</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, alex, alex tiger, tiger, conservation efforts, non-profit educational sanctuary, goodbye, saying goodbye, in memory, rainbow bridge</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        It was time to say goodbye to our beloved Alex tiger.  He is forever in our hearts, and his expressive face is one we will never forget.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72313</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0119/bigcatrescue--bigcatrescueextras--0119--saying-goodbye-to-alex-tiger--large.h264.mp4?sourceFeed=itunes"
+                               length="17645747"
+                               type="video/mp4"/>
+                    <media:content duration="131"
+                                   medium="video"
+                                   fileSize="17645747"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0119/bigcatrescue--bigcatrescueextras--0119--saying-goodbye-to-alex-tiger--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Saying Goodbye To Alex Tiger</media:title>
+                        <media:description>
+                            It was time to say goodbye to our beloved Alex tiger.  He is forever in our hearts, and his expressive face is one we will never forget.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0119/bigcatrescue--bigcatrescueextras--0119--saying-goodbye-to-alex-tiger--1449240935--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0119/bigcatrescue--bigcatrescueextras--0119--saying-goodbye-to-alex-tiger--1449240935--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0119/bigcatrescue--bigcatrescueextras--0119--saying-goodbye-to-alex-tiger--1449240935--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0119/bigcatrescue--bigcatrescueextras--0119--saying-goodbye-to-alex-tiger--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/saying-goodbye-to-alex-tiger/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, alex, alex tiger, tiger, conservation efforts, non-profit educational sanctuary, goodbye, saying goodbye, in memory, rainbow bridge</media:keywords>
+                                            </media:content>
+                    <ddn:id>72313</ddn:id>
+                    <ddn:episode_id>70433</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Big Cats And Their Thanksgiving Turkeys</title>
+                    <link>http://animalist.com/bigcatrescue/big-cats-and-their-thanksgiving-turkeys/</link>
+                    <description>
+                        Every year here at Big Cat Rescue we celebrate Thanksgiving with our big cats.  We provide turkeys for the bigger cats, and cornish game hen
+                    </description>
+                    <content:encoded>
+                        Every year here at Big Cat Rescue we celebrate Thanksgiving with our big cats.  We provide turkeys for the bigger cats, and cornish game hen
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 01 Dec 2015 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>260</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, thanksgiving, turkey</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Every year here at Big Cat Rescue we celebrate Thanksgiving with our big cats.  We provide turkeys for the bigger cats, and cornish game hen
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72185</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0155/bigcatrescue--0155--big-cats-and-their-thanksgiving-turkeys--large.h264.mp4?sourceFeed=itunes"
+                               length="35083249"
+                               type="video/mp4"/>
+                    <media:content duration="260"
+                                   medium="video"
+                                   fileSize="35083249"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0155/bigcatrescue--0155--big-cats-and-their-thanksgiving-turkeys--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Big Cats And Their Thanksgiving Turkeys</media:title>
+                        <media:description>
+                            Every year here at Big Cat Rescue we celebrate Thanksgiving with our big cats.  We provide turkeys for the bigger cats, and cornish game hen
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0155/bigcatrescue--0155--big-cats-and-their-thanksgiving-turkeys--1448982313--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0155/bigcatrescue--0155--big-cats-and-their-thanksgiving-turkeys--1448982313--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0155/bigcatrescue--0155--big-cats-and-their-thanksgiving-turkeys--1448982313--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0155/bigcatrescue--0155--big-cats-and-their-thanksgiving-turkeys--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/big-cats-and-their-thanksgiving-turkeys/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, thanksgiving, turkey</media:keywords>
+                                            </media:content>
+                    <ddn:id>72185</ddn:id>
+                    <ddn:episode_id>70306</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Thanksgiving Turkey Bags</title>
+                    <link>http://animalist.com/bigcatrescueextras/thanksgiving-turkey-bags/</link>
+                    <description>
+                        Watch as the big cats play with some enrichment turkeys before they get to devour a real one for Thanksgiving breakfast.
+                    </description>
+                    <content:encoded>
+                        Watch as the big cats play with some enrichment turkeys before they get to devour a real one for Thanksgiving breakfast.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 27 Nov 2015 14:45:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>213</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, conservation efforts, thankgiving, turkey, tiger, bobcat, serval, toys, enrichment, big cat tv, holiday, fun, non-profit educational sanctuary</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Watch as the big cats play with some enrichment turkeys before they get to devour a real one for Thanksgiving breakfast.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72137</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0118/bigcatrescue--bigcatrescueextras--0118--thanksgiving-turkey-bags--large.h264.mp4?sourceFeed=itunes"
+                               length="28638132"
+                               type="video/mp4"/>
+                    <media:content duration="213"
+                                   medium="video"
+                                   fileSize="28638132"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0118/bigcatrescue--bigcatrescueextras--0118--thanksgiving-turkey-bags--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Thanksgiving Turkey Bags</media:title>
+                        <media:description>
+                            Watch as the big cats play with some enrichment turkeys before they get to devour a real one for Thanksgiving breakfast.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0118/bigcatrescue--bigcatrescueextras--0118--thanksgiving-turkey-bags--1448636642--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0118/bigcatrescue--bigcatrescueextras--0118--thanksgiving-turkey-bags--1448636642--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0118/bigcatrescue--bigcatrescueextras--0118--thanksgiving-turkey-bags--1448636642--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0118/bigcatrescue--bigcatrescueextras--0118--thanksgiving-turkey-bags--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/thanksgiving-turkey-bags/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, conservation efforts, thankgiving, turkey, tiger, bobcat, serval, toys, enrichment, big cat tv, holiday, fun, non-profit educational sanctuary</media:keywords>
+                                            </media:content>
+                    <ddn:id>72137</ddn:id>
+                    <ddn:episode_id>70246</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>A Big Cat Thanksgiving: Pilgrims, Indians, and a Turkey</title>
+                    <link>http://animalist.com/bigcatrescue/a-big-cat-thanksgiving-pilgrims-indians-and-a-turk/</link>
+                    <description>
+                        Join us while we celebrate Thanksgiving.  Watch as the big cats have fun with our Thanksgiving photo boards.
+                    </description>
+                    <content:encoded>
+                        Join us while we celebrate Thanksgiving.  Watch as the big cats have fun with our Thanksgiving photo boards.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 24 Nov 2015 15:15:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>221</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, thanksgiving, day-to-day operations, conservation efforts, enrichment</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Join us while we celebrate Thanksgiving.  Watch as the big cats have fun with our Thanksgiving photo boards.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">72009</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0154/bigcatrescue--0154--a-big-cat-thanksgiving-pilgrims-indians-and-a-turk--large.h264.mp4?sourceFeed=itunes"
+                               length="29715344"
+                               type="video/mp4"/>
+                    <media:content duration="221"
+                                   medium="video"
+                                   fileSize="29715344"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0154/bigcatrescue--0154--a-big-cat-thanksgiving-pilgrims-indians-and-a-turk--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>A Big Cat Thanksgiving: Pilgrims, Indians, and a Turkey</media:title>
+                        <media:description>
+                            Join us while we celebrate Thanksgiving.  Watch as the big cats have fun with our Thanksgiving photo boards.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0154/bigcatrescue--0154--a-big-cat-thanksgiving-pilgrims-indians-and-a-turk--1448378055--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0154/bigcatrescue--0154--a-big-cat-thanksgiving-pilgrims-indians-and-a-turk--1448378055--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0154/bigcatrescue--0154--a-big-cat-thanksgiving-pilgrims-indians-and-a-turk--1448378172--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0154/bigcatrescue--0154--a-big-cat-thanksgiving-pilgrims-indians-and-a-turk--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/a-big-cat-thanksgiving-pilgrims-indians-and-a-turk/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, thanksgiving, day-to-day operations, conservation efforts, enrichment</media:keywords>
+                                            </media:content>
+                    <ddn:id>72009</ddn:id>
+                    <ddn:episode_id>70134</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Sassyfrass Cougar&#039;s Anniversary At Big Cat Rescue</title>
+                    <link>http://animalist.com/bigcatrescueextras/sassyfrass-cougars-anniversary-at-big-cat-rescue/</link>
+                    <description>
+                        Sarah, a senior keeper here at Big Cat Rescue, made her favorite big cat enrichment for his 5 year anniversary here at the sanctuary.
+                    </description>
+                    <content:encoded>
+                        Sarah, a senior keeper here at Big Cat Rescue, made her favorite big cat enrichment for his 5 year anniversary here at the sanctuary.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 20 Nov 2015 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>90</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, cougar, sassyfrass cougar, anniversary, conservation efforts, celebrate, enrichment, non-profit educational sanctuary, day-to-day operation</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Sarah, a senior keeper here at Big Cat Rescue, made her favorite big cat enrichment for his 5 year anniversary here at the sanctuary.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">71884</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0117/bigcatrescue--bigcatrescueextras--0117--sassyfrass-cougars-anniversary-at-big-cat-rescue--large.h264.mp4?sourceFeed=itunes"
+                               length="12163914"
+                               type="video/mp4"/>
+                    <media:content duration="90"
+                                   medium="video"
+                                   fileSize="12163914"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0117/bigcatrescue--bigcatrescueextras--0117--sassyfrass-cougars-anniversary-at-big-cat-rescue--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Sassyfrass Cougar&#039;s Anniversary At Big Cat Rescue</media:title>
+                        <media:description>
+                            Sarah, a senior keeper here at Big Cat Rescue, made her favorite big cat enrichment for his 5 year anniversary here at the sanctuary.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0117/bigcatrescue--bigcatrescueextras--0117--sassyfrass-cougars-anniversary-at-big-cat-rescue--1448027537--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0117/bigcatrescue--bigcatrescueextras--0117--sassyfrass-cougars-anniversary-at-big-cat-rescue--1448027537--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0117/bigcatrescue--bigcatrescueextras--0117--sassyfrass-cougars-anniversary-at-big-cat-rescue--1448027537--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0117/bigcatrescue--bigcatrescueextras--0117--sassyfrass-cougars-anniversary-at-big-cat-rescue--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/sassyfrass-cougars-anniversary-at-big-cat-rescue/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, cougar, sassyfrass cougar, anniversary, conservation efforts, celebrate, enrichment, non-profit educational sanctuary, day-to-day operation</media:keywords>
+                                            </media:content>
+                    <ddn:id>71884</ddn:id>
+                    <ddn:episode_id>70018</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Rehab BOBCAT KITTENS:  Meet Mr. And Mrs. Claws</title>
+                    <link>http://animalist.com/bigcatrescue/rehab-bobcat-kittens-meet-mr-and-mrs-claws/</link>
+                    <description>
+                        Meet our two newest bobcat kittens, Mr. and Mrs. Claws.  They were rescued from Christmas, Florida and that is how they got their name.
+                    </description>
+                    <content:encoded>
+                        Meet our two newest bobcat kittens, Mr. and Mrs. Claws.  They were rescued from Christmas, Florida and that is how they got their name.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 17 Nov 2015 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>184</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, bobcat, bobcat kittens, rehab, rehabilitaion, day-to-day operations, conservation efforts, non-profit educational sanctuary</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Meet our two newest bobcat kittens, Mr. and Mrs. Claws.  They were rescued from Christmas, Florida and that is how they got their name.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">71781</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0153/bigcatrescue--0153--rehab-bobcat-kittens-meet-mr-and-mrs-claws--large.h264.mp4?sourceFeed=itunes"
+                               length="24789768"
+                               type="video/mp4"/>
+                    <media:content duration="184"
+                                   medium="video"
+                                   fileSize="24789768"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0153/bigcatrescue--0153--rehab-bobcat-kittens-meet-mr-and-mrs-claws--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Rehab BOBCAT KITTENS:  Meet Mr. And Mrs. Claws</media:title>
+                        <media:description>
+                            Meet our two newest bobcat kittens, Mr. and Mrs. Claws.  They were rescued from Christmas, Florida and that is how they got their name.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0153/bigcatrescue--0153--rehab-bobcat-kittens-meet-mr-and-mrs-claws--1447772681--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0153/bigcatrescue--0153--rehab-bobcat-kittens-meet-mr-and-mrs-claws--1447772681--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0153/bigcatrescue--0153--rehab-bobcat-kittens-meet-mr-and-mrs-claws--1447772681--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0153/bigcatrescue--0153--rehab-bobcat-kittens-meet-mr-and-mrs-claws--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/rehab-bobcat-kittens-meet-mr-and-mrs-claws/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, bobcat, bobcat kittens, rehab, rehabilitaion, day-to-day operations, conservation efforts, non-profit educational sanctuary</media:keywords>
+                                            </media:content>
+                    <ddn:id>71781</ddn:id>
+                    <ddn:episode_id>69907</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>Teisha Tiger Takes Her First Dip In The Pool</title>
+                    <link>http://animalist.com/bigcatrescueextras/teisha-tiger-takes-her-first-dip-in-the-pool/</link>
+                    <description>
+                        Watch as Teisha, our newest rescue, takes her first dip in the pool.  It is so great to see her settling into her new home.
+                    </description>
+                    <content:encoded>
+                        Watch as Teisha, our newest rescue, takes her first dip in the pool.  It is so great to see her settling into her new home.
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Fri, 13 Nov 2015 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>145</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, tiger, pool, swim, non-profit educational sanctuary, day-to-day operations, big cat tv, teisha, conservation effort</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Watch as Teisha, our newest rescue, takes her first dip in the pool.  It is so great to see her settling into her new home.
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">71677</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0116/bigcatrescue--bigcatrescueextras--0116--teisha-tiger-takes-her-first-dip-in-the-pool--large.h264.mp4?sourceFeed=itunes"
+                               length="19570002"
+                               type="video/mp4"/>
+                    <media:content duration="145"
+                                   medium="video"
+                                   fileSize="19570002"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/bigcatrescueextras/0116/bigcatrescue--bigcatrescueextras--0116--teisha-tiger-takes-her-first-dip-in-the-pool--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>Teisha Tiger Takes Her First Dip In The Pool</media:title>
+                        <media:description>
+                            Watch as Teisha, our newest rescue, takes her first dip in the pool.  It is so great to see her settling into her new home.
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0116/bigcatrescue--bigcatrescueextras--0116--teisha-tiger-takes-her-first-dip-in-the-pool--1447425641--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0116/bigcatrescue--bigcatrescueextras--0116--teisha-tiger-takes-her-first-dip-in-the-pool--1447425641--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0116/bigcatrescue--bigcatrescueextras--0116--teisha-tiger-takes-her-first-dip-in-the-pool--1447425641--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescueextras/0116/bigcatrescue--bigcatrescueextras--0116--teisha-tiger-takes-her-first-dip-in-the-pool--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescueextras/teisha-tiger-takes-her-first-dip-in-the-pool/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>big cat, big cat rescue, big cats, cat, florida, rehabilitation, rescue, tampa, tiger, pool, swim, non-profit educational sanctuary, day-to-day operations, big cat tv, teisha, conservation effort</media:keywords>
+                                            </media:content>
+                    <ddn:id>71677</ddn:id>
+                    <ddn:episode_id>69805</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                            <item>
+                    <title>November Big Cat Birthdays</title>
+                    <link>http://animalist.com/bigcatrescue/november-big-cat-birthdays/</link>
+                    <description>
+                        Get up close and personal with our big cats celebrating their November birthday.  Find out what a little about them and what they do all day
+                    </description>
+                    <content:encoded>
+                        Get up close and personal with our big cats celebrating their November birthday.  Find out what a little about them and what they do all day
+                    </content:encoded>
+                    <author>feedback@animalist.com (Animalist)</author>
+                    <pubDate>Tue, 10 Nov 2015 15:00:00 GMT</pubDate>
+                    <itunes:image href="http://videos.revision3.com/revision3/images/shows/bigcatrescue/bigcatrescue_itunes.jpg"/>
+                    <itunes:duration>158</itunes:duration>
+                    <itunes:explicit>no</itunes:explicit>
+                    <itunes:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, birthday, november, conservation efforts, day-to-day operations, non-profit educational sanctuary, celebrate</itunes:keywords>
+                    <itunes:author>Animalist</itunes:author>
+                    <itunes:subtitle>
+                        Get up close and personal with our big cats celebrating their November birthday.  Find out what a little about them and what they do all day
+                    </itunes:subtitle>
+                    <guid isPermaLink="false">71575</guid>
+                    <enclosure url="http://videos.revision3.com/revision3/web/bigcatrescue/0152/bigcatrescue--0152--november-big-cat-birthdays--large.h264.mp4?sourceFeed=itunes"
+                               length="21311795"
+                               type="video/mp4"/>
+                    <media:content duration="158"
+                                   medium="video"
+                                   fileSize="21311795"
+                                   url="http://videos.revision3.com/revision3/web/bigcatrescue/0152/bigcatrescue--0152--november-big-cat-birthdays--large.h264.mp4?sourceFeed=itunes"
+                                   type="video/mp4">
+                        <media:title>November Big Cat Birthdays</media:title>
+                        <media:description>
+                            Get up close and personal with our big cats celebrating their November birthday.  Find out what a little about them and what they do all day
+                        </media:description>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0152/bigcatrescue--0152--november-big-cat-birthdays--1447167640--large.thumb.jpg" width="1280"
+                                             height="720"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0152/bigcatrescue--0152--november-big-cat-birthdays--1447167640--marge.thumb.jpg" width="640"
+                                             height="360"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0152/bigcatrescue--0152--november-big-cat-birthdays--1447167640--medium.thumb.jpg" width="300"
+                                             height="169"/>
+                                                    <media:thumbnail url="http://videos.revision3.com/revision3/images/shows/bigcatrescue/0152/bigcatrescue--0152--november-big-cat-birthdays--mini.thumb.jpg" width="100" height="100"/>
+                                                <media:player url="http://animalist.com/bigcatrescue/november-big-cat-birthdays/"/>
+                        <media:rating>nonadult</media:rating>
+                                                    <media:keywords>animal, animal videos, big cat rescue, big cat rescue florida, cat, cat videos, cats, cougars, cute, cute animals, kitten, large, lions, panthers, tigers, watch cats online, birthday, november, conservation efforts, day-to-day operations, non-profit educational sanctuary, celebrate</media:keywords>
+                                            </media:content>
+                    <ddn:id>71575</ddn:id>
+                    <ddn:episode_id>69701</ddn:episode_id>
+                    <ddn:special>0</ddn:special>
+                    <ddn:expires>2016-02-13 23:23:29</ddn:expires>
+                </item>
+                </channel>
+</rss>
