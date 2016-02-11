@@ -1,4 +1,4 @@
-defmodule Feedme.Mixfile do
+defmodule PodcastFeeds.Mixfile do
   use Mix.Project
 
   def project do
