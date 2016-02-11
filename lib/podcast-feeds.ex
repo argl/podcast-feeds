@@ -107,7 +107,7 @@ defmodule PodcastFeeds do
       :exit, {:fatal, {{parse_error, {:was, was, :should_have_been, should_have_been}}, _, {:line, line_number}, {:col, col_number}}} -> 
         {:error, "parse_error end tag does not match, was: #{was}, should have been: #{should_have_been} at line #{line_number} col #{col_number}"}
       :exit, {:fatal, {parse_error, _, {:line, line_number}, {:col, col_number}}} -> 
-        {:error, "#{parse_error} at line #{line_number} col #{col_number}"}
+        {:error, "#{parse_error.inspect} at line #{line_number} col #{col_number}"}
       :exit, reason -> 
         {:error, reason}
     end
