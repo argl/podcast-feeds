@@ -5,12 +5,12 @@ defmodule PodcastFeeds.Parsers.Helpers do
     case string do
       "" -> nil
       nil -> nil
-      _ -> String.strip string
+      _ -> String.trim string
     end
   end
 
   def parse_date(datestring, format \\ "{RFC1123}") do
-    case datestring |> DateFormat.parse(format) do
+    case datestring |> Timex.parse(format) do
       {:ok, date} -> date
       _ -> nil
     end
@@ -27,7 +27,7 @@ defmodule PodcastFeeds.Parsers.Helpers do
     case val do
       nil -> nil
       "" -> nil
-      _ -> case String.strip(val) do
+      _ -> case String.trim(val) do
         "" -> nil
         ret -> ret
       end
@@ -83,7 +83,7 @@ defmodule PodcastFeeds.Parsers.Helpers do
   #   end
   # end
 
-  # try to parse the current character map to an integer, 
+  # try to parse the current character map to an integer,
   # set it to nil on failure
   # pass on result via state
   # def parse_character_content_to_integer(state) do
@@ -95,7 +95,7 @@ defmodule PodcastFeeds.Parsers.Helpers do
   #   %{state | element_acc: element_acc}
   # end
 
-  # try to parse the current character map to a boolean, 
+  # try to parse the current character map to a boolean,
   # set it to false on failure
   # pass on result via state
   # def parse_character_content_to_boolean(state) do
@@ -127,7 +127,7 @@ defmodule PodcastFeeds.Parsers.Helpers do
 
   # get attributes from node and put it into a map
   # def extract_attributes(attributes) do
-  #   Enum.reduce attributes, %{}, fn({:attribute, key, _, _, value}, acc) -> 
+  #   Enum.reduce attributes, %{}, fn({:attribute, key, _, _, value}, acc) ->
   #     Map.put(acc, List.to_atom(key), to_string(value))
   #   end
   # end
