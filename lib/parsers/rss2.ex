@@ -47,10 +47,10 @@ defmodule PodcastFeeds.Parsers.RSS2 do
         link: node |> xpath(~x"./link/text()"s) |> Helpers.strip_nil,
         description: node |> xpath(~x"./description/text()"s) |> Helpers.strip_nil,
         # optional:
-        # language, copyright, managingEditor, webMaster, pubDate, lastBuildDate, category (a list), 
-        # generator, docs (ignored), cloud, ttl, image, rating (ignored), textInput (ignored), 
+        # language, copyright, managingEditor, webMaster, pubDate, lastBuildDate, category (a list),
+        # generator, docs (ignored), cloud, ttl, image, rating (ignored), textInput (ignored),
         # skipHours, skipDays
-        # author? its not in the specs on channel level, see http://cyber.law.harvard.edu/rss/rss.html, 
+        # author? its not in the specs on channel level, see http://cyber.law.harvard.edu/rss/rss.html,
         # we include it nonetheless because.
         author: node |> xpath(~x"./author/text()"os) |> Helpers.strip_nil |> Helpers.parse_email,
         language: node |> xpath(~x"./language/text()"os) |> Helpers.strip_nil,
@@ -60,17 +60,17 @@ defmodule PodcastFeeds.Parsers.RSS2 do
         publication_date: node |> xpath(~x"./pubDate/text()"os) |> Helpers.parse_date,
         last_build_date: node |> xpath(~x"./lastBuildDate/text()"os) |> Helpers.parse_date,
         categories: node |> xpath(~x"./category/text()"osl)
-          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end) 
+          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end)
           |> Enum.filter(fn(el)-> el != nil end),
         generator: node |> xpath(~x"./generator/text()"os) |> Helpers.strip_nil,
         cloud: node |> xpath(~x"./cloud"oe) |> parse_cloud_element,
         ttl: node |> xpath(~x"./ttl/text()"os) |> Helpers.parse_integer,
         image: node |> xpath(~x"./image"oe) |>parse_image_element,
-        skip_hours: node |> xpath(~x"./skipHours/hour/text()"osl) 
-          |> Enum.map(fn(el) -> Helpers.parse_integer(el) end) 
+        skip_hours: node |> xpath(~x"./skipHours/hour/text()"osl)
+          |> Enum.map(fn(el) -> Helpers.parse_integer(el) end)
           |> Enum.filter(fn(el)-> el != nil end),
         skip_days: node |> xpath(~x"./skipDays/day/text()"osl)
-          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end) 
+          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end)
           |> Enum.filter(fn(el)-> el != nil end),
       }
       |> Atom.do_parse_meta_node(node)
@@ -85,17 +85,18 @@ defmodule PodcastFeeds.Parsers.RSS2 do
   def do_parse_entries(%ParserState{doc: doc} = state) do
     entries = doc
     |> xpath(~x"/rss/channel/item"el)
-    |> Enum.map(fn(node) -> 
+    |> Enum.map(fn(node) ->
       %Entry{
         # require: title or description
         title: node |> xpath(~x"./title/text()"s) |> Helpers.strip_nil,
         description: node |> xpath(~x"./description/text()"s) |> Helpers.strip_nil,
-        # optional: link, author, category, comments (URL of a page for comments relating to the item), 
+        # optional: link, author, category, comments (URL of a page for comments relating to the item),
         # enclosure, guid, pubDate, source (The RSS channel that the item came from)
         link: node |> xpath(~x"./link/text()"s) |> Helpers.strip_nil,
         author: node |> xpath(~x"./author/text()"os) |> Helpers.strip_nil |> Helpers.parse_email,
+        dc_creator: node |> xpath(~x"./dc:creator/text()"os) |> Helpers.strip_nil,
         categories: node |> xpath(~x"./category/text()"osl)
-          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end) 
+          |> Enum.map(fn(el) -> Helpers.strip_nil(el) end)
           |> Enum.filter(fn(el)-> el != nil end),
         comments: node |> xpath(~x"./comments/text()"os) |> Helpers.strip_nil,
         enclosure: node |> xpath(~x"./enclosure"oe) |> parse_enclosure_element,

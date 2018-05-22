@@ -6,10 +6,10 @@ defmodule PodcastFeeds.Mixfile do
      version: "1.0.0",
      elixir: "~> 1.2",
      description: "Elixir RSS/Atom parser, optimized for Podcast feeds, based on erlsom",
-     package: package,
+     package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   # Configuration for the OTP application
@@ -38,8 +38,8 @@ defmodule PodcastFeeds.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:sweet_xml, "~> 0.5.0"},
-      {:timex, "~> 1.0.0-rc3"},
+      {:sweet_xml, "~> 0.6.0"},
+      {:timex, "~> 3.1"},
       {:mix_test_watch, "~> 0.2", only: :dev},
       {:exprof, "~> 0.2.0"}
     ]

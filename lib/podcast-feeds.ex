@@ -47,6 +47,7 @@ defmodule PodcastFeeds do
               link: nil,
               description: nil,
               author: nil,
+              dc_creator: nil,
               categories: [],
               comments: nil,
               enclosure: nil,
@@ -62,7 +63,7 @@ defmodule PodcastFeeds do
 
   # A Feed
   defmodule Feed do
-    defstruct meta: nil, 
+    defstruct meta: nil,
               entries: []
   end
 
@@ -104,11 +105,11 @@ defmodule PodcastFeeds do
         true -> {:error, "Unknown feed format"}
       end
     catch
-      :exit, {:fatal, {{_parse_error, {:was, was, :should_have_been, should_have_been}}, _, {:line, line_number}, {:col, col_number}}} -> 
+      :exit, {:fatal, {{_parse_error, {:was, was, :should_have_been, should_have_been}}, _, {:line, line_number}, {:col, col_number}}} ->
         {:error, "parse_error end tag does not match, was: #{was}, should have been: #{should_have_been} at line #{line_number} col #{col_number}"}
-      :exit, {:fatal, {_parse_error, _, {:line, line_number}, {:col, col_number}}} -> 
+      :exit, {:fatal, {_parse_error, _, {:line, line_number}, {:col, col_number}}} ->
         {:error, "parse_error at line #{line_number} col #{col_number}"}
-      :exit, reason -> 
+      :exit, reason ->
         {:error, reason}
     end
   end
